@@ -5,6 +5,7 @@ import {
   Box,
   Flex,
   Grid,
+  GridItem,
   Heading,
   Input,
   SimpleGrid,
@@ -19,9 +20,9 @@ import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 
-export default function Home() {
+export default function Projects() {
   const navRef = useRef(null);
-  const isInView = useInView(navRef, { once: false, amount: 0.8 });
+  const isInView = useInView(navRef, { once: false, amount: 0.6 });
 
   return (
     <>
@@ -55,7 +56,7 @@ export default function Home() {
           >
             <Box
               display={isInView ? "none" : "block"}
-              opacity={isInView ? 0 : 1}
+              // opacity={isInView ? 0 : 1}
               transition={"opacity .5s ease-in-out"}
               bg={"white"}
               boxShadow={"2px 2px 8px 0px rgba(0, 0, 0, 0.08)"}
@@ -67,188 +68,125 @@ export default function Home() {
           </Box>
         </nav>
         <section ref={navRef}>
-          <Box
-            bgImage={"/hero-bg.png"}
-            height={"900px"}
-            bgPosition={"center"}
-            bgSize={"cover"}
-          >
-            <Box className="section-container" pt={"206px"}>
-              <Heading
-                fontSize={"92px"}
-                fontWeight={700}
-                lineHeight={"90px"}
-                letterSpacing={"-3.68px"}
-                maxW={"889px"}
-              >
-                Building <span style={{ color: "#C0972D" }}>exceptional</span>{" "}
-                homes and a lifestyle of opulence.
-              </Heading>
-            </Box>
+          <Box className="section-container" pt={"206px"}>
+            <Heading
+              fontSize={"72px"}
+              fontWeight={700}
+              lineHeight={"100%"}
+              letterSpacing={"-2.88px"}
+            >
+              We build with you in mind;
+              <br /> Innovative and excellent living
+            </Heading>
           </Box>
+          <Box h="444px" bg={"gray"} mt="62px"></Box>
         </section>
         <section className="section-container">
-          <Box py={"108px"}>
-            <Flex justify={"space-between"}>
-              <Box w="55%" maxW={"655px"}>
-                <Text
-                  fontSize={"20px"}
-                  fontWeight={600}
-                  letterSpacing={"4px"}
-                  textTransform={"uppercase"}
-                  color={"secondary"}
-                >
-                  our goal
-                </Text>
-                <Heading
-                  color={"primary"}
-                  fontSize={"56px"}
-                  fontWeight={700}
-                  lineHeight={"100%"}
-                  letterSpacing={"-1.12px"}
-                  my={"21px"}
-                >
-                  Building for maximum results
-                </Heading>
-                <Text
-                  color={"primary"}
-                  fontSize={"20px"}
-                  fontWeight={400}
-                  lineHeight={"130%"}
-                >
-                  First Synergi Homes is a captivating capsule of innovation,
-                  energy, and symbiosis with its surroundings.
-                </Text>
-              </Box>
-              <Box color={"primary"} w="45%" textAlign={"right"}>
-                <Heading fontSize={"64px"} fontWeight={400} mb={0}>
-                  100+
-                </Heading>
-                <Text fontSize={"30px"} fontWeight={700} lineHeight={"100%"}>
-                  Homes
-                </Text>
-                <Heading fontSize={"64px"} fontWeight={400} mt="40px">
-                  15+
-                </Heading>
-                <Text fontSize={"30px"} fontWeight={700} lineHeight={"100%"}>
-                  Years of excellence
-                </Text>
-              </Box>
-            </Flex>
-            <Flex
-              color={"secondary"}
-              alignItems={"center"}
-              gap={"4px"}
-              mt={"50px"}
+          <Box pt={"100px"} pb={"108px"}>
+            <Box w="55%" maxW={"655px"}>
+              <Text
+                fontSize={"20px"}
+                fontWeight={600}
+                letterSpacing={"4px"}
+                textTransform={"uppercase"}
+                color={"primary"}
+              >
+                Featured projects
+              </Text>
+              <Heading
+                color={"primary"}
+                fontSize={"56px"}
+                fontWeight={700}
+                lineHeight={"100%"}
+                letterSpacing={"-2.24px"}
+                mt={"21px"}
+              >
+                Excellence and comfort is what we build for you
+              </Heading>
+            </Box>
+            <Grid
+              gridGap={"30px"}
+              gridTemplateColumns={"repeat(3, 1fr)"}
+              mt={"40px"}
             >
-              <Text>About First Synergi homes</Text>
-              <ArrowForwardIcon />
-            </Flex>
-            <Box
-              borderRadius={"10px"}
-              h={"675px"}
-              w="full"
-              bg={"gray"}
-              mt={"86px"}
-            ></Box>
+              <GridItem colSpan={2}>
+                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+              </GridItem>
+              <GridItem>
+                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+              </GridItem>
+              <GridItem>
+                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+              </GridItem>
+              <GridItem colSpan={2}>
+                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+              </GridItem>
+            </Grid>
           </Box>
         </section>
-        <section style={{ backgroundColor: "#002E3B" }}>
-          <Box className="section-container" color={"white"} py={"98px"}>
+        <section>
+          <Box color={"primary"} className="section-container">
             <Text
               fontSize={"20px"}
               fontWeight={600}
               letterSpacing={"4px"}
-              color={"secondary"}
               textTransform={"uppercase"}
             >
-              Projects
+              ongoing projects
             </Text>
-            <Flex
-              alignItems={"flex-start"}
-              mt={"21px"}
-              justify={"space-between"}
-            >
-              <Stack spacing={"21px"} maxW={"665px"}>
-                <Heading fontSize={"56px"} letterSpacing={"-2.24px"}>
-                  Developing with the future in mind
-                </Heading>
-                <Text fontSize={"20px"} fontWeight={400} lineHeight={"130%"}>
-                  We bring beautiful homes to market 3x faster.
-                </Text>
-              </Stack>
-              <Flex alignItems={"center"} color={"secondary"} gap={"4px"}>
-                <Text fontSize={"20px"} fontWeight={600}>
-                  View featured projects
-                </Text>
-                <ArrowForwardIcon />
-              </Flex>
-            </Flex>
+
+            <Heading fontSize={"56px"} letterSpacing={"-2.24px"} mt="21px">
+              We never stop building
+              <br /> communities
+            </Heading>
+
             <Flex
               className="no-scrollbar"
               gap={"64px"}
-              mt={"102px"}
+              mt={"40px"}
               position={"relative"}
               overflow={"scroll"}
             >
-              <HomeProjectCmp />
-              <HomeProjectCmp />
-              <HomeProjectCmp />
+              <HomeProjectCmp other />
+              <HomeProjectCmp other />
+              <HomeProjectCmp other />
             </Flex>
-            <Box textAlign={"center"}>
-              <Heading
-                color={"secondary"}
-                fontSize={"56px"}
-                letterSpacing={"-2.24px"}
-              >
-                We are trusted
-              </Heading>
-              <Text
-                fontSize={"20px"}
-                fontWeight={400}
-                lineHeight={"130%"}
-                mt={"16px"}
-              >
-                Since inception we’ve been working with amazing clients to
-                create meaningful
-                <br /> impact and compelling experiences
-              </Text>
-            </Box>
           </Box>
         </section>
         <section className="section-container">
-          <Box py={"96px"}>
-            <Flex
-              color={"primary"}
-              alignItems={"flex-start"}
-              justify={"space-between"}
-            >
-              <Box>
-                <Heading fontSize={"56px"} letterSpacing={"-2.24px"}>
-                  First insights
-                </Heading>
-                <Text fontSize={"20px"} lineHeight={"130%"} mt={"16px"}>
-                  Stay informed with our latest insights
-                </Text>
-              </Box>
-              <Flex alignItems={"center"} gap={"4px"}>
-                <Text>View all</Text>
-                <ArrowForwardIcon />
-              </Flex>
-            </Flex>
+          <Box pb={"100px"}>
+            <Box>
+              <Text
+                fontSize={"20px"}
+                fontWeight={600}
+                letterSpacing={"4px"}
+                textTransform={"uppercase"}
+              >
+                More projects
+              </Text>
+              <Heading fontSize={"56px"} letterSpacing={"-2.24px"} mt={"21px"}>
+                See First Synergi Projects
+              </Heading>
+            </Box>
+
             <Grid
               gridGap={"20px"}
               mt={"48px"}
               gridTemplateColumns={{
                 xl: "repeat(3, 1fr)",
-                lg: "repeat(2, 1fr)",
+                lg: "repeat(3, 1fr)",
               }}
             >
-              <BlogItemCmp />
-              <BlogItemCmp />
-              <BlogItemCmp />
-              <BlogItemCmp />
+              <GridItem colSpan={2}>
+                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+              </GridItem>
+              <GridItem>
+                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+              </GridItem>
             </Grid>
+            <Box mx={"auto"} w="fit-content">
+              <Button mt={"63px"} label="Load more" />
+            </Box>
           </Box>
         </section>
       </main>
