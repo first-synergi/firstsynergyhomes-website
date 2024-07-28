@@ -18,6 +18,7 @@ import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
+import ImageList from "@/images.json";
 
 export default function Home() {
   const navRef = useRef(null);
@@ -73,7 +74,7 @@ export default function Home() {
             bgPosition={"center"}
             bgSize={"cover"}
           >
-            <Box className="section-container" pt={"206px"}>
+            <Box color={"primary"} className="section-container" pt={"206px"}>
               <Heading
                 fontSize={"92px"}
                 fontWeight={700}
@@ -191,9 +192,9 @@ export default function Home() {
               position={"relative"}
               overflow={"scroll"}
             >
-              <HomeProjectCmp />
-              <HomeProjectCmp />
-              <HomeProjectCmp />
+              {ImageList.home.projects.map((obj, index) => (
+                <HomeProjectCmp key={index} data={obj} />
+              ))}
             </Flex>
             <Box textAlign={"center"}>
               <Heading

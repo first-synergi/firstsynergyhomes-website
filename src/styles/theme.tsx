@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 
 const config: ThemeConfig = {
-  initialColorMode: "dark",
+  initialColorMode: "light",
   useSystemColorMode: false,
   cssVarPrefix: "firstsynergy-homes",
 };

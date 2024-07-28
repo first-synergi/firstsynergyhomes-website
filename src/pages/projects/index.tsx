@@ -19,6 +19,7 @@ import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
+import ImagesList from "@/images.json";
 
 export default function Projects() {
   const navRef = useRef(null);
@@ -70,6 +71,7 @@ export default function Projects() {
         <section ref={navRef}>
           <Box className="section-container" pt={"206px"}>
             <Heading
+              color={"primary"}
               fontSize={"72px"}
               fontWeight={700}
               lineHeight={"100%"}
@@ -79,7 +81,15 @@ export default function Projects() {
               <br /> Innovative and excellent living
             </Heading>
           </Box>
-          <Box h="444px" bg={"gray"} mt="62px"></Box>
+          <Box
+            h="444px"
+            bg={"gray"}
+            bgImage={ImagesList.projects.hero}
+            bgSize={"cover"}
+            bgRepeat={"no-repeat"}
+            bgPosition={"center"}
+            mt="62px"
+          />
         </section>
         <section className="section-container">
           <Box pt={"100px"} pb={"108px"}>
@@ -110,16 +120,36 @@ export default function Projects() {
               mt={"40px"}
             >
               <GridItem colSpan={2}>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.projects.project_images[0]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
               </GridItem>
               <GridItem>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.projects.project_images[1]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
               </GridItem>
               <GridItem>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.projects.project_images[2]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
               </GridItem>
               <GridItem colSpan={2}>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.projects.project_images[3]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
               </GridItem>
             </Grid>
           </Box>

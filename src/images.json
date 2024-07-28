@@ -1,0 +1,42 @@
+{
+  "home": {
+    "hero": "/hero-bg.png",
+    "projects": [
+      {
+        "name": "Mulberry Mansions",
+        "src": "/images/mulberry-mansion-img.png",
+        "desc": "This development features twenty ADUs and twenty 2 bed / 2 bath homes that measure 1,176 sq. ft. and are installed in under 3 months"
+      },
+      {
+        "name": "R-Jolad Plus",
+        "src": "/images/rjolad-img.png",
+        "desc": "This development features twenty ADUs and twenty 2 bed / 2 bath homes that measure 1,176 sq. ft. and are installed in under 3 months"
+      },
+      {
+        "name": "St. Augustine Uni. Chapel",
+        "src": "/images/st-augustine-img.png",
+        "desc": ""
+      }
+    ]
+  },
+  "projects": {
+    "hero": "/images/project-hero-bg.png",
+    "project_images": [
+      "/images/project-img1.png",
+      "/images/project-img2.png",
+      "/images/project-img3.png",
+      "/images/project-img4.png"
+    ]
+  },
+  "blog": {},
+  "about": {
+    "hero": "/images/about-hero-bg.png",
+    "section3": "/images/about-section3-img.png",
+    "services": [
+      "/images/service-img1.png",
+      "/images/service-img2.png",
+      "/images/service-img3.png",
+      "/images/service-img4.png"
+    ]
+  }
+}

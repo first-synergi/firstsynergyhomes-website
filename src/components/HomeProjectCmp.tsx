@@ -1,19 +1,42 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 
-const HomeProjectCmp = ({ other = false }) => {
+interface ICmpType {
+  data?: any;
+  other?: boolean;
+}
+const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
   return (
     <Box w="90%" position={"relative"} flexShrink={0}>
-      <Box borderRadius={"10px"} w="full" height={"597px"} bg={"gray"}></Box>
+      <Box
+        borderRadius={"10px"}
+        w="full"
+        height={"597px"}
+        bg={"gray"}
+        bgImage={data?.src}
+      ></Box>
       <Box
         w="620px"
         h={other ? "188px" : "323px"}
-        bg={"steelblue"}
+        bg={"white"}
         position={"relative"}
         top={"-148px"}
         left={"40px"}
         p={"36px"}
-      ></Box>
+      >
+        <Heading color={"secondary"} fontSize={"56px"} fontWeight={700}>
+          {data?.name}
+        </Heading>
+        <Text
+          color={"primary"}
+          fontSize={"20px"}
+          fontWeight={400}
+          lineHeight={"130%"}
+          mt={"14px"}
+        >
+          {data?.desc}
+        </Text>
+      </Box>
     </Box>
   );
 };

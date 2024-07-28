@@ -19,6 +19,30 @@ import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
+import ImagesList from "@/images.json";
+
+const CoreValuesObj = [
+  {
+    title: "FOCUS",
+    subtitle:
+      "Precision and attention to detail define our approach, ensuring that every project meets the highest standards.",
+  },
+  {
+    title: "SIMPLICITY/SYNERGY",
+    subtitle:
+      "We simplify complex processes and synergize efforts to deliver exceptional results efficiently.",
+  },
+  {
+    title: "HONESTY",
+    subtitle:
+      "Our commitment to honesty builds strong, trustworthy relationships with clients and stakeholders.",
+  },
+  {
+    title: "LEADERSHIP",
+    subtitle:
+      "Our commitment to honesty builds strong, trustworthy relationships with clients and stakeholders.",
+  },
+];
 
 export default function AboutUs() {
   const navRef = useRef(null);
@@ -70,6 +94,7 @@ export default function AboutUs() {
         <section ref={navRef}>
           <Box className="section-container" pt={"206px"}>
             <Heading
+              color={"primary"}
               fontSize={"72px"}
               fontWeight={700}
               lineHeight={"100%"}
@@ -78,7 +103,12 @@ export default function AboutUs() {
               We’re transforming the way the world builds.
             </Heading>
           </Box>
-          <Box h="444px" bg={"gray"} mt="62px"></Box>
+          <Box
+            h="444px"
+            bg={"gray"}
+            bgImage={ImagesList.about.hero}
+            mt="62px"
+          ></Box>
         </section>
         <section className="section-container">
           <Box pt={"100px"} pb={"108px"}>
@@ -210,42 +240,113 @@ export default function AboutUs() {
             </Flex>
           </Box>
         </section>
-        {/* <section className="section-container">
-          <Box pb={"100px"}>
-            <Box>
+        <section className="section-container">
+          <Flex mt={"77px"} gap={"38px"} position={"relative"}>
+            <Box w="65%">
               <Text
+                color={"secondary"}
                 fontSize={"20px"}
-                fontWeight={600}
+                lineHeight={"130%"}
                 letterSpacing={"4px"}
-                textTransform={"uppercase"}
+                textTransform={"capitalize"}
               >
-                More projects
+                How we stand for
               </Text>
-              <Heading fontSize={"56px"} letterSpacing={"-2.24px"} mt={"21px"}>
-                See First Synergi Projects
+              <Heading color={"primary"} mt={"21px"} fontSize={"56px"}>
+                Core Values
               </Heading>
+              <SimpleGrid
+                columns={2}
+                gridGap={"50px"}
+                minChildWidth={"280px"}
+                mt={"34px"}
+              >
+                {CoreValuesObj.map((obj, index) => (
+                  <Box key={index} maxW={"302px"}>
+                    <Text
+                      color={"secondary"}
+                      fontSize={"20px"}
+                      lineHeight={"130%"}
+                      letterSpacing={"4px"}
+                      textTransform={"capitalize"}
+                    >
+                      {obj.title}
+                    </Text>
+                    <Text
+                      color={"primary"}
+                      fontSize={"20px"}
+                      lineHeight={"130%"}
+                    >
+                      {obj.subtitle}
+                    </Text>
+                  </Box>
+                ))}
+              </SimpleGrid>
             </Box>
-
+            <Box>
+              <Image
+                src={ImagesList.about.section3}
+                alt="project-image"
+                width={649}
+                height={597}
+              />
+            </Box>
+          </Flex>
+        </section>
+        <section className="section-container">
+          <Box my={"100px"}>
+            <Text
+              color={"secondary"}
+              fontSize={"20px"}
+              lineHeight={"130%"}
+              letterSpacing={"4px"}
+              textTransform={"capitalize"}
+            >
+              OUR SERVICES
+            </Text>
+            <Heading color={"primary"} mt={"21px"} fontSize={"56px"}>
+              How we bring your vision to life.
+            </Heading>
             <Grid
-              gridGap={"20px"}
-              mt={"48px"}
-              gridTemplateColumns={{
-                xl: "repeat(3, 1fr)",
-                lg: "repeat(3, 1fr)",
-              }}
+              gridGap={"30px"}
+              gridTemplateColumns={"repeat(3, 1fr)"}
+              mt={"40px"}
             >
               <GridItem colSpan={2}>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.about.services[0]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
               </GridItem>
               <GridItem>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.about.services[1]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
+              </GridItem>
+              <GridItem>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.about.services[2]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
+              </GridItem>
+              <GridItem colSpan={2}>
+                <Box
+                  bg={"gray"}
+                  bgImage={ImagesList.about.services[3]}
+                  borderRadius={"10px"}
+                  height={"542px"}
+                ></Box>
               </GridItem>
             </Grid>
-            <Box mx={"auto"} w="fit-content">
-              <Button mt={"63px"} label="Load more" />
-            </Box>
           </Box>
-        </section> */}
+        </section>
       </main>
       <footer style={{ backgroundColor: "#002E3B" }}>
         <Box className="section-container" pt={"80px"} pb={"96px"} w="100%">
