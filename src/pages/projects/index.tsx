@@ -20,6 +20,7 @@ import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 import ImagesList from "@/images.json";
+import FooterCmp from "@/components/FooterCmp";
 
 export default function Projects() {
   const navRef = useRef(null);
@@ -36,6 +37,7 @@ export default function Projects() {
       <main>
         <nav className="section-container">
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"absolute"}
             top={"40px"}
             w="full"
@@ -47,6 +49,7 @@ export default function Projects() {
             <Navbar />
           </Box>
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"fixed"}
             top={"40px"}
             w="full"
@@ -57,7 +60,7 @@ export default function Projects() {
           >
             <Box
               display={isInView ? "none" : "block"}
-              // opacity={isInView ? 0 : 1}
+              opacity={isInView ? 0 : 1}
               transition={"opacity .5s ease-in-out"}
               bg={"white"}
               boxShadow={"2px 2px 8px 0px rgba(0, 0, 0, 0.08)"}
@@ -67,56 +70,60 @@ export default function Projects() {
               <Navbar />
             </Box>
           </Box>
+          <Box
+            display={{ lg: "none", base: "block" }}
+            position={"fixed"}
+            top={"24px"}
+            w="full"
+            left={0}
+            px={"16px"}
+            zIndex={3}
+          >
+            <Box
+              bg={"rgba(255, 255, 255, 0.80)"}
+              boxShadow={"0px 12px 24px 6px rgba(153, 167, 177, 0.12)"}
+              p="13px"
+              borderRadius={"8px"}
+            >
+              <Navbar />
+            </Box>
+          </Box>
         </nav>
         <section ref={navRef}>
-          <Box className="section-container" pt={"206px"}>
-            <Heading
-              color={"primary"}
-              fontSize={"72px"}
-              fontWeight={700}
-              lineHeight={"100%"}
-              letterSpacing={"-2.88px"}
-            >
-              We build with you in mind;
-              <br /> Innovative and excellent living
+          <Box
+            className="section-container"
+            pt={{ lg: "206px", base: "180px" }}
+          >
+            <Heading color={"primary"} className="heading-2">
+              We build with you in mind; Innovative and excellent living
             </Heading>
           </Box>
           <Box
-            h="444px"
+            h={{ lg: "444px", base: "236px" }}
             bg={"gray"}
             bgImage={ImagesList.projects.hero}
             bgSize={"cover"}
             bgRepeat={"no-repeat"}
             bgPosition={"center"}
-            mt="62px"
+            mt={{ lg: "62px", base: "32px" }}
           />
         </section>
         <section className="section-container">
           <Box pt={"100px"} pb={"108px"}>
-            <Box w="55%" maxW={"655px"}>
-              <Text
-                fontSize={"20px"}
-                fontWeight={600}
-                letterSpacing={"4px"}
-                textTransform={"uppercase"}
-                color={"primary"}
-              >
+            <Box w={{ lg: "55%", base: "full" }} maxW={"655px"}>
+              <Text className="body-text-1" color={"secondary"}>
                 Featured projects
               </Text>
-              <Heading
-                color={"primary"}
-                fontSize={"56px"}
-                fontWeight={700}
-                lineHeight={"100%"}
-                letterSpacing={"-2.24px"}
-                mt={"21px"}
-              >
+              <Heading color={"primary"} className="heading-3" mt={"21px"}>
                 Excellence and comfort is what we build for you
               </Heading>
             </Box>
             <Grid
               gridGap={"30px"}
-              gridTemplateColumns={"repeat(3, 1fr)"}
+              gridTemplateColumns={{
+                lg: "repeat(3, 1fr)",
+                base: "repeat(1, 1fr)",
+              }}
               mt={"40px"}
             >
               <GridItem colSpan={2}>
@@ -156,16 +163,11 @@ export default function Projects() {
         </section>
         <section>
           <Box color={"primary"} className="section-container">
-            <Text
-              fontSize={"20px"}
-              fontWeight={600}
-              letterSpacing={"4px"}
-              textTransform={"uppercase"}
-            >
+            <Text className="body-text-1" color={"secondary"}>
               ongoing projects
             </Text>
 
-            <Heading fontSize={"56px"} letterSpacing={"-2.24px"} mt="21px">
+            <Heading className="heading-3" mt="21px">
               We never stop building
               <br /> communities
             </Heading>
@@ -220,86 +222,7 @@ export default function Projects() {
           </Box>
         </section>
       </main>
-      <footer style={{ backgroundColor: "#002E3B" }}>
-        <Box className="section-container" pt={"80px"} pb={"96px"} w="100%">
-          <Heading
-            textAlign={"center"}
-            color={"secondary"}
-            fontSize={"56px"}
-            lineHeight={"100%"}
-            letterSpacing={"-2.24px"}
-          >
-            Stay informed of
-            <br /> our developments
-          </Heading>
-          <Box maxW={"492px"} mx={"auto"} mt={"59px"}>
-            <Input
-              borderColor={"white"}
-              color={"white"}
-              variant={"flushed"}
-              placeholder="add your email"
-              textAlign={"center"}
-              fontSize={"32px"}
-              fontWeight={400}
-              fontFamily={"body"}
-              pb={"22px"}
-              h={"54px"}
-            />
-            <Box mx={"auto"} w="fit-content" mt={"44px"}>
-              <Button
-                label="Join our mailing list"
-                border={"1px solid"}
-                borderColor={"secondary"}
-                _hover={{ color: "white", bgColor: "secondary" }}
-                color={"secondary"}
-                bg={"none"}
-                transition={"background .5s linear"}
-              />
-            </Box>
-          </Box>
-          <Box pt={"76px"}>
-            <Box
-              w="100%"
-              pb={"17.1px"}
-              borderBottom={"1px solid rgba(225, 225, 225, 0.1)"}
-            >
-              <Image
-                src={"/brand-logo-colored.svg"}
-                alt="brand-logo"
-                width={128}
-                height={48.8}
-              />
-            </Box>
-            <Flex color={"white"} mt={"15px"} justify={"space-between"}>
-              <Stack spacing={"16px"} fontSize={"18px"}>
-                <Text>
-                  17 Emma Abimbola Cole Street,
-                  <br /> Lekki Scheme 1, Lagos – Nigeria.{" "}
-                </Text>
-                <Text>+(234) 081-2268-7371</Text>
-                <Text>info@firstsynergihomes.com</Text>
-              </Stack>
-              <Flex gap={"40px"} fontSize={"18px"} fontWeight={600}>
-                <Text>Projects</Text>
-                <Text>About us</Text>
-                <Text>Blog</Text>
-              </Flex>
-            </Flex>
-            <Flex mt={"54px"} justify={"space-between"}>
-              <Flex color={"white"} fontSize={"18px"} gap={"40px"}>
-                <Text>Terms & Conditions</Text>
-                <Text>Privacy Policy</Text>
-              </Flex>
-              <Image
-                src={"/socials.svg"}
-                alt="brand-logo"
-                width={133}
-                height={22}
-              />
-            </Flex>
-          </Box>
-        </Box>
-      </footer>
+      <FooterCmp />
     </>
   );
 }

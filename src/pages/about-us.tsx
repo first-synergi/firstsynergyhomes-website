@@ -20,6 +20,7 @@ import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 import ImagesList from "@/images.json";
+import FooterCmp from "@/components/FooterCmp";
 
 const CoreValuesObj = [
   {
@@ -59,6 +60,7 @@ export default function AboutUs() {
       <main>
         <nav className="section-container">
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"absolute"}
             top={"40px"}
             w="full"
@@ -70,6 +72,7 @@ export default function AboutUs() {
             <Navbar />
           </Box>
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"fixed"}
             top={"40px"}
             w="full"
@@ -80,7 +83,7 @@ export default function AboutUs() {
           >
             <Box
               display={isInView ? "none" : "block"}
-              //   opacity={isInView ? 0 : 1}
+              opacity={isInView ? 0 : 1}
               transition={"opacity .5s ease-in-out"}
               bg={"white"}
               boxShadow={"2px 2px 8px 0px rgba(0, 0, 0, 0.08)"}
@@ -90,57 +93,56 @@ export default function AboutUs() {
               <Navbar />
             </Box>
           </Box>
+          <Box
+            display={{ lg: "none", base: "block" }}
+            position={"fixed"}
+            top={"24px"}
+            w="full"
+            left={0}
+            px={"16px"}
+            zIndex={3}
+          >
+            <Box
+              bg={"rgba(255, 255, 255, 0.80)"}
+              boxShadow={"0px 12px 24px 6px rgba(153, 167, 177, 0.12)"}
+              p="13px"
+              borderRadius={"8px"}
+            >
+              <Navbar />
+            </Box>
+          </Box>
         </nav>
         <section ref={navRef}>
-          <Box className="section-container" pt={"206px"}>
-            <Heading
-              color={"primary"}
-              fontSize={"72px"}
-              fontWeight={700}
-              lineHeight={"100%"}
-              letterSpacing={"-2.88px"}
-            >
+          <Box
+            className="section-container"
+            pt={{ lg: "206px", base: "170px" }}
+          >
+            <Heading color={"primary"} className="heading-3">
               We’re transforming the way the world builds.
             </Heading>
           </Box>
           <Box
-            h="444px"
+            h={{ lg: "444px", base: "236px" }}
             bg={"gray"}
             bgImage={ImagesList.about.hero}
+            bgSize={"cover"}
+            bgRepeat={"no-repeat"}
+            bgPosition={"center"}
             mt="62px"
           ></Box>
         </section>
         <section className="section-container">
           <Box pt={"100px"} pb={"108px"}>
-            <Box w="55%" maxW={"655px"}>
-              <Text
-                fontSize={"20px"}
-                fontWeight={600}
-                letterSpacing={"4px"}
-                textTransform={"uppercase"}
-                color={"secondary"}
-              >
+            <Box w={{ lg: "55%", base: "full" }} maxW={"655px"}>
+              <Text className="body-text-1" color={"secondary"}>
                 Company Overview
               </Text>
-              <Heading
-                color={"primary"}
-                fontSize={"56px"}
-                fontWeight={700}
-                lineHeight={"100%"}
-                letterSpacing={"-2.24px"}
-                mt={"21px"}
-              >
+              <Heading color={"primary"} className="heasding-3" mt={"21px"}>
                 About First Synergi Homes
               </Heading>
             </Box>
             <Box mt={"37px"}>
-              <Text
-                color={"primary"}
-                fontSize={"20px"}
-                fontWeight={400}
-                lineHeight={"130%"}
-                style={{ columnCount: 2, columnGap: "60px" }}
-              >
+              <Text color={"primary"} className="body-text-2 multi-column-text">
                 First Synergi Homes Limited was Incorporated in 2007, and
                 primarily formed to cater to the need for exclusive private home
                 development and alluringly built-up living communities.
@@ -177,17 +179,25 @@ export default function AboutUs() {
           </Box>
         </section>
         <section>
-          <Box h="667px" w="full" bgImage={"/skyscraper_bg.png"} mt="62px">
+          <Box
+            h={{ lg: "667px", base: "auto" }}
+            w="full"
+            bgImage={"/skyscraper_bg.png"}
+            bgSize={"cover"}
+            bgPosition={"center"}
+            bgRepeat={"no-repeat"}
+            mt="62px"
+          >
             <Flex
               direction={"column"}
               justify={"center"}
               className="section-container"
               h={"100%"}
+              pt={{ lg: 0, base: "95px" }}
+              pb={{ lg: 0, base: "126px" }}
             >
               <Heading
-                fontSize={"56px"}
-                lineHeight={"120%"}
-                letterSpacing={"-2.24px"}
+                className="heading-2"
                 color={"white"}
                 textAlign={"center"}
               >
@@ -195,45 +205,31 @@ export default function AboutUs() {
                 Opulence,
                 <br /> WELCOME on this journey with us
               </Heading>
-              <Flex mt={"57px"} gap={"50px"} color={"white"}>
-                <Box w="50%">
-                  <Text
-                    fontSize={"20px"}
-                    fontWeight={600}
-                    letterSpacing={"4px"}
-                    textTransform={"uppercase"}
-                    color={"secondary"}
-                  >
+              <Flex
+                flexDirection={{ lg: "row", base: "column" }}
+                mt={"57px"}
+                gap={"50px"}
+                color={"white"}
+                alignItems={"center"}
+                textAlign={{ base: "center", lg: "left" }}
+              >
+                <Box w={{ lg: "50%" }}>
+                  <Text className="body-text-1" color={"secondary"}>
                     Our Vision
                   </Text>
-                  <Text
-                    fontSize={"20px"}
-                    fontWeight={400}
-                    lineHeight={"130%"}
-                    mt="21px"
-                  >
+                  <Text className="body-text-2" mt="21px">
                     To be the most sought after Property Development Company for
                     everyone who dreams to own a Home.
                   </Text>
                 </Box>
-                <Box w="50%">
-                  <Text
-                    fontSize={"20px"}
-                    fontWeight={600}
-                    letterSpacing={"4px"}
-                    textTransform={"uppercase"}
-                    color={"secondary"}
-                  >
-                    Our Vision
+                <Box w={{ lg: "50%", base: "full" }}>
+                  <Text className="body-text-1" color={"secondary"}>
+                    Our MISSION
                   </Text>
-                  <Text
-                    fontSize={"20px"}
-                    fontWeight={400}
-                    lineHeight={"130%"}
-                    mt="21px"
-                  >
-                    To be the most sought after Property Development Company for
-                    everyone who dreams to own a Home.
+                  <Text className="body-text-2" mt="21px">
+                    Our mission is to offer cutting edge services in the area of
+                    design and construction, matching internationally acceptable
+                    standards.
                   </Text>
                 </Box>
               </Flex>
@@ -241,18 +237,21 @@ export default function AboutUs() {
           </Box>
         </section>
         <section className="section-container">
-          <Flex mt={"77px"} gap={"38px"} position={"relative"}>
-            <Box w="65%">
-              <Text
-                color={"secondary"}
-                fontSize={"20px"}
-                lineHeight={"130%"}
-                letterSpacing={"4px"}
-                textTransform={"capitalize"}
-              >
-                How we stand for
+          <Flex
+            flexDirection={{ lg: "row", base: "column" }}
+            mt={"77px"}
+            gap={"38px"}
+            position={"relative"}
+          >
+            <Box w={{ lg: "65%", base: "full" }}>
+              <Text color={"secondary"} className="body-text-1">
+                what we stand for
               </Text>
-              <Heading color={"primary"} mt={"21px"} fontSize={"56px"}>
+              <Heading
+                color={"primary"}
+                mt={{ lg: "21px", base: "8px" }}
+                className="heading-4"
+              >
                 Core Values
               </Heading>
               <SimpleGrid
@@ -262,28 +261,18 @@ export default function AboutUs() {
                 mt={"34px"}
               >
                 {CoreValuesObj.map((obj, index) => (
-                  <Box key={index} maxW={"302px"}>
-                    <Text
-                      color={"secondary"}
-                      fontSize={"20px"}
-                      lineHeight={"130%"}
-                      letterSpacing={"4px"}
-                      textTransform={"capitalize"}
-                    >
+                  <Box key={index} maxW={{ lg: "302px", base: "full" }}>
+                    <Text color={"secondary"} className="body-text-1">
                       {obj.title}
                     </Text>
-                    <Text
-                      color={"primary"}
-                      fontSize={"20px"}
-                      lineHeight={"130%"}
-                    >
+                    <Text color={"primary"} className="body-text-2" mt={"16px"}>
                       {obj.subtitle}
                     </Text>
                   </Box>
                 ))}
               </SimpleGrid>
             </Box>
-            <Box>
+            <Box display={{ lg: "block", base: "none" }}>
               <Image
                 src={ImagesList.about.section3}
                 alt="project-image"
@@ -293,23 +282,32 @@ export default function AboutUs() {
             </Box>
           </Flex>
         </section>
+        <Box
+          display={{ base: "block", lg: "none" }}
+          bgImage={ImagesList.about.section3}
+          bgSize={"cover"}
+          bgPosition={"center"}
+          bgRepeat={"no-repeat"}
+          height={"364px"}
+        />
         <section className="section-container">
           <Box my={"100px"}>
-            <Text
-              color={"secondary"}
-              fontSize={"20px"}
-              lineHeight={"130%"}
-              letterSpacing={"4px"}
-              textTransform={"capitalize"}
-            >
+            <Text color={"secondary"} className="body-text-1">
               OUR SERVICES
             </Text>
-            <Heading color={"primary"} mt={"21px"} fontSize={"56px"}>
+            <Heading
+              color={"primary"}
+              mt={{ lg: "21px", base: "8px" }}
+              className="heading-4"
+            >
               How we bring your vision to life.
             </Heading>
             <Grid
               gridGap={"30px"}
-              gridTemplateColumns={"repeat(3, 1fr)"}
+              gridTemplateColumns={{
+                lg: "repeat(3, 1fr)",
+                base: "repeat(1, 1fr)",
+              }}
               mt={"40px"}
             >
               <GridItem colSpan={2}>
@@ -348,86 +346,7 @@ export default function AboutUs() {
           </Box>
         </section>
       </main>
-      <footer style={{ backgroundColor: "#002E3B" }}>
-        <Box className="section-container" pt={"80px"} pb={"96px"} w="100%">
-          <Heading
-            textAlign={"center"}
-            color={"secondary"}
-            fontSize={"56px"}
-            lineHeight={"100%"}
-            letterSpacing={"-2.24px"}
-          >
-            Stay informed of
-            <br /> our developments
-          </Heading>
-          <Box maxW={"492px"} mx={"auto"} mt={"59px"}>
-            <Input
-              borderColor={"white"}
-              color={"white"}
-              variant={"flushed"}
-              placeholder="add your email"
-              textAlign={"center"}
-              fontSize={"32px"}
-              fontWeight={400}
-              fontFamily={"body"}
-              pb={"22px"}
-              h={"54px"}
-            />
-            <Box mx={"auto"} w="fit-content" mt={"44px"}>
-              <Button
-                label="Join our mailing list"
-                border={"1px solid"}
-                borderColor={"secondary"}
-                _hover={{ color: "white", bgColor: "secondary" }}
-                color={"secondary"}
-                bg={"none"}
-                transition={"background .5s linear"}
-              />
-            </Box>
-          </Box>
-          <Box pt={"76px"}>
-            <Box
-              w="100%"
-              pb={"17.1px"}
-              borderBottom={"1px solid rgba(225, 225, 225, 0.1)"}
-            >
-              <Image
-                src={"/brand-logo-colored.svg"}
-                alt="brand-logo"
-                width={128}
-                height={48.8}
-              />
-            </Box>
-            <Flex color={"white"} mt={"15px"} justify={"space-between"}>
-              <Stack spacing={"16px"} fontSize={"18px"}>
-                <Text>
-                  17 Emma Abimbola Cole Street,
-                  <br /> Lekki Scheme 1, Lagos – Nigeria.{" "}
-                </Text>
-                <Text>+(234) 081-2268-7371</Text>
-                <Text>info@firstsynergihomes.com</Text>
-              </Stack>
-              <Flex gap={"40px"} fontSize={"18px"} fontWeight={600}>
-                <Text>Projects</Text>
-                <Text>About us</Text>
-                <Text>Blog</Text>
-              </Flex>
-            </Flex>
-            <Flex mt={"54px"} justify={"space-between"}>
-              <Flex color={"white"} fontSize={"18px"} gap={"40px"}>
-                <Text>Terms & Conditions</Text>
-                <Text>Privacy Policy</Text>
-              </Flex>
-              <Image
-                src={"/socials.svg"}
-                alt="brand-logo"
-                width={133}
-                height={22}
-              />
-            </Flex>
-          </Box>
-        </Box>
-      </footer>
+      <FooterCmp />
     </>
   );
 }

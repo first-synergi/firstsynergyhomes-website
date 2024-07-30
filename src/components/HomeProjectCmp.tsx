@@ -7,29 +7,36 @@ interface ICmpType {
 }
 const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
   return (
-    <Box w="90%" position={"relative"} flexShrink={0}>
+    <Box w={{ lg: "90%", base: "100%" }} position={"relative"} flexShrink={0}>
       <Box
         borderRadius={"10px"}
         w="full"
-        height={"597px"}
+        height={{ lg: "597px", base: "auto" }}
+        aspectRatio={{ base: 343 / 236 }}
         bg={"gray"}
         bgImage={data?.src}
+        bgSize={"cover"}
       ></Box>
       <Box
-        w="620px"
-        h={other ? "188px" : "323px"}
+        w={{ lg: "620px", base: "95%" }}
+        h={{ lg: other ? "188px" : "323px", base: "auto" }}
         bg={"white"}
         position={"relative"}
-        top={"-148px"}
-        left={"40px"}
-        p={"36px"}
+        top={{ lg: "-148px", base: "-50px" }}
+        left={{ lg: "40px", base: 0 }}
+        p={{ md: "36px", base: "20px" }}
+        mx={{ base: "auto", lg: 0 }}
       >
-        <Heading color={"secondary"} fontSize={"56px"} fontWeight={700}>
+        <Heading
+          color={"secondary"}
+          fontSize={{ lg: "56px", base: "24px" }}
+          fontWeight={700}
+        >
           {data?.name}
         </Heading>
         <Text
           color={"primary"}
-          fontSize={"20px"}
+          fontSize={{ lg: "20px", base: "16px" }}
           fontWeight={400}
           lineHeight={"130%"}
           mt={"14px"}

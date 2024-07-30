@@ -19,6 +19,7 @@ import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 import ImageList from "@/images.json";
+import FooterCmp from "@/components/FooterCmp";
 
 export default function Home() {
   const navRef = useRef(null);
@@ -35,6 +36,7 @@ export default function Home() {
       <main>
         <nav className="section-container">
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"absolute"}
             top={"40px"}
             w="full"
@@ -46,6 +48,7 @@ export default function Home() {
             <Navbar />
           </Box>
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"fixed"}
             top={"40px"}
             w="full"
@@ -66,6 +69,24 @@ export default function Home() {
               <Navbar />
             </Box>
           </Box>
+          <Box
+            display={{ lg: "none", base: "block" }}
+            position={"fixed"}
+            top={"24px"}
+            w="full"
+            left={0}
+            px={"16px"}
+            zIndex={3}
+          >
+            <Box
+              bg={"rgba(255, 255, 255, 0.80)"}
+              boxShadow={"0px 12px 24px 6px rgba(153, 167, 177, 0.12)"}
+              p="13px"
+              borderRadius={"8px"}
+            >
+              <Navbar />
+            </Box>
+          </Box>
         </nav>
         <section ref={navRef}>
           <Box
@@ -76,24 +97,29 @@ export default function Home() {
           >
             <Box color={"primary"} className="section-container" pt={"206px"}>
               <Heading
-                fontSize={"92px"}
+                fontSize={{ lg: "92px", md: "48px", base: "32px" }}
                 fontWeight={700}
-                lineHeight={"90px"}
-                letterSpacing={"-3.68px"}
+                lineHeight={{ lg: "90px", base: "90%" }}
+                letterSpacing={{ lg: "-3.68px", base: "-0.64px" }}
                 maxW={"889px"}
               >
                 Building <span style={{ color: "#C0972D" }}>exceptional</span>{" "}
                 homes and a lifestyle of opulence.
               </Heading>
+              <Button label="Build with us" mt={"50px"} />
             </Box>
           </Box>
         </section>
         <section className="section-container">
-          <Box py={"108px"}>
-            <Flex justify={"space-between"}>
-              <Box w="55%" maxW={"655px"}>
+          <Box py={{ md: "108px", base: "32px" }}>
+            <Flex
+              flexDirection={{ md: "row", base: "column" }}
+              justify={"space-between"}
+              gap={{ base: "32px", md: 0 }}
+            >
+              <Box w={{ md: "55%", base: "full" }} maxW={"655px"}>
                 <Text
-                  fontSize={"20px"}
+                  fontSize={{ md: "20px", base: "16px" }}
                   fontWeight={600}
                   letterSpacing={"4px"}
                   textTransform={"uppercase"}
@@ -103,17 +129,17 @@ export default function Home() {
                 </Text>
                 <Heading
                   color={"primary"}
-                  fontSize={"56px"}
+                  fontSize={{ md: "56px", base: "32px" }}
                   fontWeight={700}
                   lineHeight={"100%"}
-                  letterSpacing={"-1.12px"}
-                  my={"21px"}
+                  letterSpacing={{ lg: "-1.12px", base: "-0.64px" }}
+                  my={{ md: "21px", base: "16px" }}
                 >
                   Building for maximum results
                 </Heading>
                 <Text
                   color={"primary"}
-                  fontSize={"20px"}
+                  fontSize={{ md: "20px", base: "16px" }}
                   fontWeight={400}
                   lineHeight={"130%"}
                 >
@@ -121,43 +147,72 @@ export default function Home() {
                   energy, and symbiosis with its surroundings.
                 </Text>
               </Box>
-              <Box color={"primary"} w="45%" textAlign={"right"}>
-                <Heading fontSize={"64px"} fontWeight={400} mb={0}>
-                  100+
-                </Heading>
-                <Text fontSize={"30px"} fontWeight={700} lineHeight={"100%"}>
-                  Homes
-                </Text>
-                <Heading fontSize={"64px"} fontWeight={400} mt="40px">
-                  15+
-                </Heading>
-                <Text fontSize={"30px"} fontWeight={700} lineHeight={"100%"}>
-                  Years of excellence
-                </Text>
-              </Box>
+              <Flex
+                flexDirection={{ md: "column", base: "row" }}
+                color={"primary"}
+                w={{ md: "45%", base: "full" }}
+                textAlign={{ md: "right", base: "left" }}
+              >
+                <Box>
+                  <Heading
+                    fontSize={{ md: "64px", base: "32px" }}
+                    fontWeight={400}
+                  >
+                    100+
+                  </Heading>
+                  <Text
+                    fontSize={{ md: "30px", base: "18px" }}
+                    fontWeight={700}
+                    lineHeight={"100%"}
+                  >
+                    Homes
+                  </Text>
+                </Box>
+                <Box mt={{ md: "40px", base: 0 }} ml={{ base: "auto", md: 0 }}>
+                  <Heading
+                    fontSize={{ md: "64px", base: "32px" }}
+                    fontWeight={400}
+                  >
+                    15+
+                  </Heading>
+                  <Text
+                    fontSize={{ md: "30px", base: "18px" }}
+                    fontWeight={700}
+                    lineHeight={"100%"}
+                  >
+                    Years of excellence
+                  </Text>
+                </Box>
+              </Flex>
             </Flex>
             <Flex
               color={"secondary"}
               alignItems={"center"}
               gap={"4px"}
-              mt={"50px"}
+              mt={{ md: "50px", base: "32px" }}
+              fontWeight={600}
             >
               <Text>About First Synergi homes</Text>
               <ArrowForwardIcon />
             </Flex>
             <Box
               borderRadius={"10px"}
-              h={"675px"}
-              w="full"
+              // h={"675px"}
+              // w="full"
+              aspectRatio={344 / 229}
               bg={"gray"}
-              mt={"86px"}
+              mt={{ md: "86px", base: "66px" }}
             ></Box>
           </Box>
         </section>
         <section style={{ backgroundColor: "#002E3B" }}>
-          <Box className="section-container" color={"white"} py={"98px"}>
+          <Box
+            className="section-container"
+            color={"white"}
+            py={{ md: "98px", base: "72px" }}
+          >
             <Text
-              fontSize={"20px"}
+              fontSize={{ md: "20px", base: "16px" }}
               fontWeight={600}
               letterSpacing={"4px"}
               color={"secondary"}
@@ -167,19 +222,28 @@ export default function Home() {
             </Text>
             <Flex
               alignItems={"flex-start"}
-              mt={"21px"}
+              flexDirection={{ md: "row", base: "column" }}
+              mt={{ md: "21px", base: "16px" }}
               justify={"space-between"}
+              gap={{ base: "32px", md: 0 }}
             >
               <Stack spacing={"21px"} maxW={"665px"}>
-                <Heading fontSize={"56px"} letterSpacing={"-2.24px"}>
+                <Heading
+                  fontSize={{ md: "56px", base: "32px" }}
+                  letterSpacing={"-2.24px"}
+                >
                   Developing with the future in mind
                 </Heading>
-                <Text fontSize={"20px"} fontWeight={400} lineHeight={"130%"}>
+                <Text
+                  fontSize={{ md: "20px", base: "16px" }}
+                  fontWeight={400}
+                  lineHeight={"130%"}
+                >
                   We bring beautiful homes to market 3x faster.
                 </Text>
               </Stack>
               <Flex alignItems={"center"} color={"secondary"} gap={"4px"}>
-                <Text fontSize={"20px"} fontWeight={600}>
+                <Text fontSize={{ md: "20px", base: "18px" }} fontWeight={600}>
                   View featured projects
                 </Text>
                 <ArrowForwardIcon />
@@ -187,7 +251,8 @@ export default function Home() {
             </Flex>
             <Flex
               className="no-scrollbar"
-              gap={"64px"}
+              flexDirection={{ lg: "row", base: "column" }}
+              gap={{ lg: "64px", base: "40px" }}
               mt={"102px"}
               position={"relative"}
               overflow={"scroll"}
@@ -199,13 +264,13 @@ export default function Home() {
             <Box textAlign={"center"}>
               <Heading
                 color={"secondary"}
-                fontSize={"56px"}
+                fontSize={{ lg: "56px", base: "32px" }}
                 letterSpacing={"-2.24px"}
               >
                 We are trusted
               </Heading>
               <Text
-                fontSize={"20px"}
+                fontSize={{ md: "20px", base: "16px" }}
                 fontWeight={400}
                 lineHeight={"130%"}
                 mt={"16px"}
@@ -218,28 +283,39 @@ export default function Home() {
           </Box>
         </section>
         <section className="section-container">
-          <Box py={"96px"}>
+          <Box py={{ lg: "96px", base: "45px" }}>
             <Flex
               color={"primary"}
               alignItems={"flex-start"}
               justify={"space-between"}
             >
               <Box>
-                <Heading fontSize={"56px"} letterSpacing={"-2.24px"}>
+                <Heading
+                  fontSize={{ lg: "56px", base: "32px" }}
+                  letterSpacing={"-2.24px"}
+                >
                   First insights
                 </Heading>
-                <Text fontSize={"20px"} lineHeight={"130%"} mt={"16px"}>
+                <Text
+                  fontSize={{ md: "20px", base: "16px" }}
+                  lineHeight={"130%"}
+                  mt={{ lg: "16px", base: "8px" }}
+                >
                   Stay informed with our latest insights
                 </Text>
               </Box>
-              <Flex alignItems={"center"} gap={"4px"}>
+              <Flex
+                display={{ base: "none", lg: "flex" }}
+                alignItems={"center"}
+                gap={"4px"}
+              >
                 <Text>View all</Text>
                 <ArrowForwardIcon />
               </Flex>
             </Flex>
             <Grid
               gridGap={"20px"}
-              mt={"48px"}
+              mt={{ lg: "48px", base: "40px" }}
               gridTemplateColumns={{
                 xl: "repeat(3, 1fr)",
                 lg: "repeat(2, 1fr)",
@@ -253,86 +329,7 @@ export default function Home() {
           </Box>
         </section>
       </main>
-      <footer style={{ backgroundColor: "#002E3B" }}>
-        <Box className="section-container" pt={"80px"} pb={"96px"} w="100%">
-          <Heading
-            textAlign={"center"}
-            color={"secondary"}
-            fontSize={"56px"}
-            lineHeight={"100%"}
-            letterSpacing={"-2.24px"}
-          >
-            Stay informed of
-            <br /> our developments
-          </Heading>
-          <Box maxW={"492px"} mx={"auto"} mt={"59px"}>
-            <Input
-              borderColor={"white"}
-              color={"white"}
-              variant={"flushed"}
-              placeholder="add your email"
-              textAlign={"center"}
-              fontSize={"32px"}
-              fontWeight={400}
-              fontFamily={"body"}
-              pb={"22px"}
-              h={"54px"}
-            />
-            <Box mx={"auto"} w="fit-content" mt={"44px"}>
-              <Button
-                label="Join our mailing list"
-                border={"1px solid"}
-                borderColor={"secondary"}
-                _hover={{ color: "white", bgColor: "secondary" }}
-                color={"secondary"}
-                bg={"none"}
-                transition={"background .5s linear"}
-              />
-            </Box>
-          </Box>
-          <Box pt={"76px"}>
-            <Box
-              w="100%"
-              pb={"17.1px"}
-              borderBottom={"1px solid rgba(225, 225, 225, 0.1)"}
-            >
-              <Image
-                src={"/brand-logo-colored.svg"}
-                alt="brand-logo"
-                width={128}
-                height={48.8}
-              />
-            </Box>
-            <Flex color={"white"} mt={"15px"} justify={"space-between"}>
-              <Stack spacing={"16px"} fontSize={"18px"}>
-                <Text>
-                  17 Emma Abimbola Cole Street,
-                  <br /> Lekki Scheme 1, Lagos – Nigeria.{" "}
-                </Text>
-                <Text>+(234) 081-2268-7371</Text>
-                <Text>info@firstsynergihomes.com</Text>
-              </Stack>
-              <Flex gap={"40px"} fontSize={"18px"} fontWeight={600}>
-                <Text>Projects</Text>
-                <Text>About us</Text>
-                <Text>Blog</Text>
-              </Flex>
-            </Flex>
-            <Flex mt={"54px"} justify={"space-between"}>
-              <Flex color={"white"} fontSize={"18px"} gap={"40px"}>
-                <Text>Terms & Conditions</Text>
-                <Text>Privacy Policy</Text>
-              </Flex>
-              <Image
-                src={"/socials.svg"}
-                alt="brand-logo"
-                width={133}
-                height={22}
-              />
-            </Flex>
-          </Box>
-        </Box>
-      </footer>
+      <FooterCmp />
     </>
   );
 }

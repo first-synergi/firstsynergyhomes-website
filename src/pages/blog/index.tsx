@@ -20,6 +20,7 @@ import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
+import FooterCmp from "@/components/FooterCmp";
 
 const Blog = () => {
   const navRef = useRef(null);
@@ -35,6 +36,7 @@ const Blog = () => {
       <main>
         <nav className="section-container">
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"absolute"}
             top={"40px"}
             w="full"
@@ -46,6 +48,7 @@ const Blog = () => {
             <Navbar />
           </Box>
           <Box
+            display={{ lg: "block", base: "none" }}
             position={"fixed"}
             top={"40px"}
             w="full"
@@ -56,11 +59,29 @@ const Blog = () => {
           >
             <Box
               display={isInView ? "none" : "block"}
-              //   opacity={isInView ? 0 : 1}
+              opacity={isInView ? 0 : 1}
               transition={"opacity .5s ease-in-out"}
               bg={"white"}
               boxShadow={"2px 2px 8px 0px rgba(0, 0, 0, 0.08)"}
               p="20px"
+              borderRadius={"8px"}
+            >
+              <Navbar />
+            </Box>
+          </Box>
+          <Box
+            display={{ lg: "none", base: "block" }}
+            position={"fixed"}
+            top={"24px"}
+            w="full"
+            left={0}
+            px={"16px"}
+            zIndex={3}
+          >
+            <Box
+              bg={"rgba(255, 255, 255, 0.80)"}
+              boxShadow={"0px 12px 24px 6px rgba(153, 167, 177, 0.12)"}
+              p="13px"
               borderRadius={"8px"}
             >
               <Navbar />
@@ -139,86 +160,7 @@ const Blog = () => {
           </Box>
         </section>
       </main>
-      <footer style={{ backgroundColor: "#002E3B" }}>
-        <Box className="section-container" pt={"80px"} pb={"96px"} w="100%">
-          <Heading
-            textAlign={"center"}
-            color={"secondary"}
-            fontSize={"56px"}
-            lineHeight={"100%"}
-            letterSpacing={"-2.24px"}
-          >
-            Stay informed of
-            <br /> our developments
-          </Heading>
-          <Box maxW={"492px"} mx={"auto"} mt={"59px"}>
-            <Input
-              borderColor={"white"}
-              color={"white"}
-              variant={"flushed"}
-              placeholder="add your email"
-              textAlign={"center"}
-              fontSize={"32px"}
-              fontWeight={400}
-              fontFamily={"body"}
-              pb={"22px"}
-              h={"54px"}
-            />
-            <Box mx={"auto"} w="fit-content" mt={"44px"}>
-              <Button
-                label="Join our mailing list"
-                border={"1px solid"}
-                borderColor={"secondary"}
-                _hover={{ color: "white", bgColor: "secondary" }}
-                color={"secondary"}
-                bg={"none"}
-                transition={"background .5s linear"}
-              />
-            </Box>
-          </Box>
-          <Box pt={"76px"}>
-            <Box
-              w="100%"
-              pb={"17.1px"}
-              borderBottom={"1px solid rgba(225, 225, 225, 0.1)"}
-            >
-              <Image
-                src={"/brand-logo-colored.svg"}
-                alt="brand-logo"
-                width={128}
-                height={48.8}
-              />
-            </Box>
-            <Flex color={"white"} mt={"15px"} justify={"space-between"}>
-              <Stack spacing={"16px"} fontSize={"18px"}>
-                <Text>
-                  17 Emma Abimbola Cole Street,
-                  <br /> Lekki Scheme 1, Lagos – Nigeria.{" "}
-                </Text>
-                <Text>+(234) 081-2268-7371</Text>
-                <Text>info@firstsynergihomes.com</Text>
-              </Stack>
-              <Flex gap={"40px"} fontSize={"18px"} fontWeight={600}>
-                <Text>Projects</Text>
-                <Text>About us</Text>
-                <Text>Blog</Text>
-              </Flex>
-            </Flex>
-            <Flex mt={"54px"} justify={"space-between"}>
-              <Flex color={"white"} fontSize={"18px"} gap={"40px"}>
-                <Text>Terms & Conditions</Text>
-                <Text>Privacy Policy</Text>
-              </Flex>
-              <Image
-                src={"/socials.svg"}
-                alt="brand-logo"
-                width={133}
-                height={22}
-              />
-            </Flex>
-          </Box>
-        </Box>
-      </footer>
+      <FooterCmp />
     </>
   );
 };
