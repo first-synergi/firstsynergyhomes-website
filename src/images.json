@@ -1,6 +1,7 @@
 {
   "home": {
     "hero": "/hero-bg.png",
+    "heroMobile": "/images/home-hero-bg-mobile.png",
     "projects": [
       {
         "name": "Mulberry Mansions",
@@ -33,10 +34,10 @@
     "hero": "/images/about-hero-bg.png",
     "section3": "/images/about-section3-img.png",
     "services": [
-      "/images/service-img1.png",
-      "/images/service-img2.png",
-      "/images/service-img3.png",
-      "/images/service-img4.png"
+      "/images/services-img1.png",
+      "/images/services-img2.png",
+      "/images/services-img3.png",
+      "/images/services-img4.png"
     ]
   }
 }

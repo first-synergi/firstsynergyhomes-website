@@ -20,6 +20,8 @@ import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 import ImageList from "@/images.json";
 import FooterCmp from "@/components/FooterCmp";
+import ImagesList from "@/images.json";
+import SectionAnimation from "@/components/SectionAnimation";
 
 export default function Home() {
   const navRef = useRef(null);
@@ -88,245 +90,265 @@ export default function Home() {
             </Box>
           </Box>
         </nav>
-        <section ref={navRef}>
+        <motion.section
+          ref={navRef}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+        >
           <Box
-            bgImage={"/hero-bg.png"}
-            height={"900px"}
+            bgImage={{
+              lg: ImageList.home.hero,
+              base: ImageList.home.heroMobile,
+            }}
+            height={{ lg: "900px", base: "732px" }}
             bgPosition={"center"}
             bgSize={"cover"}
           >
             <Box color={"primary"} className="section-container" pt={"206px"}>
-              <Heading
-                fontSize={{ lg: "92px", md: "48px", base: "32px" }}
-                fontWeight={700}
-                lineHeight={{ lg: "90px", base: "90%" }}
-                letterSpacing={{ lg: "-3.68px", base: "-0.64px" }}
-                maxW={"889px"}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1.4 }}
               >
-                Building <span style={{ color: "#C0972D" }}>exceptional</span>{" "}
-                homes and a lifestyle of opulence.
-              </Heading>
+                <Heading className="heading-1" maxW={"889px"}>
+                  Building <span style={{ color: "#C0972D" }}>exceptional</span>{" "}
+                  homes and a lifestyle of opulence.
+                </Heading>
+              </motion.div>
               <Button label="Build with us" mt={"50px"} />
             </Box>
           </Box>
-        </section>
+        </motion.section>
         <section className="section-container">
-          <Box py={{ md: "108px", base: "32px" }}>
-            <Flex
-              flexDirection={{ md: "row", base: "column" }}
-              justify={"space-between"}
-              gap={{ base: "32px", md: 0 }}
-            >
-              <Box w={{ md: "55%", base: "full" }} maxW={"655px"}>
-                <Text
-                  fontSize={{ md: "20px", base: "16px" }}
-                  fontWeight={600}
-                  letterSpacing={"4px"}
-                  textTransform={"uppercase"}
-                  color={"secondary"}
-                >
-                  our goal
-                </Text>
-                <Heading
-                  color={"primary"}
-                  fontSize={{ md: "56px", base: "32px" }}
-                  fontWeight={700}
-                  lineHeight={"100%"}
-                  letterSpacing={{ lg: "-1.12px", base: "-0.64px" }}
-                  my={{ md: "21px", base: "16px" }}
-                >
-                  Building for maximum results
-                </Heading>
-                <Text
-                  color={"primary"}
-                  fontSize={{ md: "20px", base: "16px" }}
-                  fontWeight={400}
-                  lineHeight={"130%"}
-                >
-                  First Synergi Homes is a captivating capsule of innovation,
-                  energy, and symbiosis with its surroundings.
-                </Text>
-              </Box>
+          <SectionAnimation>
+            <Box py={{ md: "108px", base: "32px" }}>
               <Flex
-                flexDirection={{ md: "column", base: "row" }}
-                color={"primary"}
-                w={{ md: "45%", base: "full" }}
-                textAlign={{ md: "right", base: "left" }}
+                flexDirection={{ md: "row", base: "column" }}
+                justify={"space-between"}
+                gap={{ base: "32px", md: 0 }}
               >
-                <Box>
-                  <Heading
-                    fontSize={{ md: "64px", base: "32px" }}
-                    fontWeight={400}
-                  >
-                    100+
-                  </Heading>
+                <Box w={{ md: "55%", base: "full" }} maxW={"655px"}>
                   <Text
-                    fontSize={{ md: "30px", base: "18px" }}
+                    fontSize={{ md: "20px", base: "16px" }}
+                    fontWeight={600}
+                    letterSpacing={"4px"}
+                    textTransform={"uppercase"}
+                    color={"secondary"}
+                  >
+                    our goal
+                  </Text>
+                  <Heading
+                    color={"primary"}
+                    fontSize={{ md: "56px", base: "32px" }}
                     fontWeight={700}
                     lineHeight={"100%"}
+                    letterSpacing={{ lg: "-1.12px", base: "-0.64px" }}
+                    my={{ md: "21px", base: "16px" }}
                   >
-                    Homes
-                  </Text>
-                </Box>
-                <Box mt={{ md: "40px", base: 0 }} ml={{ base: "auto", md: 0 }}>
-                  <Heading
-                    fontSize={{ md: "64px", base: "32px" }}
-                    fontWeight={400}
-                  >
-                    15+
+                    Building for maximum results
                   </Heading>
                   <Text
-                    fontSize={{ md: "30px", base: "18px" }}
-                    fontWeight={700}
-                    lineHeight={"100%"}
+                    color={"primary"}
+                    fontSize={{ md: "20px", base: "16px" }}
+                    fontWeight={400}
+                    lineHeight={"130%"}
                   >
-                    Years of excellence
+                    First Synergi Homes is a captivating capsule of innovation,
+                    energy, and symbiosis with its surroundings.
                   </Text>
                 </Box>
+                <Flex
+                  flexDirection={{ md: "column", base: "row" }}
+                  color={"primary"}
+                  w={{ md: "45%", base: "full" }}
+                  textAlign={{ md: "right", base: "left" }}
+                >
+                  <Box>
+                    <Heading
+                      fontSize={{ md: "64px", base: "32px" }}
+                      fontWeight={400}
+                    >
+                      100+
+                    </Heading>
+                    <Text
+                      fontSize={{ md: "30px", base: "18px" }}
+                      fontWeight={700}
+                      lineHeight={"100%"}
+                    >
+                      Homes
+                    </Text>
+                  </Box>
+                  <Box
+                    mt={{ md: "40px", base: 0 }}
+                    ml={{ base: "auto", md: 0 }}
+                  >
+                    <Heading
+                      fontSize={{ md: "64px", base: "32px" }}
+                      fontWeight={400}
+                    >
+                      15+
+                    </Heading>
+                    <Text
+                      fontSize={{ md: "30px", base: "18px" }}
+                      fontWeight={700}
+                      lineHeight={"100%"}
+                    >
+                      Years of excellence
+                    </Text>
+                  </Box>
+                </Flex>
               </Flex>
-            </Flex>
-            <Flex
-              color={"secondary"}
-              alignItems={"center"}
-              gap={"4px"}
-              mt={{ md: "50px", base: "32px" }}
-              fontWeight={600}
-            >
-              <Text>About First Synergi homes</Text>
-              <ArrowForwardIcon />
-            </Flex>
-            <Box
-              borderRadius={"10px"}
-              // h={"675px"}
-              // w="full"
-              aspectRatio={344 / 229}
-              bg={"gray"}
-              mt={{ md: "86px", base: "66px" }}
-            ></Box>
-          </Box>
-        </section>
-        <section style={{ backgroundColor: "#002E3B" }}>
-          <Box
-            className="section-container"
-            color={"white"}
-            py={{ md: "98px", base: "72px" }}
-          >
-            <Text
-              fontSize={{ md: "20px", base: "16px" }}
-              fontWeight={600}
-              letterSpacing={"4px"}
-              color={"secondary"}
-              textTransform={"uppercase"}
-            >
-              Projects
-            </Text>
-            <Flex
-              alignItems={"flex-start"}
-              flexDirection={{ md: "row", base: "column" }}
-              mt={{ md: "21px", base: "16px" }}
-              justify={"space-between"}
-              gap={{ base: "32px", md: 0 }}
-            >
-              <Stack spacing={"21px"} maxW={"665px"}>
-                <Heading
-                  fontSize={{ md: "56px", base: "32px" }}
-                  letterSpacing={"-2.24px"}
-                >
-                  Developing with the future in mind
-                </Heading>
-                <Text
-                  fontSize={{ md: "20px", base: "16px" }}
-                  fontWeight={400}
-                  lineHeight={"130%"}
-                >
-                  We bring beautiful homes to market 3x faster.
-                </Text>
-              </Stack>
-              <Flex alignItems={"center"} color={"secondary"} gap={"4px"}>
-                <Text fontSize={{ md: "20px", base: "18px" }} fontWeight={600}>
-                  View featured projects
-                </Text>
+              <Flex
+                color={"secondary"}
+                alignItems={"center"}
+                gap={"4px"}
+                mt={{ md: "50px", base: "32px" }}
+                fontWeight={600}
+              >
+                <Text>About First Synergi homes</Text>
                 <ArrowForwardIcon />
               </Flex>
-            </Flex>
-            <Flex
-              className="no-scrollbar"
-              flexDirection={{ lg: "row", base: "column" }}
-              gap={{ lg: "64px", base: "40px" }}
-              mt={"102px"}
-              position={"relative"}
-              overflow={"scroll"}
+              <Box
+                borderRadius={"10px"}
+                // h={"675px"}
+                // w="full"
+                aspectRatio={344 / 229}
+                bg={"gray"}
+                mt={{ md: "86px", base: "66px" }}
+              ></Box>
+            </Box>
+          </SectionAnimation>
+        </section>
+        <section style={{ backgroundColor: "#002E3B" }}>
+          <SectionAnimation>
+            <Box
+              className="section-container"
+              color={"white"}
+              py={{ md: "98px", base: "72px" }}
             >
-              {ImageList.home.projects.map((obj, index) => (
-                <HomeProjectCmp key={index} data={obj} />
-              ))}
-            </Flex>
-            <Box textAlign={"center"}>
-              <Heading
-                color={"secondary"}
-                fontSize={{ lg: "56px", base: "32px" }}
-                letterSpacing={"-2.24px"}
-              >
-                We are trusted
-              </Heading>
               <Text
                 fontSize={{ md: "20px", base: "16px" }}
-                fontWeight={400}
-                lineHeight={"130%"}
-                mt={"16px"}
+                fontWeight={600}
+                letterSpacing={"4px"}
+                color={"secondary"}
+                textTransform={"uppercase"}
               >
-                Since inception we’ve been working with amazing clients to
-                create meaningful
-                <br /> impact and compelling experiences
+                Projects
               </Text>
-            </Box>
-          </Box>
-        </section>
-        <section className="section-container">
-          <Box py={{ lg: "96px", base: "45px" }}>
-            <Flex
-              color={"primary"}
-              alignItems={"flex-start"}
-              justify={"space-between"}
-            >
-              <Box>
+              <Flex
+                alignItems={"flex-start"}
+                flexDirection={{ md: "row", base: "column" }}
+                mt={{ md: "21px", base: "16px" }}
+                justify={"space-between"}
+                gap={{ base: "32px", md: 0 }}
+              >
+                <Stack spacing={"21px"} maxW={"665px"}>
+                  <Heading
+                    fontSize={{ md: "56px", base: "32px" }}
+                    letterSpacing={"-2.24px"}
+                  >
+                    Developing with the future in mind
+                  </Heading>
+                  <Text
+                    fontSize={{ md: "20px", base: "16px" }}
+                    fontWeight={400}
+                    lineHeight={"130%"}
+                  >
+                    We bring beautiful homes to market 3x faster.
+                  </Text>
+                </Stack>
+                <Flex alignItems={"center"} color={"secondary"} gap={"4px"}>
+                  <Text
+                    fontSize={{ md: "20px", base: "18px" }}
+                    fontWeight={600}
+                  >
+                    View featured projects
+                  </Text>
+                  <ArrowForwardIcon />
+                </Flex>
+              </Flex>
+              <Flex
+                className="no-scrollbar"
+                flexDirection={{ lg: "row", base: "column" }}
+                gap={{ lg: "64px", base: "40px" }}
+                mt={"102px"}
+                position={"relative"}
+                overflow={"scroll"}
+              >
+                {ImageList.home.projects.map((obj, index) => (
+                  <HomeProjectCmp key={index} data={obj} />
+                ))}
+              </Flex>
+              <Box textAlign={"center"}>
                 <Heading
+                  color={"secondary"}
                   fontSize={{ lg: "56px", base: "32px" }}
                   letterSpacing={"-2.24px"}
                 >
-                  First insights
+                  We are trusted
                 </Heading>
                 <Text
                   fontSize={{ md: "20px", base: "16px" }}
+                  fontWeight={400}
                   lineHeight={"130%"}
-                  mt={{ lg: "16px", base: "8px" }}
+                  mt={"16px"}
                 >
-                  Stay informed with our latest insights
+                  Since inception we’ve been working with amazing clients to
+                  create meaningful
+                  <br /> impact and compelling experiences
                 </Text>
               </Box>
+            </Box>
+          </SectionAnimation>
+        </section>
+        <section className="section-container">
+          <SectionAnimation>
+            <Box py={{ lg: "96px", base: "45px" }}>
               <Flex
-                display={{ base: "none", lg: "flex" }}
-                alignItems={"center"}
-                gap={"4px"}
+                color={"primary"}
+                alignItems={"flex-start"}
+                justify={"space-between"}
               >
-                <Text>View all</Text>
-                <ArrowForwardIcon />
+                <Box>
+                  <Heading
+                    fontSize={{ lg: "56px", base: "32px" }}
+                    letterSpacing={"-2.24px"}
+                  >
+                    First insights
+                  </Heading>
+                  <Text
+                    fontSize={{ md: "20px", base: "16px" }}
+                    lineHeight={"130%"}
+                    mt={{ lg: "16px", base: "8px" }}
+                  >
+                    Stay informed with our latest insights
+                  </Text>
+                </Box>
+                <Flex
+                  display={{ base: "none", lg: "flex" }}
+                  alignItems={"center"}
+                  gap={"4px"}
+                >
+                  <Text>View all</Text>
+                  <ArrowForwardIcon />
+                </Flex>
               </Flex>
-            </Flex>
-            <Grid
-              gridGap={"20px"}
-              mt={{ lg: "48px", base: "40px" }}
-              gridTemplateColumns={{
-                xl: "repeat(3, 1fr)",
-                lg: "repeat(2, 1fr)",
-              }}
-            >
-              <BlogItemCmp />
-              <BlogItemCmp />
-              <BlogItemCmp />
-              <BlogItemCmp />
-            </Grid>
-          </Box>
+              <Grid
+                gridGap={"20px"}
+                mt={{ lg: "48px", base: "40px" }}
+                gridTemplateColumns={{
+                  xl: "repeat(3, 1fr)",
+                  lg: "repeat(2, 1fr)",
+                }}
+              >
+                <BlogItemCmp />
+                <BlogItemCmp />
+                <BlogItemCmp />
+                <BlogItemCmp />
+              </Grid>
+            </Box>
+          </SectionAnimation>
         </section>
       </main>
       <FooterCmp />

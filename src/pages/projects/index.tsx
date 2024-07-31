@@ -15,12 +15,14 @@ import {
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 import ImagesList from "@/images.json";
 import FooterCmp from "@/components/FooterCmp";
+import { TypeAnimation } from "react-type-animation";
+import SectionAnimation from "@/components/SectionAnimation";
 
 export default function Projects() {
   const navRef = useRef(null);
@@ -93,10 +95,20 @@ export default function Projects() {
           <Box
             className="section-container"
             pt={{ lg: "206px", base: "180px" }}
+            height={{ lg: "400px", base: "300px" }}
           >
-            <Heading color={"primary"} className="heading-2">
-              We build with you in mind; Innovative and excellent living
-            </Heading>
+            <TypeAnimation
+              sequence={[
+                "We build with you in mind; Innovative and excellent living.",
+                1000,
+              ]}
+              speed={10}
+              style={{ color: "#002E3B" }}
+              wrapper="h2"
+              className="heading-2"
+              repeat={1}
+              cursor={false}
+            />
           </Box>
           <Box
             h={{ lg: "444px", base: "236px" }}
@@ -109,117 +121,127 @@ export default function Projects() {
           />
         </section>
         <section className="section-container">
-          <Box pt={"100px"} pb={"108px"}>
-            <Box w={{ lg: "55%", base: "full" }} maxW={"655px"}>
-              <Text className="body-text-1" color={"secondary"}>
-                Featured projects
-              </Text>
-              <Heading color={"primary"} className="heading-3" mt={"21px"}>
-                Excellence and comfort is what we build for you
-              </Heading>
+          <SectionAnimation>
+            <Box pt={"100px"} pb={"108px"}>
+              <Box w={{ lg: "55%", base: "full" }} maxW={"655px"}>
+                <Text className="body-text-1" color={"secondary"}>
+                  Featured projects
+                </Text>
+                <Heading color={"primary"} className="heading-3" mt={"21px"}>
+                  Excellence and comfort is what we build for you
+                </Heading>
+              </Box>
+              <Grid
+                gridGap={"30px"}
+                gridTemplateColumns={{
+                  lg: "repeat(3, 1fr)",
+                  base: "repeat(1, 1fr)",
+                }}
+                mt={"40px"}
+              >
+                <GridItem colSpan={2}>
+                  <Box
+                    bg={"gray"}
+                    bgImage={ImagesList.projects.project_images[0]}
+                    borderRadius={"10px"}
+                    height={"542px"}
+                  ></Box>
+                </GridItem>
+                <GridItem>
+                  <Box
+                    bg={"gray"}
+                    bgImage={ImagesList.projects.project_images[1]}
+                    borderRadius={"10px"}
+                    height={"542px"}
+                  ></Box>
+                </GridItem>
+                <GridItem>
+                  <Box
+                    bg={"gray"}
+                    bgImage={ImagesList.projects.project_images[2]}
+                    borderRadius={"10px"}
+                    height={"542px"}
+                  ></Box>
+                </GridItem>
+                <GridItem colSpan={2}>
+                  <Box
+                    bg={"gray"}
+                    bgImage={ImagesList.projects.project_images[3]}
+                    borderRadius={"10px"}
+                    height={"542px"}
+                  ></Box>
+                </GridItem>
+              </Grid>
             </Box>
-            <Grid
-              gridGap={"30px"}
-              gridTemplateColumns={{
-                lg: "repeat(3, 1fr)",
-                base: "repeat(1, 1fr)",
-              }}
-              mt={"40px"}
-            >
-              <GridItem colSpan={2}>
-                <Box
-                  bg={"gray"}
-                  bgImage={ImagesList.projects.project_images[0]}
-                  borderRadius={"10px"}
-                  height={"542px"}
-                ></Box>
-              </GridItem>
-              <GridItem>
-                <Box
-                  bg={"gray"}
-                  bgImage={ImagesList.projects.project_images[1]}
-                  borderRadius={"10px"}
-                  height={"542px"}
-                ></Box>
-              </GridItem>
-              <GridItem>
-                <Box
-                  bg={"gray"}
-                  bgImage={ImagesList.projects.project_images[2]}
-                  borderRadius={"10px"}
-                  height={"542px"}
-                ></Box>
-              </GridItem>
-              <GridItem colSpan={2}>
-                <Box
-                  bg={"gray"}
-                  bgImage={ImagesList.projects.project_images[3]}
-                  borderRadius={"10px"}
-                  height={"542px"}
-                ></Box>
-              </GridItem>
-            </Grid>
-          </Box>
+          </SectionAnimation>
         </section>
         <section>
-          <Box color={"primary"} className="section-container">
-            <Text className="body-text-1" color={"secondary"}>
-              ongoing projects
-            </Text>
+          <SectionAnimation>
+            <Box color={"primary"} className="section-container">
+              <Text className="body-text-1" color={"secondary"}>
+                ongoing projects
+              </Text>
 
-            <Heading className="heading-3" mt="21px">
-              We never stop building
-              <br /> communities
-            </Heading>
+              <Heading className="heading-3" mt="21px">
+                We never stop building
+                <br /> communities
+              </Heading>
 
-            <Flex
-              className="no-scrollbar"
-              gap={"64px"}
-              mt={"40px"}
-              position={"relative"}
-              overflow={"scroll"}
-            >
-              <HomeProjectCmp other />
-              <HomeProjectCmp other />
-              <HomeProjectCmp other />
-            </Flex>
-          </Box>
+              <Flex
+                className="no-scrollbar"
+                gap={"64px"}
+                mt={"40px"}
+                position={"relative"}
+                overflow={"scroll"}
+              >
+                <HomeProjectCmp other />
+                <HomeProjectCmp other />
+                <HomeProjectCmp other />
+              </Flex>
+            </Box>
+          </SectionAnimation>
         </section>
         <section className="section-container">
-          <Box pb={"100px"}>
-            <Box>
-              <Text
-                fontSize={"20px"}
-                fontWeight={600}
-                letterSpacing={"4px"}
-                textTransform={"uppercase"}
-              >
-                More projects
-              </Text>
-              <Heading fontSize={"56px"} letterSpacing={"-2.24px"} mt={"21px"}>
-                See First Synergi Projects
-              </Heading>
-            </Box>
+          <SectionAnimation>
+            <Box pb={"100px"}>
+              <Box>
+                <Text
+                  fontSize={"20px"}
+                  fontWeight={600}
+                  letterSpacing={"4px"}
+                  textTransform={"uppercase"}
+                >
+                  More projects
+                </Text>
+                <Heading
+                  fontSize={"56px"}
+                  letterSpacing={"-2.24px"}
+                  mt={"21px"}
+                >
+                  See First Synergi Projects
+                </Heading>
+              </Box>
 
-            <Grid
-              gridGap={"20px"}
-              mt={"48px"}
-              gridTemplateColumns={{
-                xl: "repeat(3, 1fr)",
-                lg: "repeat(3, 1fr)",
-              }}
-            >
-              <GridItem colSpan={2}>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-              <GridItem>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-            </Grid>
-            <Box mx={"auto"} w="fit-content">
-              <Button mt={"63px"} label="Load more" />
+              <Grid
+                gridGap={"20px"}
+                mt={"48px"}
+                gridTemplateColumns={{
+                  xl: "repeat(3, 1fr)",
+                  lg: "repeat(3, 1fr)",
+                }}
+              >
+                <GridItem colSpan={2}>
+                  <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                </GridItem>
+                <GridItem>
+                  <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
+                </GridItem>
+              </Grid>
+              <Box mx={"auto"} w="fit-content">
+                <Button mt={"63px"} label="Load more" />
+              </Box>
             </Box>
-          </Box>
+          </SectionAnimation>
         </section>
       </main>
       <FooterCmp />
