@@ -10,6 +10,7 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
@@ -23,11 +24,13 @@ import FooterCmp from "@/components/FooterCmp";
 import ImagesList from "@/images.json";
 import SectionAnimation from "@/components/SectionAnimation";
 import { useRouter } from "next/router";
+import BounceAnimation from "@/components/BounceAnimation";
 
 export default function Home() {
   const router = useRouter();
   const navRef = useRef(null);
   const isInView = useInView(navRef, { once: false, amount: 0.8 });
+  const [isMobile] = useMediaQuery("(max-width: 767px)");
 
   return (
     <>
@@ -212,14 +215,14 @@ export default function Home() {
                 gap={"4px"}
                 mt={{ md: "50px", base: "32px" }}
                 fontWeight={600}
+                cursor={"pointer"}
+                onClick={() => router.push("/about-us")}
               >
                 <Text>About First Synergi homes</Text>
                 <ArrowForwardIcon />
               </Flex>
               <Box
                 borderRadius={"10px"}
-                // h={"675px"}
-                // w="full"
                 aspectRatio={344 / 229}
                 bg={"gray"}
                 mt={{ md: "86px", base: "66px" }}
@@ -273,7 +276,13 @@ export default function Home() {
                     We bring beautiful homes to market 3x faster.
                   </Text>
                 </Stack>
-                <Flex alignItems={"center"} color={"secondary"} gap={"4px"}>
+                <Flex
+                  alignItems={"center"}
+                  cursor={"pointer"}
+                  onClick={() => router.push("/projects")}
+                  color={"secondary"}
+                  gap={"4px"}
+                >
                   <Text
                     fontSize={{ md: "20px", base: "18px" }}
                     fontWeight={600}
@@ -313,6 +322,49 @@ export default function Home() {
                   create meaningful
                   <br /> impact and compelling experiences
                 </Text>
+                <BounceAnimation>
+                  <Flex
+                    alignItems={"center"}
+                    width={"full"}
+                    maxW={isMobile ? "338px" : "full"}
+                    mx={"auto"}
+                    mt={"40px"}
+                    gap={isMobile ? "34px" : "64px"}
+                    justify={isMobile ? "space-between" : "center"}
+                    position={"relative"}
+                  >
+                    <Image
+                      src={ImageList.home.clients[0]}
+                      alt="client-logo"
+                      width={isMobile ? 110 : 202}
+                      height={isMobile ? 56 : 104}
+                      style={{
+                        objectFit: "contain",
+                        objectPosition: "top",
+                      }}
+                    />
+                    <Image
+                      src={ImageList.home.clients[1]}
+                      alt="client-logo"
+                      width={isMobile ? 64 : 118}
+                      height={isMobile ? 46 : 85}
+                      style={{
+                        objectFit: "contain",
+                        objectPosition: "top",
+                      }}
+                    />
+                    <Image
+                      src={ImageList.home.clients[2]}
+                      alt="client-logo"
+                      width={isMobile ? 101 : 186}
+                      height={isMobile ? 49 : 81}
+                      style={{
+                        objectFit: "contain",
+                        objectPosition: "top",
+                      }}
+                    />
+                  </Flex>
+                </BounceAnimation>
               </Box>
             </Box>
           </SectionAnimation>

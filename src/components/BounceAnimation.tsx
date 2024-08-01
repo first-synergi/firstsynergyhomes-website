@@ -12,6 +12,7 @@ const BounceAnimation = ({ children, amount, ...props }: any) => {
         opacity: 1,
         y: 0,
         transition: {
+          delay: 0.5,
           duration: 1,
           ease: "easeInOut",
           bounce: 20,

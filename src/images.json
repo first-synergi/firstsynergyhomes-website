@@ -18,7 +18,8 @@
         "src": "/images/st-augustine-img.png",
         "desc": ""
       }
-    ]
+    ],
+    "clients": ["Providusbank.svg", "Northwest.svg", "/Rjolad.svg"]
   },
   "projects": {
     "hero": "/images/project-hero-bg.png",

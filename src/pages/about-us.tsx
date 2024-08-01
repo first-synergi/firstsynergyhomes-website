@@ -136,14 +136,17 @@ export default function AboutUs() {
           </Box>
         </nav>
         <section ref={navRef}>
-          <Box
-            className="section-container"
-            pt={{ lg: "206px", base: "170px" }}
-          >
-            <Heading color={"primary"} className="heading-3">
-              We’re transforming the way the world builds.
-            </Heading>
-          </Box>
+          <SectionAnimation>
+            <Box
+              className="section-container"
+              pt={{ lg: "206px", base: "170px" }}
+            >
+              <Heading color={"primary"} className="heading-3">
+                We’re transforming the way the world builds.
+              </Heading>
+            </Box>
+          </SectionAnimation>
+
           <Box
             h={{ lg: "444px", base: "236px" }}
             bg={"gray"}
