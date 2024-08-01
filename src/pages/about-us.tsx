@@ -23,6 +23,7 @@ import ImagesList from "@/images.json";
 import FooterCmp from "@/components/FooterCmp";
 import SectionAnimation from "@/components/SectionAnimation";
 import ServicesTextCmp from "@/components/ServicesTextCmp";
+import BounceAnimation from "@/components/BounceAnimation";
 
 const CoreValuesObj = [
   {
@@ -347,50 +348,58 @@ export default function AboutUs() {
               mt={"40px"}
             >
               <GridItem colSpan={{ lg: 2, base: 1 }}>
-                <Flex
-                  bgImage={ImagesList.about.services[0]}
-                  className="services-container"
-                >
-                  <ServicesTextCmp
-                    heading="Architectural Designs"
-                    bodyText="We create innovative and aesthetically pleasing designs tailored to your specific requirements."
-                  />
-                </Flex>
+                <BounceAnimation>
+                  <Flex
+                    bgImage={ImagesList.about.services[0]}
+                    className="services-container"
+                  >
+                    <ServicesTextCmp
+                      heading="Architectural Designs"
+                      bodyText="We create innovative and aesthetically pleasing designs tailored to your specific requirements."
+                    />
+                  </Flex>
+                </BounceAnimation>
               </GridItem>
               <GridItem>
-                <Flex
-                  bgImage={ImagesList.about.services[1]}
-                  className="services-container"
-                  alignItems={{ lg: "flex-end", base: "flex-start" }}
-                >
-                  <ServicesTextCmp
-                    heading="Building Construction"
-                    bodyText="We ensure every structure we build is safe, sustainable, and durable, overseeing each project from inception to completion"
-                  />
-                </Flex>
+                <BounceAnimation>
+                  <Flex
+                    bgImage={ImagesList.about.services[1]}
+                    className="services-container"
+                    alignItems={{ lg: "flex-end", base: "flex-start" }}
+                  >
+                    <ServicesTextCmp
+                      heading="Building Construction"
+                      bodyText="We ensure every structure we build is safe, sustainable, and durable, overseeing each project from inception to completion"
+                    />
+                  </Flex>
+                </BounceAnimation>
               </GridItem>
               <GridItem>
-                <Flex
-                  bgImage={ImagesList.about.services[2]}
-                  className="services-container"
-                  alignItems={{ lg: "flex-end", base: "flex-start" }}
-                >
-                  <ServicesTextCmp
-                    heading="Project Management"
-                    bodyText="We manage your project from planning to final delivery, ensuring it is completed on time, within budget, and to the highest quality standards."
-                  />
-                </Flex>
+                <BounceAnimation>
+                  <Flex
+                    bgImage={ImagesList.about.services[2]}
+                    className="services-container"
+                    alignItems={{ lg: "flex-end", base: "flex-start" }}
+                  >
+                    <ServicesTextCmp
+                      heading="Project Management"
+                      bodyText="We manage your project from planning to final delivery, ensuring it is completed on time, within budget, and to the highest quality standards."
+                    />
+                  </Flex>
+                </BounceAnimation>
               </GridItem>
               <GridItem colSpan={{ lg: 2, base: 1 }}>
-                <Flex
-                  className="services-container"
-                  bgImage={ImagesList.about.services[3]}
-                >
-                  <ServicesTextCmp
-                    heading="Property Sales and Marketing"
-                    bodyText="We provide professional property sales and marketing services to help you buy, sell, or lease properties successfully."
-                  />
-                </Flex>
+                <BounceAnimation>
+                  <Flex
+                    className="services-container"
+                    bgImage={ImagesList.about.services[3]}
+                  >
+                    <ServicesTextCmp
+                      heading="Property Sales and Marketing"
+                      bodyText="We provide professional property sales and marketing services to help you buy, sell, or lease properties successfully."
+                    />
+                  </Flex>
+                </BounceAnimation>
               </GridItem>
             </Grid>
           </Box>
@@ -400,44 +409,47 @@ export default function AboutUs() {
             <Text color={"secondary"} className="body-text-1">
               MEET OUR TEAM
             </Text>
-            <Flex flexDirection={{ lg: "row", base: "column" }} mt={"66px"}>
-              <Box w={"100%"} maxW={"375px"} h={"496px"}>
-                <Box
-                  position={"relative"}
-                  w="full"
-                  height={"425px"}
-                  mb={"27px"}
-                >
-                  <Image
-                    src={"/images/Disu-Adeniyi_(BW).jpg"}
-                    alt="img"
-                    fill
-                    style={{
-                      objectFit: "cover",
-                      objectPosition: "top",
-                    }}
+            <SectionAnimation>
+              <Flex flexDirection={{ lg: "row", base: "column" }} mt={"66px"}>
+                <Box w={"100%"} maxW={"375px"} h={"496px"}>
+                  <Box
+                    position={"relative"}
+                    w="full"
+                    height={"425px"}
+                    mb={"27px"}
+                  >
+                    <Image
+                      src={"/images/Disu-Adeniyi_(BW).jpg"}
+                      alt="img"
+                      fill
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "top",
+                      }}
+                    />
+                  </Box>
+                  <TeamMemberCmp
+                    name="Kamar Adeniyi Disu"
+                    role="Managing Director"
                   />
                 </Box>
-                <TeamMemberCmp
-                  name="Kamar Adeniyi Disu"
-                  role="Managing Director"
-                />
-              </Box>
-              <Grid
-                gridTemplateColumns={{ lg: "repeat(2, 1fr)" }}
-                rowGap={"24px"}
-                columnGap={"55px"}
-                ml={{ lg: "auto", base: 0 }}
-                mt={{ lg: "20px", base: "40px" }}
-                height={"fit-content"}
-              >
-                {TeamMembers.map((member) => (
-                  <GridItem key={member.name}>
-                    <TeamMemberCmp name={member.name} role={member.role} />
-                  </GridItem>
-                ))}
-              </Grid>
-            </Flex>
+
+                <Grid
+                  gridTemplateColumns={{ lg: "repeat(2, 1fr)" }}
+                  rowGap={"24px"}
+                  columnGap={"55px"}
+                  ml={{ lg: "auto", base: 0 }}
+                  mt={{ lg: "20px", base: "40px" }}
+                  height={"fit-content"}
+                >
+                  {TeamMembers.map((member) => (
+                    <GridItem key={member.name}>
+                      <TeamMemberCmp name={member.name} role={member.role} />
+                    </GridItem>
+                  ))}
+                </Grid>
+              </Flex>
+            </SectionAnimation>
           </Box>
         </section>
       </main>

@@ -70,6 +70,7 @@ const Navbar = () => {
             display={{ lg: "flex", base: "none" }}
             label="Build with us"
             width={"fit-content"}
+            onClick={() => location.push("/build-with-us")}
           />
         </Box>
         {isMobile &&
@@ -118,7 +119,12 @@ const Navbar = () => {
                 </motion.div>
               ))}
             </Stack>
-            <Button label="Build with us" w="full" mt={"30px"} />
+            <Button
+              label="Build with us"
+              w="full"
+              mt={"30px"}
+              onClick={() => location.push("/build-with-us")}
+            />
           </Box>
         </Box>
       )}

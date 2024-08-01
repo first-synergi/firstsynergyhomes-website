@@ -22,8 +22,10 @@ import ImageList from "@/images.json";
 import FooterCmp from "@/components/FooterCmp";
 import ImagesList from "@/images.json";
 import SectionAnimation from "@/components/SectionAnimation";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
   const navRef = useRef(null);
   const isInView = useInView(navRef, { once: false, amount: 0.8 });
 
@@ -116,7 +118,12 @@ export default function Home() {
                   homes and a lifestyle of opulence.
                 </Heading>
               </motion.div>
-              <Button label="Build with us" mt={"50px"} />
+              <Button
+                display={{ lg: "none" }}
+                label="Build with us"
+                mt={"50px"}
+                onClick={() => router.push("/build-with-us")}
+              />
             </Box>
           </Box>
         </motion.section>

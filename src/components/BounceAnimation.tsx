@@ -1,9 +1,9 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
-const SectionAnimation = ({ children, amount, ...props }: any) => {
+const BounceAnimation = ({ children, amount, ...props }: any) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: amount || 0.2 });
+  const isInView = useInView(ref, { once: true, amount: amount || 0.3 });
   const animation = useAnimation();
 
   useEffect(() => {
@@ -14,11 +14,13 @@ const SectionAnimation = ({ children, amount, ...props }: any) => {
         transition: {
           duration: 1,
           ease: "easeInOut",
+          bounce: 20,
+          stiffness: 120,
         },
       });
     }
     if (!isInView) {
-      animation.start({ opacity: 0, y: 20 });
+      animation.start({ opacity: 0, y: 100 });
     }
   }, [animation, isInView]);
 
@@ -29,4 +31,4 @@ const SectionAnimation = ({ children, amount, ...props }: any) => {
   );
 };
 
-export default SectionAnimation;
+export default BounceAnimation;

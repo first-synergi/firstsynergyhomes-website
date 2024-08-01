@@ -19,6 +19,7 @@ const FooterCmp = () => {
         </Heading>
         <Box maxW={"492px"} mx={"auto"} mt={"59px"}>
           <Input
+            borderBottom={"1px solid"}
             borderColor={"white"}
             color={"white"}
             variant={"flushed"}
@@ -27,6 +28,7 @@ const FooterCmp = () => {
             fontSize={{ lg: "32px", base: "20px" }}
             fontWeight={400}
             fontFamily={"body"}
+            _focusVisible={{ outline: "none" }}
             // pb={"22px"}
             h={{ lg: "54px", base: "48px" }}
           />
