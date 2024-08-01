@@ -7,7 +7,7 @@ interface TextCmp {
 }
 const ServicesTextCmp = ({ heading, bodyText }: TextCmp) => {
   return (
-    <Box>
+    <Box color={"white"}>
       <Heading className="services-text-header">{heading}</Heading>
       <Text className="body-text-2" mt={{ lg: "21px", base: "8px" }}>
         {bodyText}
