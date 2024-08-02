@@ -40,7 +40,7 @@ const BlogDetails = () => {
     if (typeof document !== "undefined") {
       const content = document.getElementById("blog-content");
       if (content !== null || content !== undefined) {
-        content.innerHTML = blogPost?.content;
+        content && (content.innerHTML = blogPost?.content as string);
       }
     }
   }, [blogPost?.content, id]);
