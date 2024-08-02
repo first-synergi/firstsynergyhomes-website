@@ -1,8 +1,15 @@
 import { Box, Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
-const BlogItemCmp = () => {
+interface IBlogData {
+  title: string;
+  thumbnail: string;
+  tag?: string;
+}
+
+const BlogItemCmp = ({ title, thumbnail, tag = "company" }: IBlogData) => {
   return (
     <motion.div
       initial={{ x: -30, opacity: 0 }}
@@ -10,8 +17,16 @@ const BlogItemCmp = () => {
       transition={{ delay: 0.5, duration: 0.5, bounce: 20 }}
       viewport={{ once: true }}
     >
-      <Box>
-        <Box borderRadius="16px" bg={"gray"} h="307px"></Box>
+      <Box cursor={"pointer"}>
+        <Box
+          borderRadius="16px"
+          bg={"gray"}
+          bgImage={thumbnail}
+          bgRepeat={"no-repeat"}
+          bgSize={"cover"}
+          bgPosition={"center"}
+          h="307px"
+        ></Box>
         <Stack spacing={"12px"} mt="24px">
           <Text
             fontSize={"12px"}
@@ -19,8 +34,9 @@ const BlogItemCmp = () => {
             lineHeight={"18px"}
             letterSpacing={"1.2px"}
             color={"secondary"}
+            textTransform={"uppercase"}
           >
-            INNOVATION
+            {tag}
           </Text>
           <Heading
             color={"primary"}
@@ -29,10 +45,9 @@ const BlogItemCmp = () => {
             lineHeight={"110%"}
             letterSpacing={"-0.8px"}
           >
-            {`Introducing first Synergi home's latest feature - Twin
-                    Towers.`}
+            {title}
           </Heading>
-          <Text
+          {/* <Text
             color={"black"}
             fontSize={"16px"}
             fontWeight={400}
@@ -40,7 +55,7 @@ const BlogItemCmp = () => {
           >
             The exceptional way to show your work, sell products and receive
             payments seamlessly
-          </Text>
+          </Text> */}
         </Stack>
       </Box>
     </motion.div>

@@ -126,7 +126,7 @@ export default function AboutUs() {
             zIndex={3}
           >
             <Box
-              bg={"rgba(255, 255, 255, 0.80)"}
+              bg={"rgba(255, 255, 255, 0.98)"}
               boxShadow={"0px 12px 24px 6px rgba(153, 167, 177, 0.12)"}
               p="13px"
               borderRadius={"8px"}

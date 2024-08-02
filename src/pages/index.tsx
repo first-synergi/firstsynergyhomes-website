@@ -1,13 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "@/styles/Home.module.css";
 import {
   Box,
   Flex,
   Grid,
+  GridItem,
   Heading,
-  Input,
-  SimpleGrid,
   Stack,
   Text,
   useMediaQuery,
@@ -15,16 +13,16 @@ import {
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 import ImageList from "@/images.json";
 import FooterCmp from "@/components/FooterCmp";
-import ImagesList from "@/images.json";
 import SectionAnimation from "@/components/SectionAnimation";
 import { useRouter } from "next/router";
 import BounceAnimation from "@/components/BounceAnimation";
+import { BlogArticles } from "@/static/blog";
 
 export default function Home() {
   const router = useRouter();
@@ -86,7 +84,7 @@ export default function Home() {
             zIndex={3}
           >
             <Box
-              bg={"rgba(255, 255, 255, 0.80)"}
+              bg={"rgba(255, 255, 255, 0.98)"}
               boxShadow={"0px 12px 24px 6px rgba(153, 167, 177, 0.12)"}
               p="13px"
               borderRadius={"8px"}
@@ -409,10 +407,18 @@ export default function Home() {
                   lg: "repeat(2, 1fr)",
                 }}
               >
-                <BlogItemCmp />
-                <BlogItemCmp />
-                <BlogItemCmp />
-                <BlogItemCmp />
+                {BlogArticles.blog.map((item) => (
+                  <GridItem
+                    key={item.id}
+                    onClick={() => router.push(`/blog/${item.id}`)}
+                  >
+                    <BlogItemCmp
+                      tag={item.tag}
+                      title={item.title}
+                      thumbnail={item.thumbnail}
+                    />
+                  </GridItem>
+                ))}
               </Grid>
             </Box>
           </SectionAnimation>
