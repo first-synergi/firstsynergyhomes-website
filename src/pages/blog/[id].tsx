@@ -43,7 +43,7 @@ const BlogDetails = () => {
         content.innerHTML = blogPost?.content;
       }
     }
-  }, [id]);
+  }, [blogPost?.content, id]);
 
   return (
     <>
