@@ -42,7 +42,9 @@ const ProjectPicCmp = ({
         {(show || isMobile) && (
           <Flex
             bg={
-              "linear-gradient(180deg, rgba(0, 0, 0, 0.00)0%, rgba(0, 0, 0, 0.60)57.2%)"
+              location || projectName
+                ? "linear-gradient(180deg, rgba(0, 0, 0, 0.00)0%, rgba(0, 0, 0, 0.60)57.2%)"
+                : "none"
             }
             borderRadius={"10px"}
             px={{ lg: "55px", base: "24px" }}

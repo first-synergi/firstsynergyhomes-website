@@ -133,7 +133,11 @@ export default function Projects() {
               color={"primary"}
               gap={"16px"}
             >
-              <Heading className="blog-heading" mt={"20px"} maxW={"665px"}>
+              <Heading
+                className="blog-heading"
+                mt={"20px"}
+                maxW={{ lg: "665px", base: "70%" }}
+              >
                 {project?.projectName}
               </Heading>
               <Center
@@ -145,7 +149,11 @@ export default function Projects() {
                 ml={"auto"}
               >
                 <Text className="body-text-2" textTransform={"capitalize"}>
-                  {project?.status}
+                  {isMobile
+                    ? project?.status?.toLowerCase() === "completed"
+                      ? "completed"
+                      : "ongoing"
+                    : project?.status}
                 </Text>
               </Center>
             </Flex>
@@ -220,7 +228,7 @@ export default function Projects() {
             overflow={"scroll"}
             className="no-scrollbar"
             mt={"30px"}
-            h={{ lg: "600px", base: "250px" }}
+            // h={{ lg: "600px", base: "100%" }}
           >
             {project?.otherImgs.map((img, idx) => (
               <Box key={idx} w="full" maxW={"765px"} flexShrink={0}>
