@@ -23,6 +23,7 @@ import SectionAnimation from "@/components/SectionAnimation";
 import { useRouter } from "next/router";
 import BounceAnimation from "@/components/BounceAnimation";
 import { BlogArticles } from "@/static/blog";
+import Link from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -299,7 +300,9 @@ export default function Home() {
                 overflow={"scroll"}
               >
                 {ImageList.home.projects.map((obj, index) => (
-                  <HomeProjectCmp key={index} data={obj} />
+                  <Link key={index} href={obj.id}>
+                    <HomeProjectCmp key={index} data={obj} />
+                  </Link>
                 ))}
               </Flex>
               <Box textAlign={"center"}>
