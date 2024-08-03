@@ -196,6 +196,7 @@ const BlogDetails = () => {
                 className="blog-text"
                 w="full"
                 maxW={"776px"}
+                textAlign={"justify"}
               >
                 {blogPost?.content}
               </Box>
