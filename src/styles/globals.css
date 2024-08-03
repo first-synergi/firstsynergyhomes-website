@@ -35,10 +35,10 @@ a {
 
 /* Typography */
 .heading-1 {
-  font-size: 92px !important;
+  font-size: 76px !important;
   font-style: normal !important;
   font-weight: 700 !important;
-  line-height: 90% !important;
+  line-height: 100% !important;
   letter-spacing: -3.68px !important;
 }
 

@@ -1,31 +1,31 @@
 import React, { useEffect } from "react";
+import styles from "../../styles/Home.module.css";
 import Head from "next/head";
-import Image from "next/image";
 import {
   Box,
-  Center,
+  Circle,
   Flex,
   Grid,
   GridItem,
   Heading,
-  Stack,
   Text,
   useMediaQuery,
 } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
-import Button from "@/components/Button";
-import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon } from "@chakra-ui/icons";
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import HomeProjectCmp from "@/components/HomeProjectCmp";
+import { useInView } from "framer-motion";
 import BlogItemCmp from "@/components/BlogItemCmp";
-import ImageList from "@/images.json";
 import FooterCmp from "@/components/FooterCmp";
-import SectionAnimation from "@/components/SectionAnimation";
 import { useRouter } from "next/router";
-import BounceAnimation from "@/components/BounceAnimation";
 import { BlogArticles } from "@/static/blog";
 import Link from "next/link";
+import Image from "next/image";
+import {
+  FacebookShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+} from "react-share";
 
 const BlogDetails = () => {
   const router = useRouter();
@@ -44,6 +44,9 @@ const BlogDetails = () => {
       }
     }
   }, [blogPost?.content, id]);
+
+  const url = `${process.env.NEXT_PUBLIC_WEBSITE_URL}/blog/${id}`;
+  const quote = `${blogPost?.title}`;
 
   return (
     <>
@@ -155,6 +158,38 @@ const BlogDetails = () => {
                 <Text className="blog-text" fontWeight={600}>
                   Share this article
                 </Text>
+                <Flex>
+                  <TwitterShareButton url={url} title={quote}>
+                    <Circle bg="secondary" size={"38px"}>
+                      <Image
+                        src={"/twitter-icon-white.png"}
+                        alt="social-icon"
+                        width={24}
+                        height={24}
+                      />
+                    </Circle>
+                  </TwitterShareButton>
+                  <LinkedinShareButton url={url} title={quote}>
+                    <Circle bg="secondary" size={"38px"}>
+                      <Image
+                        src={"/linked-in-icon-white.png"}
+                        alt="social-icon"
+                        width={24}
+                        height={24}
+                      />
+                    </Circle>
+                  </LinkedinShareButton>
+                  <FacebookShareButton url={url} quote={quote}>
+                    <Circle bg="secondary" size={"38px"}>
+                      <Image
+                        src={"/facebook-icon-white.png"}
+                        alt="social-icon"
+                        width={24}
+                        height={24}
+                      />
+                    </Circle>
+                  </FacebookShareButton>
+                </Flex>
               </Box>
               <Box
                 id="blog-content"

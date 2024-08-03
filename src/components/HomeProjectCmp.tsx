@@ -25,14 +25,10 @@ const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
         position={"relative"}
         top={{ lg: "-148px", base: "-50px" }}
         left={{ lg: "40px", base: 0 }}
-        p={{ md: "36px", base: "20px" }}
+        p={{ md: "28px", base: "20px" }}
         mx={{ base: "auto", lg: 0 }}
       >
-        <Heading
-          color={"secondary"}
-          fontSize={{ lg: "56px", base: "24px" }}
-          fontWeight={700}
-        >
+        <Heading color={"secondary"} className="heading-4" fontWeight={700}>
           {data?.name || data?.projectName}
         </Heading>
         <Flex alignItems={"center"} color={"primary"} gap={"8px"} mt={"20px"}>
