@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import {
   Box,
+  Center,
   Flex,
   Grid,
   GridItem,
@@ -11,20 +12,40 @@ import {
   SimpleGrid,
   Stack,
   Text,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
-import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { ArrowBackIcon, ArrowForwardIcon } from "@chakra-ui/icons";
 import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
 import FooterCmp from "@/components/FooterCmp";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { ProjectDetails } from "@/static/project";
+import ProjectPicCmp from "@/components/ProjectPicCmp";
 
 export default function Projects() {
+  const router = useRouter();
   const navRef = useRef(null);
-  const isInView = useInView(navRef, { once: false, amount: 0.8 });
-  console.log(isInView);
+  const isInView = useInView(navRef, { once: false, amount: 0.4 });
+  const [isMobile] = useMediaQuery("(max-width: 767px)");
+
+  const { id } = router.query;
+  const project = ProjectDetails.projects?.find((el) => el.id === id);
+  const projectIndex = ProjectDetails.projects?.findIndex((el) => el.id === id);
+  const otherPosts = ProjectDetails.projects?.filter((el) => el.id !== id);
+
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const content = document.getElementById("summary-text");
+      if (content !== null || content !== undefined) {
+        content && (content.innerHTML = project?.summary as string);
+      }
+    }
+  }, [project?.summary, id]);
 
   return (
     <>
@@ -90,145 +111,156 @@ export default function Projects() {
           </Box>
         </nav>
         <section ref={navRef}>
-          <Box className="section-container" pt={"206px"}>
-            <Heading
-              fontSize={"72px"}
-              fontWeight={700}
-              lineHeight={"100%"}
-              letterSpacing={"-2.88px"}
-            >
-              We build with you in mind;
-              <br /> Innovative and excellent living
-            </Heading>
-          </Box>
-          <Box h="444px" bg={"gray"} mt="62px"></Box>
-        </section>
-        <section className="section-container">
-          <Box pt={"100px"} pb={"108px"}>
-            <Box w="55%" maxW={"655px"}>
-              <Text
-                fontSize={"20px"}
-                fontWeight={600}
-                letterSpacing={"4px"}
-                textTransform={"uppercase"}
-                color={"primary"}
-              >
-                Featured projects
-              </Text>
-              <Heading
-                color={"primary"}
-                fontSize={"56px"}
-                fontWeight={700}
-                lineHeight={"100%"}
-                letterSpacing={"-2.24px"}
-                mt={"21px"}
-              >
-                Excellence and comfort is what we build for you
-              </Heading>
-            </Box>
-            <Grid
-              gridGap={"30px"}
-              gridTemplateColumns={"repeat(3, 1fr)"}
-              mt={"40px"}
-            >
-              <GridItem colSpan={2}>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-              <GridItem>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-              <GridItem>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-              <GridItem colSpan={2}>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-            </Grid>
-          </Box>
-        </section>
-        <section>
-          <Box color={"primary"} className="section-container">
-            <Text
-              fontSize={"20px"}
-              fontWeight={600}
-              letterSpacing={"4px"}
-              textTransform={"uppercase"}
-            >
-              ongoing projects
-            </Text>
-
-            <Heading fontSize={"56px"} letterSpacing={"-2.24px"} mt="21px">
-              We never stop building
-              <br /> communities
-            </Heading>
-
-            <Flex
-              className="no-scrollbar"
-              gap={"64px"}
-              mt={"40px"}
-              position={"relative"}
-              overflow={"scroll"}
-            >
-              <HomeProjectCmp other />
-              <HomeProjectCmp other />
-              <HomeProjectCmp other />
-            </Flex>
-            {/* <Box textAlign={"center"}>
-              <Heading
+          <Box
+            className="section-container"
+            color={"primary"}
+            pt={{ lg: "200px", base: "150px" }}
+          >
+            <Link href={"/projects"}>
+              <Flex
+                alignItems={"center"}
+                gap={"8px"}
                 color={"secondary"}
-                fontSize={"56px"}
-                letterSpacing={"-2.24px"}
+                cursor={"pointer"}
+                fontWeight={600}
               >
-                We are trusted
+                <ArrowBackIcon />
+                <Text>Back to projects</Text>
+              </Flex>
+            </Link>
+            <Flex
+              alignItems={{ lg: "flex-start", base: "center" }}
+              color={"primary"}
+              gap={"16px"}
+            >
+              <Heading className="blog-heading" mt={"20px"} maxW={"665px"}>
+                {project?.projectName}
               </Heading>
-              <Text
-                fontSize={"20px"}
-                fontWeight={400}
-                lineHeight={"130%"}
-                mt={"16px"}
+              <Center
+                borderRadius={"30px"}
+                border={"1px solid #002E3B"}
+                p={{ lg: "16px", base: "8px" }}
+                w="fit-content"
+                h={{ lg: "52px", base: "fit-content" }}
+                ml={"auto"}
               >
-                Since inception we’ve been working with amazing clients to
-                create meaningful
-                <br /> impact and compelling experiences
-              </Text>
-            </Box> */}
+                <Text className="body-text-2" textTransform={"capitalize"}>
+                  {project?.status}
+                </Text>
+              </Center>
+            </Flex>
+            <Box
+              bg={"gray"}
+              bgImage={project?.headerImg}
+              bgRepeat={"no-repeat"}
+              bgSize={"cover"}
+              bgPosition={"center"}
+              borderRadius={"10px"}
+              h={{ lg: "542px", base: "204px" }}
+              w="full"
+              mt={"20px"}
+            ></Box>
+            <Flex
+              flexDirection={{ base: "column", lg: "row" }}
+              color={"primary"}
+              mt={"56px"}
+            >
+              <Box maxW={"665px"}>
+                <Heading className="heading">Summary</Heading>
+                <Text
+                  id="summary-text"
+                  className="body-text-2"
+                  mt={"21px"}
+                ></Text>
+              </Box>
+              <Box
+                color={"primary"}
+                textAlign={{ lg: "right", base: "left" }}
+                ml={{ lg: "auto", base: 0 }}
+                mt={{ lg: 0, base: "24px" }}
+              >
+                <Box>
+                  <Text
+                    color={"rgba(0, 46, 59, 0.27)"}
+                    fontSize={"16px"}
+                    letterSpacing={"0.064"}
+                    lineHeight={"100%"}
+                    textTransform={"uppercase"}
+                  >
+                    LOCATION
+                  </Text>
+                  <Text className="body-text-2" mt={"8px"}>
+                    {project?.location}
+                  </Text>
+                </Box>
+                <Box mt={{ lg: "40px" }}>
+                  <Text
+                    color={"rgba(0, 46, 59, 0.27)"}
+                    fontSize={"16px"}
+                    letterSpacing={"0.064"}
+                    lineHeight={"100%"}
+                    textTransform={"uppercase"}
+                    mt={"8px"}
+                  >
+                    Year completed
+                  </Text>
+                  <Text className="body-text-2">
+                    {project?.comepletionYear}
+                  </Text>
+                </Box>
+              </Box>
+            </Flex>
           </Box>
         </section>
         <section className="section-container">
-          <Box pb={"100px"}>
-            <Box>
-              <Text
-                fontSize={"20px"}
-                fontWeight={600}
-                letterSpacing={"4px"}
-                textTransform={"uppercase"}
-              >
-                More projects
-              </Text>
-              <Heading fontSize={"56px"} letterSpacing={"-2.24px"} mt={"21px"}>
-                See First Synergi Projects
-              </Heading>
-            </Box>
-
-            <Grid
-              gridGap={"20px"}
-              mt={"48px"}
-              gridTemplateColumns={{
-                xl: "repeat(3, 1fr)",
-                lg: "repeat(3, 1fr)",
-              }}
-            >
-              <GridItem colSpan={2}>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-              <GridItem>
-                <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-              </GridItem>
-            </Grid>
-            <Box mx={"auto"} w="fit-content">
-              <Button mt={"63px"} label="Load more" />
-            </Box>
-          </Box>
+          <Flex
+            flexDirection={{ base: "column", lg: "row" }}
+            alignItems={"center"}
+            gap={{ lg: "30px", base: "16px" }}
+            overflow={"scroll"}
+            className="no-scrollbar"
+            mt={"30px"}
+            h={{ lg: "600px", base: "250px" }}
+          >
+            {project?.otherImgs.map((img, idx) => (
+              <Box key={idx} w="full" maxW={"765px"} flexShrink={0}>
+                <ProjectPicCmp imgSrc={img} />
+              </Box>
+            ))}
+          </Flex>
+          <Flex
+            gap={"16px"}
+            alignItems={"center"}
+            justify={"center"}
+            my={{ lg: "157px", base: "100px" }}
+          >
+            {projectIndex > 0 && (
+              <Button
+                label={isMobile ? "Previous" : "See previous project"}
+                width={{ lg: "fit-content", base: "120px" }}
+                onClick={() =>
+                  router.push(
+                    `/projects/${
+                      ProjectDetails.projects?.[projectIndex - 1]?.id
+                    }`
+                  )
+                }
+              />
+            )}
+            {projectIndex !== ProjectDetails.projects?.length - 1 && (
+              <Button
+                label={isMobile ? "Next" : "See next project"}
+                width={{ lg: "fit-content", base: "120px" }}
+                onClick={() =>
+                  router.push(
+                    `/projects/${
+                      ProjectDetails.projects?.[projectIndex + 1]?.id
+                    }`
+                  )
+                }
+              />
+            )}
+          </Flex>
         </section>
       </main>
       <FooterCmp />

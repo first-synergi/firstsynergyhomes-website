@@ -14,7 +14,7 @@ const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
         height={{ lg: "597px", base: "auto" }}
         aspectRatio={{ base: 343 / 236 }}
         bg={"gray"}
-        bgImage={data?.src}
+        bgImage={data?.src || data?.imgSrc}
         bgSize={"cover"}
       ></Box>
       <Box
@@ -32,7 +32,7 @@ const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
           fontSize={{ lg: "56px", base: "24px" }}
           fontWeight={700}
         >
-          {data?.name}
+          {data?.name || data?.projectName}
         </Heading>
         <Text
           color={"primary"}

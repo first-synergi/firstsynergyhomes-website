@@ -23,6 +23,8 @@ import ImagesList from "@/images.json";
 import FooterCmp from "@/components/FooterCmp";
 import { TypeAnimation } from "react-type-animation";
 import SectionAnimation from "@/components/SectionAnimation";
+import ProjectPicCmp from "@/components/ProjectPicCmp";
+import Link from "next/link";
 
 export default function Projects() {
   const navRef = useRef(null);
@@ -139,38 +141,24 @@ export default function Projects() {
                 }}
                 mt={"40px"}
               >
-                <GridItem colSpan={2}>
-                  <Box
-                    bg={"gray"}
-                    bgImage={ImagesList.projects.project_images[0]}
-                    borderRadius={"10px"}
-                    height={"542px"}
-                  ></Box>
-                </GridItem>
-                <GridItem>
-                  <Box
-                    bg={"gray"}
-                    bgImage={ImagesList.projects.project_images[1]}
-                    borderRadius={"10px"}
-                    height={"542px"}
-                  ></Box>
-                </GridItem>
-                <GridItem>
-                  <Box
-                    bg={"gray"}
-                    bgImage={ImagesList.projects.project_images[2]}
-                    borderRadius={"10px"}
-                    height={"542px"}
-                  ></Box>
-                </GridItem>
-                <GridItem colSpan={2}>
-                  <Box
-                    bg={"gray"}
-                    bgImage={ImagesList.projects.project_images[3]}
-                    borderRadius={"10px"}
-                    height={"542px"}
-                  ></Box>
-                </GridItem>
+                {ImagesList.projects.project_images.map((item, index) => (
+                  <GridItem
+                    key={index}
+                    colSpan={{
+                      lg: index === 0 || index === 3 ? 2 : 1,
+                      base: 1,
+                    }}
+                  >
+                    <Link key={item.id} href={`/projects/${item.id}`}>
+                      <ProjectPicCmp
+                        imgSrc={item.img}
+                        location={item.location}
+                        status={item.status}
+                        projectName={item.projectName}
+                      />
+                    </Link>
+                  </GridItem>
+                ))}
               </Grid>
             </Box>
           </SectionAnimation>
@@ -188,58 +176,62 @@ export default function Projects() {
               </Heading>
 
               <Flex
+                flexDirection={{ lg: "row", base: "column" }}
                 className="no-scrollbar"
-                gap={"64px"}
+                gap={{ lg: "64px", base: "20px" }}
                 mt={"40px"}
                 position={"relative"}
                 overflow={"scroll"}
               >
-                <HomeProjectCmp other />
-                <HomeProjectCmp other />
-                <HomeProjectCmp other />
+                {ImagesList.projects.ongoing_projects.map((item, index) => (
+                  <Link key={index} href={`/projects/${item.id}`}>
+                    <HomeProjectCmp key={index} data={item} other />
+                  </Link>
+                ))}
               </Flex>
             </Box>
           </SectionAnimation>
         </section>
         <section className="section-container">
           <SectionAnimation>
-            <Box pb={"100px"}>
+            <Box color={"primary"} pb={"100px"}>
               <Box>
-                <Text
-                  fontSize={"20px"}
-                  fontWeight={600}
-                  letterSpacing={"4px"}
-                  textTransform={"uppercase"}
-                >
+                <Text className="body-text-1" textTransform={"uppercase"}>
                   More projects
                 </Text>
-                <Heading
-                  fontSize={"56px"}
-                  letterSpacing={"-2.24px"}
-                  mt={"21px"}
-                >
+                <Heading className="heading-3" mt={{ lg: "21px", base: "8px" }}>
                   See First Synergi Projects
                 </Heading>
               </Box>
 
               <Grid
-                gridGap={"20px"}
-                mt={"48px"}
+                gridGap={"30px"}
                 gridTemplateColumns={{
-                  xl: "repeat(3, 1fr)",
                   lg: "repeat(3, 1fr)",
+                  base: "repeat(1, 1fr)",
                 }}
+                mt={"40px"}
               >
-                <GridItem colSpan={2}>
-                  <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-                </GridItem>
-                <GridItem>
-                  <Box bg={"gray"} borderRadius={"10px"} height={"542px"}></Box>
-                </GridItem>
+                {ImagesList.projects.other_projects.map((item, index) => (
+                  <GridItem
+                    key={index}
+                    colSpan={{
+                      lg: index === 0 || index === 2 ? 2 : 1,
+                      base: 1,
+                    }}
+                  >
+                    <Link href={`/projects/${item.id}`}>
+                      <ProjectPicCmp
+                        imgSrc={item.imgSrc}
+                        projectName={item.projectName}
+                      />
+                    </Link>
+                  </GridItem>
+                ))}
               </Grid>
-              <Box mx={"auto"} w="fit-content">
+              {/* <Box mx={"auto"} w="fit-content">
                 <Button mt={"63px"} label="Load more" />
-              </Box>
+              </Box> */}
             </Box>
           </SectionAnimation>
         </section>

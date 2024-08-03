@@ -24,10 +24,78 @@
   "projects": {
     "hero": "/images/project-hero-bg.png",
     "project_images": [
-      "/images/project-img1.png",
-      "/images/project-img2.png",
-      "/images/project-img3.png",
-      "/images/project-img4.png"
+      {
+        "id": "mulberry-mansions-lekki",
+        "img": "/images/project-img1.png",
+        "location": "Shoreline Estate, Ikoyi, Lagos State. 2023",
+        "projectName": "Mulberry Mansions",
+        "status": "completed"
+      },
+      {
+        "id": "r-jolad-gbagada",
+        "img": "/images/project-img2.png",
+        "location": "Gbagada, Lagos State. 2023",
+        "projectName": "R-Jolad Plus Hospital",
+        "status": "completed"
+      },
+
+      {
+        "id": "providus-bank-surulere",
+        "img": "/images/project-img3.png",
+        "location": "Surulere, Lagos State.2024",
+        "projectName": "ProvidusBank",
+        "status": "completed"
+      },
+      {
+        "id": "northwest-lekki",
+        "img": "/images/project-img4.png",
+        "location": "Lekki-Epe Expressway Lagos. 2016",
+        "projectName": "NorthWest Filling station",
+        "status": "completed"
+      }
+    ],
+    "ongoing_projects": [
+      {
+        "id": "st-augustine-uni-chapel-epe",
+        "projectName": "St Augustine University Chapel Development",
+        "imgSrc": "/images/ongoing-img1.png",
+        "status": "ongoing"
+      },
+      {
+        "id": "cullingham-palace-lekki",
+        "projectName": "Cullingham Place, Lekki Foreshore",
+        "imgSrc": "/images/ongoing-img2.png",
+        "status": "ongoing"
+      },
+      {
+        "id": "project-sigma-ikoyi",
+        "projectName": "Project Sigma, Rumens Road",
+        "imgSrc": "/images/ongoing-img3.png",
+        "status": "ongoing"
+      },
+      {
+        "id": "residential-shoreline-estate-ikoyi",
+        "projectName": "Private Residential Development, Shoreline Estate",
+        "imgSrc": "/images/ongoing-img4.png",
+        "status": "ongoing"
+      }
+    ],
+    "other_projects": [
+      {
+        "id": "castle-and-temple-road-lekki",
+        "projectName": "Residential Development at Castle and Temple Road, Lekki.",
+        "imgSrc": "/images/other-img1.png"
+      },
+      {
+        "id": "providus-bank-lekki",
+        "projectName": "ProvidusBank Head Office,  Lekki, Lagos State ",
+        "imgSrc": "/images/other-img2.png"
+      },
+      {
+        "id": "providus-bank-victoria-island",
+        "projectName": "ProvidusBank Head Office, Victoria Island",
+        "imgSrc": "/images/other-img3.png"
+      }
     ]
   },
   "blog": {},
