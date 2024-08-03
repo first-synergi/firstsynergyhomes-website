@@ -300,7 +300,7 @@ export default function Home() {
                 overflow={"scroll"}
               >
                 {ImageList.home.projects.map((obj, index) => (
-                  <Link key={index} href={obj.id}>
+                  <Link key={index} href={`/projects/${obj.id}`}>
                     <HomeProjectCmp key={index} data={obj} />
                   </Link>
                 ))}
