@@ -7,19 +7,19 @@
         "id": "mulberry-mansions-lekki",
         "name": "Mulberry Mansions",
         "src": "/images/mulberry-mansion-img.png",
-        "desc": "This development features twenty ADUs and twenty 2 bed / 2 bath homes that measure 1,176 sq. ft. and are installed in under 3 months"
+        "desc": "<p>Scope - Build Only (civil works and finishes generally)</p><p>Building Type - Residential Development.</p><p>Project Configuration - 2 Blocks of Ground + 3 Upper floors. (Comprising of 3,4 and 4 bedrooms of Maisonettes,</p> <p>Terraces, Penthouse and Duplex respectively)</p>"
       },
       {
         "id": "r-jolad-gbagada",
         "name": "R-Jolad Plus",
         "src": "/images/rjolad-img.png",
-        "desc": "This development features twenty ADUs and twenty 2 bed / 2 bath homes that measure 1,176 sq. ft. and are installed in under 3 months"
+        "desc": "<p>Scope - Build Only (civil works and finishes generally)</p><p>Building Type - Commercial Development. - Healthcare</p><p>Project Configuration - Ground + 5 Upper floors</p>"
       },
       {
         "id": "st-augustine-uni-chapel-epe",
         "name": "St. Augustine Uni. Chapel",
         "src": "/images/st-augustine-img.png",
-        "desc": ""
+        "desc": "<p>Scope - Design and Build</p><p>Building Type - Institutional Development.</p><p>Project Configuration - 1300 seater Auditorium</p>"
       }
     ],
     "clients": ["Providusbank.svg", "Northwest.svg", "/Rjolad.svg"]
@@ -62,25 +62,29 @@
         "id": "st-augustine-uni-chapel-epe",
         "projectName": "St Augustine University Chapel Development",
         "imgSrc": "/images/ongoing-img1.png",
-        "status": "ongoing"
+        "status": "ongoing",
+        "desc": "<p>Scope - Design and Build</p><p>Building Type - Institutional Development.</p><p>Project Configuration - 1300 seater Auditorium</p>"
       },
       {
         "id": "cullingham-palace-lekki",
         "projectName": "Cullingham Place, Lekki Foreshore",
         "imgSrc": "/images/ongoing-img2.png",
-        "status": "ongoing"
+        "status": "ongoing",
+        "desc": "<p>Scope - Design and Build</p><p>Proposed Completion Timeline - Q4, 2027</p><p>Building Type - Private Residential Developments.</p><p>Project Configuration - 96 units of a combination of Detached, Semi-detached, Terraces, 2-3 bedroom apartments and Penthouses.</p>"
       },
       {
         "id": "project-sigma-ikoyi",
         "projectName": "Project Sigma, Rumens Road",
         "imgSrc": "/images/ongoing-img3.png",
-        "status": "ongoing"
+        "status": "ongoing",
+        "desc": "<p>Scope - Design and Build</p><p>Proposed Completion Timeline - Q1, 2027</p><p>Building Type - Private Residential Development.</p><p>Project Configuration - Ground + 7 floors of 4-5 bedroom maisonettes and penthouses.</p>"
       },
       {
         "id": "residential-shoreline-estate-ikoyi",
         "projectName": "Private Residential Development, Shoreline Estate",
         "imgSrc": "/images/ongoing-img4.png",
-        "status": "ongoing"
+        "status": "ongoing",
+        "desc": "<p>Scope - Build Only (Civil works and Finishes Generally)</p><p>Building Type - Private Residential Development.</p><p>Project Configuration - Ground + 2 Upper floors.</p>"
       }
     ],
     "other_projects": [

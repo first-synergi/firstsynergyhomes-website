@@ -1,12 +1,24 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
-import React from "react";
+import React, { useEffect } from "react";
 
 interface ICmpType {
   data?: any;
   other?: boolean;
+  index?: number;
 }
-const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
+const HomeProjectCmp = ({ data, other = false, index }: ICmpType) => {
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const content = document.getElementsByClassName("project_desc");
+      if (content !== null || content !== undefined) {
+        content &&
+          (content[index ?? 0].innerHTML =
+            (data?.desc as string) || (data?.summary as string));
+      }
+    }
+  }, [data?.desc, data?.summary, index]);
+
   return (
     <Box w={{ lg: "90%", base: "100%" }} position={"relative"} flexShrink={0}>
       <Box
@@ -31,19 +43,11 @@ const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
         <Heading color={"secondary"} className="heading-4" fontWeight={700}>
           {data?.name || data?.projectName}
         </Heading>
-        <Flex alignItems={"center"} color={"primary"} gap={"8px"} mt={"20px"}>
-          <Text>Learn more</Text>
-          <ArrowForwardIcon />
-        </Flex>
-        {/* <Text
+        <Text
           color={"primary"}
-          fontSize={{ lg: "20px", base: "16px" }}
-          fontWeight={400}
-          lineHeight={"130%"}
+          className="body-text-2 project_desc"
           mt={"14px"}
-        >
-          {data?.desc}
-        </Text> */}
+        ></Text>
       </Box>
     </Box>
   );

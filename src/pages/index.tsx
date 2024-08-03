@@ -304,7 +304,7 @@ export default function Home() {
               >
                 {ImageList.home.projects.map((obj, index) => (
                   <Link key={index} href={`/projects/${obj.id}`}>
-                    <HomeProjectCmp key={index} data={obj} />
+                    <HomeProjectCmp key={index} data={obj} index={index} />
                   </Link>
                 ))}
               </Flex>

@@ -188,7 +188,12 @@ export default function Projects() {
               >
                 {ImagesList.projects.ongoing_projects.map((item, index) => (
                   <Link key={index} href={`/projects/${item.id}`}>
-                    <HomeProjectCmp key={index} data={item} other />
+                    <HomeProjectCmp
+                      key={index}
+                      data={item}
+                      index={index}
+                      other
+                    />
                   </Link>
                 ))}
               </Flex>
