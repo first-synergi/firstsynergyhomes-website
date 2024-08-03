@@ -28,71 +28,102 @@ const Navbar = () => {
     { link: "Blog", to: "/blog", active: location.pathname === "/blog" },
   ];
 
-  return (
-    <Box>
-      <Flex alignItems={"center"} w="100%">
-        <Image
-          src={"/brand-logo.svg"}
-          alt="brand-logo"
-          width={128}
-          height={48}
-        />
-        <Flex
-          display={{ lg: "inline-flex", base: "none" }}
-          color={"primary"}
-          p={"10px"}
-          gap={"40px"}
-          ml={"60px"}
-        >
-          {navLinks.map((item, index) => (
-            <Link
-              className="link"
-              key={index}
-              href={item.to}
-              style={{ cursor: "pointer" }}
-            >
-              <Text
-                fontSize={"18px"}
-                fontStyle={"normal"}
-                fontWeight={"600"}
-                lineHeight={"100%"}
-                color={item.active ? "secondary" : "primary"}
-                borderBottom={item.active ? `2px solid` : "none"}
-                borderColor={item.active ? "secondary" : "none"}
-              >
-                {item.link}
-              </Text>
-            </Link>
-          ))}
-        </Flex>
-        <Box ml="auto">
-          <Button
-            display={{ lg: "flex", base: "none" }}
-            label="Build with us"
-            width={"fit-content"}
-            onClick={() => location.push("/build-with-us")}
-          />
-        </Box>
-        {isMobile &&
-          (showMobileMenu ? (
-            <CloseIcon
-              cursor={"pointer"}
-              color={"#131316"}
-              boxSize={"24px"}
-              ml={"auto"}
-              onClick={() => setShowMobileMenu(false)}
-            />
-          ) : (
-            <HamburgerMenuIcon
-              cursor={"pointer"}
-              color={"#131316"}
-              boxSize={"24px"}
-              ml={"auto"}
-              onClick={() => setShowMobileMenu(true)}
-            />
-          ))}
-      </Flex>
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      const body = document?.querySelector("body");
+      if (body && isMobile) {
+        body &&
+          body.addEventListener("click", (e) => {
+            e.stopPropagation();
+            showMobileMenu && setShowMobileMenu(false);
+          });
+      }
+    }
+    if (typeof window !== "undefined") {
+      if (window && isMobile) {
+        window &&
+          window.addEventListener("scroll", (e) => {
+            e.stopPropagation();
+            showMobileMenu && setShowMobileMenu(false);
+          });
+      }
+    }
+  }, [isMobile, showMobileMenu]);
 
+  return (
+    <>
+      <Box>
+        <Flex alignItems={"center"} w="100%">
+          <Link href={"/"}>
+            <Image
+              src={"/brand-logo-gold.svg"}
+              alt="brand-logo"
+              width={128}
+              height={48}
+            />
+          </Link>
+          <Flex
+            display={{ lg: "inline-flex", base: "none" }}
+            color={"primary"}
+            p={"10px"}
+            gap={"40px"}
+            ml={"60px"}
+          >
+            {navLinks.map((item, index) => (
+              <Link
+                className="link"
+                key={index}
+                href={item.to}
+                style={{ cursor: "pointer" }}
+              >
+                <Text
+                  fontSize={"18px"}
+                  fontStyle={"normal"}
+                  fontWeight={"600"}
+                  lineHeight={"100%"}
+                  color={item.active ? "secondary" : "primary"}
+                  borderBottom={item.active ? `2px solid` : "none"}
+                  borderColor={item.active ? "secondary" : "none"}
+                >
+                  {item.link}
+                </Text>
+              </Link>
+            ))}
+          </Flex>
+          <Box ml="auto">
+            <Button
+              display={{ lg: "flex", base: "none" }}
+              label="Build with us"
+              width={"fit-content"}
+              onClick={() => location.push("/build-with-us")}
+            />
+          </Box>
+          {isMobile &&
+            (showMobileMenu ? (
+              <CloseIcon
+                cursor={"pointer"}
+                color={"#131316"}
+                boxSize={"24px"}
+                ml={"auto"}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowMobileMenu(false);
+                }}
+              />
+            ) : (
+              <HamburgerMenuIcon
+                cursor={"pointer"}
+                color={"#131316"}
+                boxSize={"24px"}
+                ml={"auto"}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowMobileMenu(true);
+                }}
+              />
+            ))}
+        </Flex>
+      </Box>
       {isMobile && showMobileMenu && (
         <Box w="full">
           <Box>
@@ -128,7 +159,7 @@ const Navbar = () => {
           </Box>
         </Box>
       )}
-    </Box>
+    </>
   );
 };
 
