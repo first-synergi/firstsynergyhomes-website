@@ -44,7 +44,7 @@ const CoreValuesObj = [
   {
     title: "LEADERSHIP",
     subtitle:
-      "Our commitment to honesty builds strong, trustworthy relationships with clients and stakeholders.",
+      "Leading with expertise and vision, we set benchmarks in quality and innovation in our industry.",
   },
 ];
 
@@ -237,8 +237,8 @@ export default function AboutUs() {
                   color={"white"}
                   textAlign={"center"}
                 >
-                  For those who seek an Exceptional Home and a<br /> Lifestyle
-                  of Opulence,
+                  For those who seek an Exceptional Home and a Lifestyle of
+                  Opulence,
                   <br /> WELCOME on this journey with us
                 </Heading>
                 <Flex
@@ -281,7 +281,7 @@ export default function AboutUs() {
               gap={"38px"}
               position={"relative"}
             >
-              <Box w={{ lg: "65%", base: "full" }}>
+              <Box w={{ lg: "70%", base: "full" }}>
                 <Text color={"secondary"} className="body-text-1">
                   what we stand for
                 </Text>
@@ -295,7 +295,7 @@ export default function AboutUs() {
                 <SimpleGrid
                   columns={2}
                   gridGap={"50px"}
-                  minChildWidth={"280px"}
+                  minChildWidth={"290px"}
                   mt={"34px"}
                 >
                   {CoreValuesObj.map((obj, index) => (

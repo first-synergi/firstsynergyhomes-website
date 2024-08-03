@@ -116,6 +116,7 @@ a {
 .multi-column-text {
   column-count: 2;
   column-gap: "60px";
+  text-align: justify;
 }
 
 .services-text-header {
