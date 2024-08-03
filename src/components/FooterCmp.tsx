@@ -94,7 +94,7 @@ const FooterCmp = () => {
           <Flex
             flexDirection={{ md: "row", base: "column" }}
             mt={"54px"}
-            justify={"space-between"}
+            justify={{ lg: "space-between", base: "center" }}
             alignItems={{ base: "center" }}
           >
             {/* <Flex
@@ -106,13 +106,50 @@ const FooterCmp = () => {
               <Text>Terms & Conditions</Text>
               <Text>Privacy Policy</Text>
             </Flex> */}
-            <FacebookIcon fontSize={"50px"} color={"red"} />
-            <Image
-              src={"/socials.svg"}
-              alt="brand-logo"
-              width={133}
-              height={22}
-            />
+            <Flex
+              alignItems={"center"}
+              gap={"20px"}
+              ml={{ lg: "auto", base: 0 }}
+            >
+              <Link
+                href={
+                  "https://www.facebook.com/profile.php?id=61562678024714&mibextid=LQQJ4d"
+                }
+              >
+                <Image
+                  src={"/facebook-icon-white.png"}
+                  alt="social-icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
+              <Link href={"https://x.com/1stsynergihomes/"}>
+                <Image
+                  src={"/twitter-icon-white.png"}
+                  alt="social-icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
+              <Link href={"https://www.instagram.com/firstsynergihomes/"}>
+                <Image
+                  src={"/instagram-icon-white.png"}
+                  alt="social-icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
+              <Link
+                href={"https://www.linkedin.com/company/first-synergi-homes/"}
+              >
+                <Image
+                  src={"/linked-in-icon-white.png"}
+                  alt="social-icon"
+                  width={24}
+                  height={24}
+                />
+              </Link>
+            </Flex>
           </Flex>
         </Box>
       </Box>

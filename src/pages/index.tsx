@@ -377,6 +377,7 @@ export default function Home() {
                 color={"primary"}
                 alignItems={"flex-start"}
                 justify={"space-between"}
+                flexDirection={{ lg: "row", base: "column" }}
               >
                 <Box>
                   <Heading
@@ -393,14 +394,17 @@ export default function Home() {
                     Stay informed with our latest insights
                   </Text>
                 </Box>
-                <Flex
-                  display={{ base: "none", lg: "flex" }}
-                  alignItems={"center"}
-                  gap={"4px"}
-                >
-                  <Text>View all</Text>
-                  <ArrowForwardIcon />
-                </Flex>
+                <Link href={"/blog"}>
+                  <Flex
+                    display={{ base: "none", lg: "flex" }}
+                    color={"primary"}
+                    alignItems={"center"}
+                    gap={"4px"}
+                  >
+                    <Text>View all</Text>
+                    <ArrowForwardIcon />
+                  </Flex>
+                </Link>
               </Flex>
               <Grid
                 gridGap={"20px"}
@@ -423,6 +427,18 @@ export default function Home() {
                   </GridItem>
                 ))}
               </Grid>
+              <Link href={"/blog"}>
+                <Flex
+                  color={"primary"}
+                  display={{ base: "flex", lg: "none" }}
+                  alignItems={"center"}
+                  gap={"4px"}
+                  mt={"16px"}
+                >
+                  <Text>View all</Text>
+                  <ArrowForwardIcon />
+                </Flex>
+              </Link>
             </Box>
           </SectionAnimation>
         </section>
