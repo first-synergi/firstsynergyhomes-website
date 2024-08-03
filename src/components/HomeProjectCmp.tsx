@@ -1,4 +1,5 @@
-import { Box, Heading, Text } from "@chakra-ui/react";
+import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import React from "react";
 
 interface ICmpType {
@@ -19,7 +20,7 @@ const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
       ></Box>
       <Box
         w={{ lg: "620px", base: "95%" }}
-        h={{ lg: other ? "188px" : "323px", base: "auto" }}
+        // h={{ lg: other ? "188px" : "323px", base: "auto" }}
         bg={"white"}
         position={"relative"}
         top={{ lg: "-148px", base: "-50px" }}
@@ -34,7 +35,11 @@ const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
         >
           {data?.name || data?.projectName}
         </Heading>
-        <Text
+        <Flex alignItems={"center"} color={"primary"} gap={"8px"} mt={"20px"}>
+          <Text>Learn more</Text>
+          <ArrowForwardIcon />
+        </Flex>
+        {/* <Text
           color={"primary"}
           fontSize={{ lg: "20px", base: "16px" }}
           fontWeight={400}
@@ -42,7 +47,7 @@ const HomeProjectCmp = ({ data, other = false }: ICmpType) => {
           mt={"14px"}
         >
           {data?.desc}
-        </Text>
+        </Text> */}
       </Box>
     </Box>
   );

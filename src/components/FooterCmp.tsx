@@ -2,6 +2,8 @@ import { Box, Flex, Heading, Input, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import Button from "./Button";
 import Image from "next/image";
+import Link from "next/link";
+import FacebookIcon from "./icons/FacebookIcon";
 
 const FooterCmp = () => {
   return (
@@ -78,9 +80,15 @@ const FooterCmp = () => {
               fontWeight={600}
               mt={{ base: "86px", md: 0 }}
             >
-              <Text>Projects</Text>
-              <Text>About us</Text>
-              <Text>Blog</Text>
+              <Link href={"/projects"}>
+                <Text>Projects</Text>
+              </Link>
+              <Link href={"/about-us"}>
+                <Text>About us</Text>
+              </Link>
+              <Link href={"/blog"}>
+                <Text>Blog</Text>
+              </Link>
             </Flex>
           </Flex>
           <Flex
@@ -89,7 +97,7 @@ const FooterCmp = () => {
             justify={"space-between"}
             alignItems={{ base: "center" }}
           >
-            <Flex
+            {/* <Flex
               color={"white"}
               fontSize={"18px"}
               gap={"40px"}
@@ -97,7 +105,8 @@ const FooterCmp = () => {
             >
               <Text>Terms & Conditions</Text>
               <Text>Privacy Policy</Text>
-            </Flex>
+            </Flex> */}
+            <FacebookIcon fontSize={"50px"} color={"red"} />
             <Image
               src={"/socials.svg"}
               alt="brand-logo"
