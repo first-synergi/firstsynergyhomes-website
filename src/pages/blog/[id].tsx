@@ -158,7 +158,7 @@ const BlogDetails = () => {
                 <Text className="blog-text" fontWeight={600}>
                   Share this article
                 </Text>
-                <Flex>
+                <Flex gap={"12px"} mt={"12px"}>
                   <TwitterShareButton url={url} title={quote}>
                     <Circle bg="secondary" size={"38px"}>
                       <Image

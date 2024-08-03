@@ -54,7 +54,7 @@ const TeamMembers = [
   { name: "Olanrewaju Oshinaike", role: "Project Architect" },
   { name: "Anthony Sunday Kingsley", role: "Quantity Surveyor" },
   { name: "Blessing Oyase", role: "Operations/HR Manager" },
-  { name: "Oladoja Abdulfattah Adekunle", role: "Quantity Site Surveying" },
+  { name: "Oladoja Abdulfattah Adekunle", role: "Site Engineer" },
 ];
 
 const TeamMemberCmp = ({ name, role }: any) => {
