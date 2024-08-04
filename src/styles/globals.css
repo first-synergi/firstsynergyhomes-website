@@ -136,6 +136,20 @@ a {
   padding: 48px 55px !important;
 }
 
+.scroll-section {
+  display: flex;
+  overflow-x: auto;
+  width: 100%;
+  position: relative;
+}
+.scroll-item {
+  display: inline-block;
+  /* width: 200px; */
+  /* height: 200px; */
+  /* margin-right: 10px; */
+  /* background-color: lightblue; */
+}
+
 @media (max-width: 600px) {
   .section-container {
     max-width: 100%;

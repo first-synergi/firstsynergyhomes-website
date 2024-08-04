@@ -1,7 +1,7 @@
 {
   "home": {
-    "hero": "/hero-bg.png",
-    "heroMobile": "/images/home-hero-bg-mobile.png",
+    "hero": "/hero-img-desktop.jpg",
+    "heroMobile": "/hero-img-mobile.jpg",
     "projects": [
       {
         "id": "mulberry-mansions-lekki",
@@ -52,7 +52,7 @@
       {
         "id": "northwest-lekki",
         "img": "/images/project-img4.png",
-        "location": "Maryland Lagos. 2016",
+        "location": "Maryland Lagos. 2023",
         "projectName": "NorthWest Filling station",
         "status": "completed"
       }
@@ -107,7 +107,7 @@
   },
   "blog": {},
   "about": {
-    "hero": "/images/about-hero-bg.png",
+    "hero": "/images/team-image.jpg",
     "section3": "/images/about-section3-img.png",
     "services": [
       "/images/services-img1.png",

@@ -13,7 +13,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import HomeProjectCmp from "@/components/HomeProjectCmp";
 import BlogItemCmp from "@/components/BlogItemCmp";
@@ -28,9 +28,24 @@ import Link from "next/link";
 export default function Home() {
   const router = useRouter();
   const navRef = useRef(null);
+  const scrollRef = useRef(null);
   const isInView = useInView(navRef, { once: false, amount: 0.8 });
+  const isInViewScroll = useInView(scrollRef, { once: false, amount: "all" });
   const [isMobile] = useMediaQuery("(max-width: 767px)");
 
+  useEffect(() => {
+    if (typeof document !== "undefined") {
+      window.addEventListener("scroll", function () {
+        const scrollContainer = document.getElementById(
+          "horizontal-scroll-container"
+        );
+        if (isInViewScroll && scrollContainer) {
+          scrollContainer.scrollLeft = window.scrollY;
+        }
+      });
+    }
+  }, [isInViewScroll]);
+  console.log(isInViewScroll);
   return (
     <>
       <Head>
@@ -111,6 +126,7 @@ export default function Home() {
             height={{ lg: "900px", base: "732px" }}
             bgPosition={"center"}
             bgSize={"cover"}
+            bgRepeat={"no-repeat"}
           >
             <Box color={"primary"} className="section-container" pt={"206px"}>
               <motion.div
@@ -240,12 +256,19 @@ export default function Home() {
             </Box>
           </SectionAnimation>
         </section>
-        <section style={{ backgroundColor: "#002E3B" }}>
+        <section
+          style={{
+            backgroundColor: "#002E3B",
+            position: "relative",
+          }}
+        >
           <SectionAnimation>
             <Box
               className="section-container"
               color={"white"}
               py={{ md: "98px", base: "72px" }}
+              position={"relative"}
+              // height={"100vh"}
             >
               <Text
                 fontSize={{ md: "20px", base: "16px" }}
@@ -294,20 +317,54 @@ export default function Home() {
                   <ArrowForwardIcon />
                 </Flex>
               </Flex>
-              <Flex
+              <Box
                 className="no-scrollbar"
-                flexDirection={{ lg: "row", base: "column" }}
-                gap={{ lg: "64px", base: "40px" }}
-                mt={"102px"}
-                position={"relative"}
+                height={"100vh"}
                 overflow={"scroll"}
               >
-                {ImageList.home.projects.map((obj, index) => (
-                  <Link key={index} href={`/projects/${obj.id}`}>
-                    <HomeProjectCmp key={index} data={obj} index={index} />
-                  </Link>
-                ))}
-              </Flex>
+                <Flex
+                  // ref={scrollRef}
+                  className="no-scrollbar"
+                  // id="horizontal-scroll-container"
+                  flexDirection={{ lg: "row", base: "column" }}
+                  gap={{ lg: "64px", base: "40px" }}
+                  width={"100%"}
+                  mt={"102px"}
+                  // bg={"white"}
+                  position={"sticky"}
+                  top={"100px"}
+                  // height={{ lg: "700px", base: "auto" }}
+                  // overflowY={"visible"}
+                  overflowX={"auto"}
+                >
+                  {ImageList.home.projects.map((obj, index) => (
+                    <Link key={index} href={`/projects/${obj.id}`}>
+                      <HomeProjectCmp key={index} data={obj} index={index} />
+                    </Link>
+                  ))}
+                </Flex>
+                {/* <Box
+                  bg={"red"}
+                  height={{ lg: "700px", base: "auto" }}
+                  position={"sticky"}
+                  top={"100px"}
+                  mt={"200px"}
+                />
+                <Box
+                  bg={"red"}
+                  height={{ lg: "700px", base: "auto" }}
+                  position={"sticky"}
+                  top={"100px"}
+                  mt={"200px"}
+                />
+                <Box
+                  bg={"red"}
+                  height={{ lg: "700px", base: "auto" }}
+                  position={"sticky"}
+                  top={"100px"}
+                  mt={"200px"}
+                /> */}
+              </Box>
               <Box textAlign={"center"}>
                 <Heading
                   color={"secondary"}

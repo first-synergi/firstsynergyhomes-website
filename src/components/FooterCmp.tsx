@@ -70,8 +70,12 @@ const FooterCmp = () => {
                 17 Emma Abimbola Cole Street,
                 <br /> Lekki Scheme 1, Lagos – Nigeria.{" "}
               </Text>
-              <Text>+(234) 081-2268-7371</Text>
-              <Text>info@firstsynergihomes.com</Text>
+              <a href="tel:+23408122687371">
+                <Text>+(234) 081-2268-7371</Text>
+              </a>
+              <a href="mailto:info@firstsynergihomes.com">
+                <Text>info@firstsynergihomes.com</Text>
+              </a>
             </Stack>
             <Flex
               flexDirection={{ md: "row", base: "column" }}

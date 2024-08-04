@@ -107,8 +107,12 @@ const BuildWithUs = () => {
               gap={{ lg: "24px", base: "8px" }}
               mt={{ lg: "40px", base: "30px" }}
             >
-              <Text>+(234) 081-2268-7371</Text>
-              <Text>info@firstsynergihomes.com</Text>
+              <a href="tel:+23408122687371">
+                <Text>+(234) 081-2268-7371</Text>
+              </a>
+              <a href="mailto:info@firstsynergihomes.com">
+                <Text>info@firstsynergihomes.com</Text>
+              </a>
             </Flex>
             <Box
               display={{ lg: "none", base: "block" }}

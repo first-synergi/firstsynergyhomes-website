@@ -417,15 +417,15 @@ export default function AboutUs() {
             </Text>
             <SectionAnimation>
               <Flex flexDirection={{ lg: "row", base: "column" }} mt={"66px"}>
-                <Box w={"100%"} maxW={"375px"} h={"496px"}>
+                <Box w={"100%"} maxW={"375px"}>
                   <Box
                     position={"relative"}
                     w="full"
-                    height={"425px"}
+                    height={"525px"}
                     mb={"27px"}
                   >
                     <Image
-                      src={"/images/Disu-Adeniyi_(BW).jpg"}
+                      src={"/images/Mr.Disu.jpg"}
                       alt="img"
                       fill
                       style={{
