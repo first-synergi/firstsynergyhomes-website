@@ -213,7 +213,9 @@ export default function Projects() {
                     textTransform={"uppercase"}
                     mt={"8px"}
                   >
-                    Year completed
+                    {project?.status === "Completed"
+                      ? "Year completed"
+                      : "Proposed Completion Timeline"}
                   </Text>
                   <Text className="body-text-2">
                     {project?.comepletionYear}
