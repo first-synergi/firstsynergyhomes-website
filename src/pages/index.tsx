@@ -35,17 +35,20 @@ export default function Home() {
 
   useEffect(() => {
     if (typeof document !== "undefined") {
-      window.addEventListener("scroll", function () {
-        const scrollContainer = document.getElementById(
-          "horizontal-scroll-container"
-        );
-        if (isInViewScroll && scrollContainer) {
-          scrollContainer.scrollLeft = window.scrollY;
-        }
-      });
+      const scrolled = window.scrollY;
+
+      const scrollWrapper = document.getElementById("scroll-wrapper");
+      const scrollContainer = document.getElementById(
+        "horizontal-scroll-container"
+      );
+      if (scrollContainer) {
+        scrollWrapper?.addEventListener("scroll", (e) => {
+          scrollContainer.scrollLeft = scrollWrapper.scrollTop;
+        });
+      }
     }
   }, [isInViewScroll]);
-  console.log(isInViewScroll);
+
   return (
     <>
       <Head>
@@ -268,7 +271,6 @@ export default function Home() {
               color={"white"}
               py={{ md: "98px", base: "72px" }}
               position={"relative"}
-              // height={"100vh"}
             >
               <Text
                 fontSize={{ md: "20px", base: "16px" }}
@@ -319,22 +321,20 @@ export default function Home() {
               </Flex>
               <Box
                 className="no-scrollbar"
-                height={"100vh"}
+                id="scroll-wrapper"
+                height={"900px"}
                 overflow={"scroll"}
+                mt={"102px"}
               >
                 <Flex
-                  // ref={scrollRef}
+                  ref={scrollRef}
                   className="no-scrollbar"
-                  // id="horizontal-scroll-container"
+                  id="horizontal-scroll-container"
                   flexDirection={{ lg: "row", base: "column" }}
                   gap={{ lg: "64px", base: "40px" }}
                   width={"100%"}
-                  mt={"102px"}
-                  // bg={"white"}
                   position={"sticky"}
-                  top={"100px"}
-                  // height={{ lg: "700px", base: "auto" }}
-                  // overflowY={"visible"}
+                  top={"0px"}
                   overflowX={"auto"}
                 >
                   {ImageList.home.projects.map((obj, index) => (
@@ -343,25 +343,25 @@ export default function Home() {
                     </Link>
                   ))}
                 </Flex>
+                <Box
+                  bg={"none"}
+                  height={{ lg: "700px", base: "auto" }}
+                  position={"sticky"}
+                  top={"0px"}
+                  mt={"200px"}
+                />
+                <Box
+                  bg={"none"}
+                  height={{ lg: "700px", base: "auto" }}
+                  position={"sticky"}
+                  top={"0px"}
+                  mt={"200px"}
+                />
                 {/* <Box
-                  bg={"red"}
+                  bg={"none"}
                   height={{ lg: "700px", base: "auto" }}
                   position={"sticky"}
-                  top={"100px"}
-                  mt={"200px"}
-                />
-                <Box
-                  bg={"red"}
-                  height={{ lg: "700px", base: "auto" }}
-                  position={"sticky"}
-                  top={"100px"}
-                  mt={"200px"}
-                />
-                <Box
-                  bg={"red"}
-                  height={{ lg: "700px", base: "auto" }}
-                  position={"sticky"}
-                  top={"100px"}
+                  top={"0px"}
                   mt={"200px"}
                 /> */}
               </Box>
