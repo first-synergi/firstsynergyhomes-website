@@ -359,13 +359,14 @@ export default function Home() {
                   top={"0px"}
                   mt={"200px"}
                 />
-                {/* <Box
+                <Box
+                  display={{ lg: "block", base: "none" }}
                   bg={"none"}
-                  height={{ lg: "700px", base: "auto" }}
+                  height={{ lg: "200px", base: "auto" }}
                   position={"sticky"}
                   top={"0px"}
                   mt={"200px"}
-                /> */}
+                />
               </Box>
               <Box textAlign={"center"}>
                 <Heading
