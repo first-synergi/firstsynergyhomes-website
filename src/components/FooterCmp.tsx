@@ -57,6 +57,7 @@ const FooterCmp = () => {
               alt="brand-logo"
               width={128}
               height={48.8}
+              style={{ height: "auto", width: "auto" }}
             />
           </Box>
           <Flex

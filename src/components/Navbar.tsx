@@ -60,6 +60,7 @@ const Navbar = () => {
               alt="brand-logo"
               width={128}
               height={48}
+              style={{ height: "auto", width: "auto" }}
             />
           </Link>
           <Flex

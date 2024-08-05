@@ -322,9 +322,9 @@ export default function Home() {
               <Box
                 className="no-scrollbar"
                 id="scroll-wrapper"
-                height={"900px"}
+                height={{ lg: "900px", base: "auto" }}
                 overflow={"scroll"}
-                mt={"102px"}
+                mt={{ lg: "102px", base: "50px" }}
               >
                 <Flex
                   ref={scrollRef}
@@ -344,6 +344,7 @@ export default function Home() {
                   ))}
                 </Flex>
                 <Box
+                  display={{ lg: "block", base: "none" }}
                   bg={"none"}
                   height={{ lg: "700px", base: "auto" }}
                   position={"sticky"}
@@ -351,6 +352,7 @@ export default function Home() {
                   mt={"200px"}
                 />
                 <Box
+                  display={{ lg: "block", base: "none" }}
                   bg={"none"}
                   height={{ lg: "700px", base: "auto" }}
                   position={"sticky"}
@@ -400,6 +402,8 @@ export default function Home() {
                       width={isMobile ? 110 : 202}
                       height={isMobile ? 56 : 104}
                       style={{
+                        width: "auto",
+                        height: "auto",
                         objectFit: "contain",
                         objectPosition: "top",
                       }}
