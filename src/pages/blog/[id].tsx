@@ -30,7 +30,8 @@ import {
 const BlogDetails = () => {
   const router = useRouter();
   const navRef = useRef(null);
-  const isInView = useInView(navRef, { once: false, amount: 0.8 });
+  const isInView = useInView(navRef, { once: false, amount: 0.5 });
+  console.log(isInView);
   const [isMobile] = useMediaQuery("(max-width: 767px)");
   const { id } = router.query;
   const blogPost = BlogArticles.blog?.find((el) => el.id === id);
@@ -118,7 +119,7 @@ const BlogDetails = () => {
           <Box
             className="section-container"
             color={"primary"}
-            py={{ lg: "250px", base: "150px" }}
+            pt={{ lg: "250px", base: "150px" }}
           >
             <Link href={"/blog"}>
               <Flex
@@ -148,89 +149,90 @@ const BlogDetails = () => {
               w="full"
               mt={"20px"}
             ></Box>
-            <Flex
-              flexDirection={{ lg: "row", base: "column-reverse" }}
-              mt={{ lg: "40px", base: "32px" }}
-              gap={"50px"}
-              justify={"space-between"}
-            >
-              <Box w="full" maxW={"163px"}>
-                <Text className="blog-text" fontWeight={600}>
-                  Share this article
-                </Text>
-                <Flex gap={"12px"} mt={"12px"}>
-                  <TwitterShareButton url={url} title={quote}>
-                    <Circle bg="secondary" size={"38px"}>
-                      <Image
-                        src={"/twitter-icon-white.png"}
-                        alt="social-icon"
-                        width={24}
-                        height={24}
-                      />
-                    </Circle>
-                  </TwitterShareButton>
-                  <LinkedinShareButton url={url} title={quote}>
-                    <Circle bg="secondary" size={"38px"}>
-                      <Image
-                        src={"/linked-in-icon-white.png"}
-                        alt="social-icon"
-                        width={24}
-                        height={24}
-                      />
-                    </Circle>
-                  </LinkedinShareButton>
-                  <FacebookShareButton url={url} quote={quote}>
-                    <Circle bg="secondary" size={"38px"}>
-                      <Image
-                        src={"/facebook-icon-white.png"}
-                        alt="social-icon"
-                        width={24}
-                        height={24}
-                      />
-                    </Circle>
-                  </FacebookShareButton>
-                </Flex>
-              </Box>
-              <Box
-                id="blog-content"
-                className="blog-text"
-                w="full"
-                maxW={"776px"}
-                textAlign={"justify"}
-              >
-                {blogPost?.content}
-              </Box>
-            </Flex>
-            <Box w="full" mt={{ lg: "80px", base: "50px" }}>
-              <Heading
-                color={"primary"}
-                fontSize={{ lg: "32px", base: "24px" }}
-              >
-                Read these next
-              </Heading>
-            </Box>
-            <Grid
-              gridGap={"20px"}
-              mt={{ lg: "48px", base: "35px" }}
-              gridTemplateColumns={{
-                xl: "repeat(3, 1fr)",
-                lg: "repeat(2, 1fr)",
-              }}
-            >
-              {otherPosts?.map((item) => (
-                <GridItem
-                  key={item.id}
-                  onClick={() => router.push(`/blog/${item.id}`)}
-                >
-                  <BlogItemCmp
-                    tag={item.tag}
-                    title={item.title}
-                    thumbnail={item.thumbnail}
-                  />
-                </GridItem>
-              ))}
-            </Grid>
           </Box>
+        </section>
+        <section className="section-container">
+          <Flex
+            color={"primary"}
+            flexDirection={{ lg: "row", base: "column-reverse" }}
+            mt={{ lg: "40px", base: "32px" }}
+            gap={"50px"}
+            justify={"space-between"}
+          >
+            <Box w="full" maxW={"163px"}>
+              <Text className="blog-text" fontWeight={600}>
+                Share this article
+              </Text>
+              <Flex gap={"12px"} mt={"12px"}>
+                <TwitterShareButton url={url} title={quote}>
+                  <Circle bg="secondary" size={"38px"}>
+                    <Image
+                      src={"/twitter-icon-white.png"}
+                      alt="social-icon"
+                      width={24}
+                      height={24}
+                    />
+                  </Circle>
+                </TwitterShareButton>
+                <LinkedinShareButton url={url} title={quote}>
+                  <Circle bg="secondary" size={"38px"}>
+                    <Image
+                      src={"/linked-in-icon-white.png"}
+                      alt="social-icon"
+                      width={24}
+                      height={24}
+                    />
+                  </Circle>
+                </LinkedinShareButton>
+                <FacebookShareButton url={url} quote={quote}>
+                  <Circle bg="secondary" size={"38px"}>
+                    <Image
+                      src={"/facebook-icon-white.png"}
+                      alt="social-icon"
+                      width={24}
+                      height={24}
+                    />
+                  </Circle>
+                </FacebookShareButton>
+              </Flex>
+            </Box>
+            <Box
+              id="blog-content"
+              className="blog-text"
+              w="full"
+              maxW={"776px"}
+              textAlign={"justify"}
+            >
+              {blogPost?.content}
+            </Box>
+          </Flex>
+          <Box w="full" mt={{ lg: "80px", base: "50px" }}>
+            <Heading color={"primary"} fontSize={{ lg: "32px", base: "24px" }}>
+              Read these next
+            </Heading>
+          </Box>
+          <Grid
+            gridGap={"20px"}
+            mt={{ lg: "48px", base: "35px" }}
+            mb={{ lg: "150x", base: "100px" }}
+            gridTemplateColumns={{
+              xl: "repeat(3, 1fr)",
+              lg: "repeat(2, 1fr)",
+            }}
+          >
+            {otherPosts?.map((item) => (
+              <GridItem
+                key={item.id}
+                onClick={() => router.push(`/blog/${item.id}`)}
+              >
+                <BlogItemCmp
+                  tag={item.tag}
+                  title={item.title}
+                  thumbnail={item.thumbnail}
+                />
+              </GridItem>
+            ))}
+          </Grid>
         </section>
       </main>
       <FooterCmp />

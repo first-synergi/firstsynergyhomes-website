@@ -126,7 +126,7 @@ export default function Home() {
               lg: ImageList.home.hero,
               base: ImageList.home.heroMobile,
             }}
-            height={{ lg: "900px", base: "732px" }}
+            height={{ lg: "100vh", base: "100dvh" }}
             bgPosition={"center"}
             bgSize={"cover"}
             bgRepeat={"no-repeat"}
