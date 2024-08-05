@@ -233,7 +233,8 @@ export default function Projects() {
             overflow={"scroll"}
             className="no-scrollbar"
             mt={"30px"}
-            // h={{ lg: "600px", base: "100%" }}
+            overflowY={"clip"}
+            height={{ lg: "700px", base: "auto" }}
           >
             {project?.otherImgs.map((img, idx) => (
               <Box key={idx} w="full" maxW={"765px"} flexShrink={0}>

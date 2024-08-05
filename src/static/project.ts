@@ -184,13 +184,12 @@ export const ProjectDetails = {
       location: "Lekki, Lagos State",
       comepletionYear: "2024",
       headerImg:
-        "https://lh3.google.com/u/0/d/1PvLXoySzyAWfmoWkNw0x1Mxg4FOlnO1r=w3360-h1766-iv2",
+        "https://lh3.google.com/u/0/d/1HY_-rDOTExYnpKyifNjm9k9rJ4FAk7NN=w3360-h1766-iv2",
       otherImgs: [
-        "https://lh3.google.com/u/0/d/1PvLXoySzyAWfmoWkNw0x1Mxg4FOlnO1r=w3360-h1766-iv2",
-        "https://lh3.google.com/u/0/d/1zRGCgnkduXw35eq9wp0NlPM1VAmdoVfU=w3360-h1766-iv2",
-        "https://lh3.google.com/u/0/d/1_I-jsoazZvlE07nIBYL7_L8q_IZ35bpV=w3360-h1766-iv2",
-        "https://lh3.google.com/u/0/d/1olf08eHSVa8IfjLxwOOtNA4gn9KNi4_k=w3360-h1766-iv2",
-        "https://lh3.google.com/u/0/d/16w0OZuit6cIJR1bOaizHz01UUw5XoTOv=w3360-h1766-iv2",
+        "https://lh3.google.com/u/0/d/12Va4VOcWKLUaq7Ei4mKnomqbF39iNj3M=w3360-h1766-iv2",
+        "https://lh3.google.com/u/0/d/1S98LfmZXYEn6_JHUuwEGX4VLYLHMjvef=w3360-h1766-iv2",
+        "https://lh3.google.com/u/0/d/18lG7kUzsMfC6ebD_c_NjgCqOTbPHrayX=w3360-h1766-iv2",
+        "https://lh3.google.com/u/0/d/1c5PpELD6aSy_lr35CUwDXDW_1_73edZz=w3360-h1766-iv2",
       ],
     },
     {
