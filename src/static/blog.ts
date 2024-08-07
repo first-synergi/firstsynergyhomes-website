@@ -3,6 +3,7 @@ export const BlogArticles = {
     {
       id: "renting-vs-home-ownership",
       tag: "company",
+      date: "July 2024",
       title:
         "Renting vs. Home Ownership: Making the Financial Decision that Fits Your Lifestyle",
       headerImg:
@@ -49,11 +50,12 @@ Oftentimes, when you find yourself at this crossroads, speaking to a real estate
 
 We are a property development company focused on the development of living communities and singular dwelling spaces within Nigeria. We believe homes represent personal style and aspirations, and our commitment to craftsmanship is evident in every aspect of our building projects, focusing on meticulous construction and commitment to excellence. <br/><br/>
 
-You can learn more about us at www.firstsynergihomes.com or speak to a representative via Info@firstsynergihomes.com, +2348122687371`,
+You can learn more about us at www.firstsynergihomes.com or speak to a representative via <span><a href="mailto:info@firstsynergihomes.com">Info@firstsynergihomes.com</a></span>, <span><a href="tel:+23408122687371">+2348122687371</a></span>`,
     },
     {
       id: "home-ownership-benefits",
       tag: "company",
+      date: "August 2024",
       title:
         "Surprising Health Benefits of Home Ownership You Didn't Know About",
       headerImg:
@@ -85,7 +87,7 @@ While homeownership largely benefits the economy, the long-term financial securi
 <br/><br/>
 Besides the financial implications, home ownership provides a plethora of surprising health benefits that improve physical, mental, and emotional well-being. Owning a home can improve your general quality of life by encouraging physical activity and lowering stress levels, as well as cultivating a sense of community and pride of ownership. Whether you are thinking about buying your first home or are already reaping the rewards of home ownership, understanding these health benefits emphasises the importance of investing in a place to call your own. Understanding how house ownership can improve your health allows you to make an informed decision that is consistent with your personal and long-term wellness goals.<br/><br/>
 Looking to buy your first home, or increasing your portfolio for your real estate? First Synergi Homes is readily available to make this come true. We are a property development company in Nigeria, passionate about architectural innovation, sustainability, and combining timeless design with cutting-edge technology. <br/><br/>
-Our homes create communities that promote a sense of belonging and luxury living, aiming to set new benchmarks in luxury living. Drop us a message via info@firstsynergihomes.com.
+Our homes create communities that promote a sense of belonging and luxury living, aiming to set new benchmarks in luxury living. Drop us a message via <span><a href="mailto:info@firstsynergihomes.com">info@firstsynergihomes.com</a></span>.
 `,
     },
   ],

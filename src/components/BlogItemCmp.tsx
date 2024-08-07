@@ -1,15 +1,22 @@
-import { Box, Heading, Stack, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import { CalendarIcon } from "@chakra-ui/icons";
 
 interface IBlogData {
   title: string;
   thumbnail: string;
   tag?: string;
+  date?: string;
 }
 
-const BlogItemCmp = ({ title, thumbnail, tag = "company" }: IBlogData) => {
+const BlogItemCmp = ({
+  title,
+  thumbnail,
+  tag = "company",
+  date,
+}: IBlogData) => {
   return (
     <motion.div
       initial={{ x: -30, opacity: 0 }}
@@ -28,7 +35,7 @@ const BlogItemCmp = ({ title, thumbnail, tag = "company" }: IBlogData) => {
           h="307px"
         ></Box>
         <Stack spacing={"12px"} mt="24px">
-          <Text
+          {/* <Text
             fontSize={"12px"}
             fontWeight={500}
             lineHeight={"18px"}
@@ -37,7 +44,7 @@ const BlogItemCmp = ({ title, thumbnail, tag = "company" }: IBlogData) => {
             textTransform={"uppercase"}
           >
             {tag}
-          </Text>
+          </Text> */}
           <Heading
             color={"primary"}
             fontSize={"20px"}
@@ -47,15 +54,18 @@ const BlogItemCmp = ({ title, thumbnail, tag = "company" }: IBlogData) => {
           >
             {title}
           </Heading>
-          {/* <Text
-            color={"black"}
-            fontSize={"16px"}
-            fontWeight={400}
-            lineHeight={"130%"}
-          >
-            The exceptional way to show your work, sell products and receive
-            payments seamlessly
-          </Text> */}
+          <Flex alignItems={"center"} gap={"4px"} mt={"16px"}>
+            <CalendarIcon color={"secondary"} />
+            <Text
+              fontSize={"14px"}
+              lineHeight={"16px"}
+              fontWeight={500}
+              letterSpacing={"1.4px"}
+              color={"secondary"}
+            >
+              {date}
+            </Text>
+          </Flex>
         </Stack>
       </Box>
     </motion.div>

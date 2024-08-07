@@ -137,7 +137,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1.4 }}
               >
-                <Heading className="heading-1" maxW={"889px"}>
+                <Heading className="heading-1">
                   Building <span style={{ color: "#C0972D" }}>exceptional</span>{" "}
                   homes and a lifestyle of opulence.
                 </Heading>
@@ -254,6 +254,8 @@ export default function Home() {
                   height="100%"
                   style={{ borderRadius: "10px" }}
                   allow="autoplay"
+                  name="video"
+                  loading="lazy"
                 ></iframe>
               </Box>
             </Box>
@@ -488,6 +490,7 @@ export default function Home() {
                       tag={item.tag}
                       title={item.title}
                       thumbnail={item.thumbnail}
+                      date={item.date}
                     />
                   </GridItem>
                 ))}

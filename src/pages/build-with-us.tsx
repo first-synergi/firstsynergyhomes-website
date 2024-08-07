@@ -13,14 +13,62 @@ import {
   InputProps,
   Stack,
   Text,
+  useToast,
 } from "@chakra-ui/react";
 import { useInView } from "framer-motion";
 import Head from "next/head";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 
 const BuildWithUs = () => {
   const navRef = useRef(null);
   const isInView = useInView(navRef, { once: false, amount: 0.6 });
+  const toast = useToast();
+
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const validate = () => {};
+
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    setIsLoading(true);
+    const values = { firstName, lastName, email, phone, subject, message };
+    console.log(values);
+    console.log(process.env.NEXT_PUBLIC_EMAIL_HOST);
+
+    const res = await fetch("/api/send-email", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...values }),
+    });
+
+    const result = await res.json();
+    if (res.status === 200) {
+      toast({
+        title: "Email sent",
+        description: "We've received your message.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+    } else {
+      toast({
+        description: `Error: ${result.message}`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
+    setIsLoading(false);
+  };
+
   return (
     <>
       <Head>
@@ -97,11 +145,12 @@ const BuildWithUs = () => {
               className="heading-2"
               mt={{ base: "12px", lg: "7px" }}
             >
-              Build with us or ask a question? We are ready for you!
+              {`Build with us or ask a question? We’re always ready to work with
+              you.`}
             </Heading>
             <Flex
               flexDirection={{ base: "column", lg: "row" }}
-              color={"primary"}
+              color={"secondary"}
               fontSize={{ lg: "24px", base: "16px" }}
               fontWeight={400}
               gap={{ lg: "24px", base: "8px" }}
@@ -141,35 +190,67 @@ const BuildWithUs = () => {
               justify={"space-between"}
             >
               <Box w="full" maxW={"764px"}>
-                <Stack spacing={"16px"}>
-                  <Flex gap={"16px"}>
+                <form autoComplete="off" onSubmit={(e) => handleSubmit(e)}>
+                  <Stack spacing={"16px"}>
+                    <Flex gap={"16px"}>
+                      <InputCmp
+                        label="First name"
+                        name="first_name"
+                        id="first_name"
+                        value={firstName}
+                        onChange={(e) => setFirstName(e?.target?.value)}
+                      />
+                      <InputCmp
+                        label="Last name"
+                        name="last_name"
+                        id="last_name"
+                        value={lastName}
+                        onChange={(e) => setLastName(e?.target?.value)}
+                      />
+                    </Flex>
+                    <Flex
+                      flexDirection={{ base: "column", lg: "row" }}
+                      gap={"16px"}
+                    >
+                      <InputCmp
+                        label="Email"
+                        name="email"
+                        id="email"
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e?.target?.value)}
+                      />
+                      <InputCmp
+                        label="Phone number"
+                        name="phone"
+                        id="phone"
+                        type="number"
+                        value={phone}
+                        onChange={(e) => setPhone(e?.target?.value)}
+                      />
+                    </Flex>
                     <InputCmp
-                      label="First name"
-                      name="first_name"
-                      id="first_name"
+                      label="Subject"
+                      name="subject"
+                      id="subject"
+                      value={subject}
+                      onChange={(e) => setSubject(e?.target?.value)}
                     />
-                    <InputCmp
-                      label="Last name"
-                      name="last_name"
-                      id="last_name"
+                    <TextAreaCmp
+                      label="Message"
+                      name="message"
+                      id="message"
+                      value={message}
+                      onChange={(e) => setMessage(e?.target?.value)}
                     />
-                  </Flex>
-                  <Flex
-                    flexDirection={{ base: "column", lg: "row" }}
-                    gap={"16px"}
-                  >
-                    <InputCmp
-                      label="Email"
-                      name="email"
-                      id="email"
-                      type="email"
+                    <Button
+                      label="Send message"
+                      type="submit"
+                      width={"full"}
+                      isLoading={isLoading}
                     />
-                    <InputCmp label="Phone number" name="phone" id="phone" />
-                  </Flex>
-                  <InputCmp label="Subject" name="subject" id="subject" />
-                  <TextAreaCmp label="Message" name="message" id="message" />
-                  <Button label="Send message" width={"full"} />
-                </Stack>
+                  </Stack>
+                </form>
               </Box>
               <Box
                 display={{ base: "none", lg: "block" }}

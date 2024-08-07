@@ -155,7 +155,7 @@ const Blog = () => {
                   letterSpacing={"1.4px"}
                   color={"secondary"}
                 >
-                  Jun 01, 2022
+                  {BlogArticles.blog[0].date}
                 </Text>
               </Flex>
             </Box>
@@ -181,6 +181,7 @@ const Blog = () => {
                     tag={item.tag}
                     title={item.title}
                     thumbnail={item.thumbnail}
+                    date={item.date}
                   />
                 </GridItem>
               ))}

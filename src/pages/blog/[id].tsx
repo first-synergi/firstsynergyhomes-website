@@ -229,6 +229,7 @@ const BlogDetails = () => {
                   tag={item.tag}
                   title={item.title}
                   thumbnail={item.thumbnail}
+                  date={item.date}
                 />
               </GridItem>
             ))}

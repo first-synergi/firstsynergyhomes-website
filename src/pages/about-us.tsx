@@ -193,6 +193,7 @@ export default function AboutUs() {
                   quality, practicality, spatial management, smart and energy
                   efficiency.
                   <br />
+                  <br />
                   Our work focuses on possibilities that are open to the
                   architectural and construction industry, through advancement
                   in technology and the constant development of various
@@ -246,7 +247,7 @@ export default function AboutUs() {
                   mt={"57px"}
                   gap={"50px"}
                   color={"white"}
-                  alignItems={"center"}
+                  // alignItems={"center"}
                   textAlign={{ base: "center", lg: "left" }}
                 >
                   <Box w={{ lg: "50%" }}>
@@ -313,14 +314,6 @@ export default function AboutUs() {
                     </Box>
                   ))}
                 </SimpleGrid>
-              </Box>
-              <Box display={{ lg: "block", base: "none" }}>
-                <Image
-                  src={ImagesList.about.section3}
-                  alt="project-image"
-                  width={649}
-                  height={597}
-                />
               </Box>
             </Flex>
           </SectionAnimation>
