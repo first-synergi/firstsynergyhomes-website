@@ -18,6 +18,7 @@ const HomeProjectCmp = ({ data, other = false, index }: ICmpType) => {
       }
     }
   }, [data?.desc, data?.summary, index]);
+  console.log(data, data?.name);
 
   return (
     <Box w={{ lg: "90%", base: "100%" }} position={"relative"} flexShrink={0}>

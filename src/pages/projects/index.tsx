@@ -25,10 +25,25 @@ import { TypeAnimation } from "react-type-animation";
 import SectionAnimation from "@/components/SectionAnimation";
 import ProjectPicCmp from "@/components/ProjectPicCmp";
 import Link from "next/link";
+import { ProjectDetails } from "@/static/project";
 
 export default function Projects() {
   const navRef = useRef(null);
+  const [more, setMore] = useState(0);
   const isInView = useInView(navRef, { once: false, amount: 0.6 });
+  const completedProjects = ProjectDetails?.projects?.filter(
+    (el) => el?.status === "Completed"
+  );
+  const moreProjects = completedProjects?.slice(4, 4 + more);
+
+  const getColSpan = (idx: number) => {
+    const base = 3;
+    if (idx === 0 || idx === base || idx % 4 === 0 || idx % 4 === 3) {
+      return 2;
+    }
+
+    return 1;
+  };
 
   return (
     <>
@@ -162,7 +177,37 @@ export default function Projects() {
                     </Link>
                   </GridItem>
                 ))}
+                {more > 0 && (
+                  <>
+                    {moreProjects?.map((item, idx) => (
+                      <GridItem
+                        key={idx}
+                        colSpan={{
+                          lg: getColSpan(idx),
+                          base: 1,
+                        }}
+                      >
+                        <Link key={item.id} href={`/projects/${item.id}`}>
+                          <ProjectPicCmp
+                            imgSrc={item.headerImg}
+                            location={item.location}
+                            status={item.status}
+                            projectName={item.projectName}
+                          />
+                        </Link>
+                      </GridItem>
+                    ))}
+                  </>
+                )}
               </Grid>
+              <Box mx={"auto"} w="fit-content" mt={"63px"}>
+                <Button
+                  label={"Load more"}
+                  onClick={() => {
+                    if (more !== completedProjects.length) setMore(more + 4);
+                  }}
+                />
+              </Box>
             </Box>
           </SectionAnimation>
         </section>
@@ -200,7 +245,7 @@ export default function Projects() {
             </Box>
           </SectionAnimation>
         </section>
-        <section className="section-container">
+        {/* <section className="section-container">
           <SectionAnimation>
             <Box color={"primary"} pb={"100px"}>
               <Box>
@@ -237,12 +282,12 @@ export default function Projects() {
                   </GridItem>
                 ))}
               </Grid>
-              {/* <Box mx={"auto"} w="fit-content">
+              <Box mx={"auto"} w="fit-content">
                 <Button mt={"63px"} label="Load more" />
-              </Box> */}
+              </Box>
             </Box>
           </SectionAnimation>
-        </section>
+        </section> */}
       </main>
       <FooterCmp />
     </>

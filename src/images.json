@@ -28,14 +28,14 @@
     "hero": "/images/project-hero-bg.png",
     "project_images": [
       {
-        "id": "mulberry-mansions-lekki",
+        "id": "mulberry-mansions-development",
         "img": "/images/project-img1.png",
         "location": "Shoreline Estate, Ikoyi, Lagos State. 2023",
         "projectName": "Mulberry Mansions",
         "status": "completed"
       },
       {
-        "id": "r-jolad-gbagada",
+        "id": "r-jolad-hospital",
         "img": "/images/project-img2.png",
         "location": "Gbagada, Lagos State. 2023",
         "projectName": "R-Jolad Plus Hospital",
@@ -50,7 +50,7 @@
         "status": "completed"
       },
       {
-        "id": "northwest-lekki",
+        "id": "northwest-filling-station-maryland",
         "img": "/images/project-img4.png",
         "location": "Maryland Lagos. 2023",
         "projectName": "NorthWest Filling station",
@@ -73,14 +73,14 @@
         "desc": "<p>Scope - Design and Build</p><p>Proposed Completion Timeline - Q4, 2027</p><p>Building Type - Private Residential Developments.</p><p>Project Configuration - 96 units of a combination of Detached, Semi-detached, Terraces, 2-3 bedroom apartments and Penthouses.</p>"
       },
       {
-        "id": "project-sigma-ikoyi",
+        "id": "project-sigma-rumens-ikoyi",
         "projectName": "Project Sigma, Rumens Road",
         "imgSrc": "/images/ongoing-img3.png",
         "status": "ongoing",
         "desc": "<p>Scope - Design and Build</p><p>Proposed Completion Timeline - Q1, 2027</p><p>Building Type - Private Residential Development.</p><p>Project Configuration - Ground + 7 floors of 4-5 bedroom maisonettes and penthouses.</p>"
       },
       {
-        "id": "residential-shoreline-estate-ikoyi",
+        "id": "private-residential-development-ikoyi",
         "projectName": "Private Residential Development, Shoreline Estate",
         "imgSrc": "/images/ongoing-img4.png",
         "status": "ongoing",
