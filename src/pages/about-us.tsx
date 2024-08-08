@@ -57,11 +57,23 @@ const TeamMembers = [
   { name: "Oladoja Abdulfattah Adekunle", role: "Site Engineer" },
 ];
 
-const TeamMemberCmp = ({ name, role }: any) => {
+const TeamMemberCmp = ({ name, role, noBorder }: any) => {
   return (
-    <Box color={"primary"} textAlign={"center"}>
+    <Box
+      border={noBorder ? "none" : "1px solid"}
+      borderColor={"primary"}
+      borderRadius={"16px"}
+      color={"primary"}
+      textAlign={"center"}
+      p={noBorder ? "0" : "20px"}
+    >
       <Heading fontSize={"20px"}>{name}</Heading>
-      <Heading fontSize={"20px"} fontWeight={400} mt={"8px"}>
+      <Heading
+        color={"secondary"}
+        fontSize={"20px"}
+        fontWeight={400}
+        mt={"8px"}
+      >
         {role}
       </Heading>
     </Box>
@@ -405,16 +417,25 @@ export default function AboutUs() {
         </section>
         <section className="section-container">
           <Box py={"70px"}>
-            <Text color={"secondary"} className="body-text-1">
+            <Text
+              color={"secondary"}
+              className="body-text-1"
+              textAlign={"center"}
+            >
               MEET OUR TEAM
             </Text>
             <SectionAnimation>
-              <Flex flexDirection={{ lg: "row", base: "column" }} mt={"66px"}>
-                <Box w={"100%"} maxW={"375px"}>
+              <Flex
+                flexDirection={{ lg: "row", base: "column" }}
+                justify={"center"}
+                gap={{ lg: "69px", base: "40px" }}
+                mt={"66px"}
+              >
+                <Box w={"100%"} maxW={"375px"} mx={{ lg: 0, base: "auto" }}>
                   <Box
                     position={"relative"}
                     w="full"
-                    height={"525px"}
+                    height={"421px"}
                     mb={"27px"}
                   >
                     <Image
@@ -430,24 +451,50 @@ export default function AboutUs() {
                   <TeamMemberCmp
                     name="Kamar Adeniyi Disu"
                     role="Managing Director"
+                    noBorder
                   />
                 </Box>
-
-                <Grid
-                  gridTemplateColumns={{ lg: "repeat(2, 1fr)" }}
-                  rowGap={"24px"}
-                  columnGap={"55px"}
-                  ml={{ lg: "auto", base: 0 }}
-                  mt={{ lg: "20px", base: "40px" }}
-                  height={"fit-content"}
-                >
-                  {TeamMembers.map((member) => (
-                    <GridItem key={member.name}>
-                      <TeamMemberCmp name={member.name} role={member.role} />
-                    </GridItem>
-                  ))}
-                </Grid>
+                <Box w={"100%"} maxW={"375px"} mx={{ lg: 0, base: "auto" }}>
+                  <Box
+                    position={"relative"}
+                    w="full"
+                    height={"421px"}
+                    mb={"27px"}
+                  >
+                    <Image
+                      src={"/images/akindele-makinde.png"}
+                      alt="img"
+                      fill
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "top",
+                      }}
+                    />
+                  </Box>
+                  <TeamMemberCmp
+                    name="Akindele Makinde"
+                    role="Team Lead - Sales and Marketing"
+                    noBorder
+                  />
+                </Box>
               </Flex>
+              <Grid
+                gridTemplateColumns={{
+                  lg: "repeat(3, 1fr)",
+                  md: "repeat(2, 1fr)",
+                }}
+                rowGap={"24px"}
+                columnGap={"55px"}
+                ml={{ lg: "auto", base: 0 }}
+                mt={{ lg: "70px", base: "40px" }}
+                height={"fit-content"}
+              >
+                {TeamMembers.map((member) => (
+                  <GridItem key={member.name}>
+                    <TeamMemberCmp name={member.name} role={member.role} />
+                  </GridItem>
+                ))}
+              </Grid>
             </SectionAnimation>
           </Box>
         </section>

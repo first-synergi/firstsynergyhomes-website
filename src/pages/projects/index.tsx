@@ -222,8 +222,34 @@ export default function Projects() {
                 We never stop building
                 <br /> communities
               </Heading>
-
-              <Flex
+              <Grid
+                gridGap={"30px"}
+                gridTemplateColumns={{
+                  lg: "repeat(3, 1fr)",
+                  base: "repeat(1, 1fr)",
+                }}
+                mt={"40px"}
+                mb={"100px"}
+              >
+                {ImagesList.projects.ongoing_projects.map((item, index) => (
+                  <GridItem
+                    key={index}
+                    colSpan={{
+                      lg: index === 0 || index === 3 ? 2 : 1,
+                      base: 1,
+                    }}
+                  >
+                    <Link key={item.id} href={`/projects/${item.id}`}>
+                      <ProjectPicCmp
+                        imgSrc={item.imgSrc}
+                        status={item.status}
+                        projectName={item.projectName}
+                      />
+                    </Link>
+                  </GridItem>
+                ))}
+              </Grid>
+              {/* <Flex
                 flexDirection={{ lg: "row", base: "column" }}
                 className="no-scrollbar"
                 gap={{ lg: "64px", base: "20px" }}
@@ -241,7 +267,7 @@ export default function Projects() {
                     />
                   </Link>
                 ))}
-              </Flex>
+              </Flex> */}
             </Box>
           </SectionAnimation>
         </section>
