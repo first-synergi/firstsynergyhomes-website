@@ -4,13 +4,13 @@
     "heroMobile": "/hero-img-mobile.jpg",
     "projects": [
       {
-        "id": "mulberry-mansions-lekki",
+        "id": "mulberry-mansions-development",
         "name": "Mulberry Mansions",
         "src": "/images/mulberry-mansion-img.png",
         "desc": "<p>Scope - Build Only (civil works and finishes generally)</p><p>Building Type - Residential Development.</p><p>Project Configuration - 2 Blocks of Ground + 3 Upper floors. (Comprising of 3,4 and 4 bedrooms of Maisonettes,</p> <p>Terraces, Penthouse and Duplex respectively)</p>"
       },
       {
-        "id": "r-jolad-gbagada",
+        "id": "r-jolad-hospital",
         "name": "R-Jolad Plus",
         "src": "/images/rjolad-img.png",
         "desc": "<p>Scope - Build Only (civil works and finishes generally)</p><p>Building Type - Commercial Development. - Healthcare</p><p>Project Configuration - Ground + 5 Upper floors</p>"
