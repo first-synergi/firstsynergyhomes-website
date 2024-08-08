@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import {
   Box,
+  Circle,
   Flex,
   Grid,
   GridItem,
@@ -514,6 +515,28 @@ export default function Home() {
             </Box>
           </SectionAnimation>
         </section>
+        <Link
+          href={
+            "https://wa.me/2348122687371?text=Hello%2C%20I'm%20interested%20in%20your%20services."
+          }
+        >
+          <Circle
+            position={"fixed"}
+            bottom={"30px"}
+            boxShadow={"2px 2px 8px 0px rgba(0, 0, 0, 0.08)"}
+            right={"30px"}
+            size={"60px"}
+            bg={"white"}
+            zIndex={2}
+          >
+            <Image
+              src={"/whatsApp-logo.svg"}
+              alt="whatsapp-logo"
+              width={28}
+              height={28}
+            />
+          </Circle>
+        </Link>
       </main>
       <FooterCmp />
     </>
