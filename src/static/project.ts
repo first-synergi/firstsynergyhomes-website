@@ -13,13 +13,14 @@ Duplex respectively)</p>
 `,
       location: "Shoreline Estate, Ikoyi, Lagos State",
       comepletionYear: "2023",
-      headerImg: "/images/mulberry-mansions/Mulberry-Mansions_8_5_11zon.jpg",
+      headerImg:
+        "https://lh3.google.com/u/0/d/1bPjq_UCcy9Qh62XCcaaf34OaCJzU9xcB=w3360-h1766-iv1",
       otherImgs: [
-        "/images/mulberry-mansions/Mulberry-Mansions_2_6_11zon.jpg",
-        "/images/mulberry-mansions/Mulberry-Mansions_6_7_11zon.jpg",
-        "/images/mulberry-mansions/Mulberry-Mansions_9_8_11zon.jpg",
-        "/images/mulberry-mansions/Mulberry-Mansions_10_9_11zon.jpg",
-        "/images/mulberry-mansions/Mulberry-Mansions_11_10_11zon.jpg",
+        "https://lh3.google.com/u/0/d/16XCKjhEDB_o2WeBMCTx5Te32owzXX8yS=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1Ry6m-oJKNlaynVH9xAQ_6Df8NfWmDhNJ=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1mgRZN9DzJJEmdckbWTUmPX_dFIviFaX_=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1w9xBTQXBqGsOswHSDSB_5hr9uP_kkNCd=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1lmriJc1henZLvTelIJlT55AounaoX5fl=w3360-h1766-iv1",
       ],
     },
     {
@@ -32,13 +33,14 @@ Duplex respectively)</p>
 `,
       location: "Gbagada, Lagos ",
       comepletionYear: "2023",
-      headerImg: "/images/rjolad-plus/R-Jolad_Plus_16_7_11zon.jpg",
+      headerImg:
+        "https://lh3.google.com/u/0/d/1wGwcDKLstFrqVmGfA-GO3gAJTRsGhE7F=w3360-h1766-iv1",
       otherImgs: [
-        "/images/rjolad-plus/R-Jolad_Plus_1_8_11zon.jpg",
-        "/images/rjolad-plus/R-Jolad_Plus_2_9_11zon.jpg",
-        "/images/rjolad-plus/R-Jolad_Plus_7_10_11zon.jpg",
-        "/images/rjolad-plus/R-Jolad_Plus_14_11_11zon.jpg",
-        "/images/rjolad-plus/R-Jolad_Plus_15_12_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1SnYbOQDvbd_am3AgrJ8TVJOG6_UJry0C=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1Daxx1sn5XEQsDGedoDUEgXw6cpiha2Km=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1vr1w0sPwsytCOqcYv8RVlLfPutXGb7MH=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1iVWW54edPxUKaUyBMCTzRBgKtZCouyzK=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1gAWZXeKcXiCAU5LnQafveVNMK1UGMH_B=w3360-h1766-iv1",
       ],
     },
     {
@@ -54,11 +56,11 @@ Project Configuration - Ground + 2 Upper floors.
       location: "Surulere, Lagos State",
       comepletionYear: " Q1 2024",
       headerImg:
-        "/images/providus-surulere/ProvidusBank-Surulere_1_25_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1JuRzMGTL7i7d0ypCAy7mLhW1HECZT5jd=w3360-h1766-iv1",
       otherImgs: [
-        "/images/providus-surulere/ProvidusBank-Surulere_2_26_11zon.jpg",
-        "/images/providus-surulere/ProvidusBank-Surulere_3_27_11zon.jpg",
-        "/images/providus-surulere/ProvidusBank-Surulere_4_28_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1HsY1JkYfASyc-6sNP73vDZ2gAHjUsaAf=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1PZePsNgAQUObke_S5vwniX676BlF6tvd=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1-u_rV7Si11F0XmtFJOi6zPNeu4HVlWFT=w3360-h1766-iv1",
       ],
     },
     {
@@ -69,10 +71,12 @@ Project Configuration - Ground + 2 Upper floors.
 </p>`,
       location: "Maryland Lagos.",
       completionYear: "2023",
-      headerImg: "/images/northwest-maryland/NorthWest-Maryland_3_36_11zon.jpg",
+      headerImg:
+        "https://lh3.google.com/u/0/d/1iep-k8No5W0YM7trB67FdGxBedzWfbbQ=w3360-h1766-iv1",
       otherImgs: [
-        "/images/northwest-maryland/NorthWest-Maryland_1_37_11zon.jpg",
-        "/images/northwest-maryland/NorthWest-Maryland_2_38_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1S1XqOqnjb98M27b93bsKLwo8X0lnbLt6=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1LSu-Ar0TKEacUDZNuAZQn1s7Ae19qOoq=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1iep-k8No5W0YM7trB67FdGxBedzWfbbQ=w3360-h1766-iv1",
       ],
     },
     {
@@ -83,16 +87,11 @@ Project Configuration - Ground + 2 Upper floors.
       location: "Banana Island, Ikoyi, Lagos",
       comepletionYear: "2019",
       headerImg:
-        "/images/residential-e13-325-close/Residential Villas, Plot E13, 325 Close_2_1_11zon.png",
+        "https://lh3.google.com/u/0/d/1XPxanLsZtB_IDV3QKiuT99Q7t8iJpdYR=w3360-h1766-iv1",
       otherImgs: [
-        "/images/residential-e13-325-close/Residential Villas,_Plot E13, 325 Close_3_2_11zon.png",
-        "/images/residential-e13-325-close/Residential Villas,_Plot E13, 325 Close_4_3_11zon.png",
-      ],
-      headerImgHighRes:
-        "https://lh3.google.com/u/0/d/1uhqZDKrIFo9PG1pVXc91GXSaUXjjf_uN=w3360-h1766-iv2",
-      otherImgsHighRes: [
-        "https://lh3.google.com/u/0/d/1rZZCgP-4aBGMgKBoaiEkOmlFehUYXkGN=w3360-h1766-iv1",
-        "https://lh3.google.com/u/0/d/1I0CNqbD1-HLVVYuLpuUHFdMO6u6TT-Kc=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1eLOXXoV-kb4KEvwdluk3tufSLlWTRW9T=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1XPxanLsZtB_IDV3QKiuT99Q7t8iJpdYR=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1ffjCpHX8ry6nX342LP8OZ350l44ADjVS=w3360-h1766-iv1",
       ],
     },
     {
@@ -102,13 +101,14 @@ Project Configuration - Ground + 2 Upper floors.
       summary: `<p>Scope - Build Only</p>`,
       location: "Sagamu G.R.A",
       comepletionYear: "2021",
-      headerImg: "/images/countyhouse-villa/Asset 5_1_11zon.png",
+      headerImg:
+        "https://lh3.google.com/u/0/d/1h2mlS3eLkzYy4-kYJTwxbH0xH_vxbHMQ=w3360-h1766-iv1",
       otherImgs: [
-        "/images/countyhouse-villa/Asset 6_2_11zon.png",
-        "/images/countyhouse-villa/Asset 7_3_11zon.png",
-        "/images/countyhouse-villa/Asset 8_4_11zon.png",
-        "/images/countyhouse-villa/Asset 9_5_11zon.png",
-        "/images/countyhouse-villa/Asset 10_6_11zon.png",
+        "https://lh3.google.com/u/0/d/17-pvLF2c0qxdqTVfCZiICYlw3q7yq-0n=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1-_7mQWLBaG0r8JNOgws5NAGGNYDakxxD=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/13arVkSw9lFQ15mnOn70BK7S5mhnEPHJa=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/14MH-FLpNYi7w8tnALwk4jh75DW3kV_xp=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1ip7jgIxhYjxUlIPZFwOWyNbkBqgIPrI_=w3360-h1766-iv1",
       ],
     },
     {
@@ -122,11 +122,11 @@ Project Configuration - Ground + 2 Upper floors.
       location: "Victoria Island, Lagos",
       comepletionYear: "2017",
       headerImg:
-        "/images/providus-bank-vi/ProvidusBanK-Head-Office_2_13_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1N-B9w6sUnYpFnMavlnL-yTUdrBLlrt0n=w3360-h1766-iv1",
       otherImgs: [
-        "/images/providus-bank-vi/ProvidusBanK-Head-Office_1_14_11zon.jpg",
-        "/images/providus-bank-vi/ProvidusBanK-Head-Office_3_15_11zon.jpg",
-        "/images/providus-bank-vi/ProvidusBanK-Head-Office_4_16_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1aKKIRtqfhogkczxy3YvWhZIxmOEA4V5P=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1XpaOeK2AvcLuHR-vM707OwFqvZlTsIlP=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1EafpOfAsMw9khlGMqZWSsroIoGJG0Ynh=w3360-h1766-iv1",
       ],
     },
     {
@@ -140,10 +140,11 @@ Project Configuration - Ground + 3 Upper floors.</p>
       location: "Lekki, Lagos",
       comepletionYear: "2022",
       headerImg:
-        "/images/providus-bank-lekki/Providus-Bank,-Lekki_1_17_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1KL3boWj0xKc6NoXcahqv7xeLmuISOr3P=w3360-h1766-iv1",
       otherImgs: [
-        "/images/providus-bank-lekki/Providus-Bank,-Lekki_2_18_11zon.jpg",
-        "/images/providus-bank-lekki/Providus-Bank,-Lekki_3_19_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1u06KJXReLhSheFlsvtacXEZyhQwq2TKI=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1XftH4NCv07y7ly0iy65-BMDQSTeucCSd=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1KL3boWj0xKc6NoXcahqv7xeLmuISOr3P=w3360-h1766-iv1",
       ],
     },
     {
@@ -156,10 +157,12 @@ Project Configuration - Ground + 2 Upper floors.</p>
 `,
       location: "Port-Harcourt, Rivers State",
       comepletionYear: "Q2 2023",
-      headerImg: "/images/providus-bank-ph/Providus Bank, PHA_3_20_11zon.png",
+      headerImg:
+        "https://lh3.google.com/u/0/d/1DYn8z4B2B6qBXP0YkNZSZ8tytwu1PVt9=w3360-h1766-iv1",
       otherImgs: [
-        "/images/providus-bank-ph/Providus Bank, PHA_1_21_11zon.png",
-        "/images/providus-bank-ph/Providus Bank, PHA_2_22_11zon.png",
+        "https://lh3.google.com/u/0/d/19Mw1obwZF5YM4og3PJx1mCa4gRpr4HE1=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1QHoPdcW5v7dHe8M_5LrIpxM6-v8xgzn_=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1DYn8z4B2B6qBXP0YkNZSZ8tytwu1PVt9=w3360-h1766-iv1",
       ],
     },
     {
@@ -170,9 +173,10 @@ Project Configuration - Ground + 2 Upper floors.</p>
       location: "Lekki-Epe Expressway Lagos",
       comepletionYear: "2016",
       headerImg:
-        "/images/northwest-vgc/NorthWest Fillinf Station VGC_2_23_11zon.png",
+        "https://lh3.google.com/u/0/d/17ipAu8gsxzVkwbi9qN8j4c9WpFESAfM5=w3360-h1766-iv1",
       otherImgs: [
-        "/images/northwest-vgc/NorthWest Fillinf Station VGC_1_24_11zon.png",
+        "https://lh3.google.com/u/0/d/1sDQ_3JLmFD1BZ-dIFJgI1ZsrMq1sPPX7=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/17ipAu8gsxzVkwbi9qN8j4c9WpFESAfM5=w3360-h1766-iv1",
       ],
     },
     {
@@ -188,11 +192,11 @@ respectively)</p>
       location: "Lekki Scheme 1, Lagos",
       comepletionYear: "2018",
       headerImg:
-        "/images/residential-temple-rd/Residential Development at Castle and Temple Road_1_29_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1STCpANGRPQPYyKP60pCbVm8hV9hWqKxe=w3360-h1766-iv1",
       otherImgs: [
-        "/images/residential-temple-rd/Residential-Development-at-Castle-and-Temple-Road_2_30_11zon.jpg",
-        "/images/residential-temple-rd/Residential-Development-at-Castle-and-Temple-Road_3_31_11zon.jpg",
-        "/images/residential-temple-rd/Residential-Development-at-Castle-and-Temple-Road_4_32_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1UjyfMfnxBDnmwpu-39jReNR_P6bvcZwG=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1W7lBfP8oC4B7M7SNCfUrNL197V2q4c0O=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1xckUJ29RUSfFu680CAfuUuU7Mv-37cuc=w3360-h1766-iv1",
       ],
     },
     {
@@ -205,10 +209,11 @@ respectively)</p>
       location: "Wuse Zone II, Abuja",
       comepletionYear: "2017",
       headerImg:
-        "/images/providus-bank-abuja/ProvidusBank Regional_Office Abuja_1_33_11zon.png",
+        "https://lh3.google.com/u/0/d/1sVg9Pw7fcgcJLk_iicbdWNkyT9Cx5lqV=w3360-h1766-iv1",
       otherImgs: [
-        "/images/providus-bank-abuja/ProvidusBank Regional_Office Abuja_2_34_11zon.png",
-        "/images/providus-bank-abuja/ProvidusBank Regional_Office Abuja_3_35_11zon.png",
+        "https://lh3.google.com/u/0/d/1hQtvXi_fB5h6oz2v-40-JdtrRQ52XrnG=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1R-W5KwQR4_nxKZWC5nNYHV7K9OcO-QJS=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1sVg9Pw7fcgcJLk_iicbdWNkyT9Cx5lqV=w3360-h1766-iv1",
       ],
     },
     {
@@ -219,10 +224,12 @@ respectively)</p>
 </p>`,
       location: "Gbagada Expressway, Lagos",
       completionYear: "2020",
-      headerImg: "/images/northwest-gbagada/NorthWest Gbagada_2_39_11zon.png",
+      headerImg:
+        "https://lh3.google.com/u/0/d/1fmsJ39-b5ut9IR4DM28BF39Q9wiQbQ7j=w3360-h1766-iv1",
       otherImgs: [
-        "/images/northwest-gbagada/NorthWest Gbagada_1_40_11zon.png",
-        "/images/northwest-gbagada/NorthWest Gbagada_3_41_11zon.png",
+        "https://lh3.google.com/u/0/d/1ShujVknXFW0gs4NPtz6W8vv1NdUXw6ky=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1B1cY83xg1fYwz3sXBRcHkJxucDLiOiqX=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1fmsJ39-b5ut9IR4DM28BF39Q9wiQbQ7j=w3360-h1766-iv1",
       ],
     },
     {
@@ -233,10 +240,11 @@ respectively)</p>
       location: "Lekki Scheme 1, Lagos State",
       completionYear: "2014",
       headerImg:
-        "/images/semi-detached-duplex/2 Units of 5 Bedroom_Semi Detached Duplex_2_42_11zon.png",
+        "https://lh3.google.com/u/0/d/14D7Yc-pd3t_8EV9rBQ38jYVU7Oe36vBh=w3360-h1766-iv1",
       otherImgs: [
-        "/images/semi-detached-duplex/2 Units of 5 Bedroom_Semi Detached Duplex_1_43_11zon.png",
-        "/images/semi-detached-duplex/2 Units of 5 Bedroom_Semi Detached Duplex_3_44_11zon.png",
+        "https://lh3.google.com/u/0/d/16u8HsoeRJqy_xfPO3H7cJJaWap_m77KD=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/16e2dmZEHFDdeGXFQ7KfNbBQ9qXq_j8Ps=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/14D7Yc-pd3t_8EV9rBQ38jYVU7Oe36vBh=w3360-h1766-iv1",
       ],
     },
     {
@@ -247,12 +255,12 @@ respectively)</p>
       location: "Lekki Scheme 1, Lagos State",
       completionYear: "2013",
       headerImg:
-        "/images/detached-duplex/5 Bedroom Detached Duplex, 1a Otunba Yomi_1_45_11zon.png",
+        "https://lh3.google.com/u/0/d/12ZBI8cBHHaYRTUoEn0Gky8ku81V56sTB=w3360-h1766-iv1",
       otherImgs: [
-        "/images/detached-duplex/5 Bedroom Detached Duplex, 1a Otunba Yomi_2_46_11zon.png",
-        "/images/detached-duplex/5 Bedroom Detached Duplex, 1a Otunba Yomi_3_47_11zon.png",
-        "/images/detached-duplex/5 Bedroom Detached Duplex, 1a Otunba Yomi_4_48_11zon.png",
-        "/images/detached-duplex/5 Bedroom Detached Duplex, 1a Otunba Yomi_5_49_11zon.png",
+        "https://lh3.google.com/u/0/d/1nKspl5dKphKi0zpmrbiUO-1yReRUoSHw=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1ZRi3do1cIWsVQZ6wQ1oHg7IPOr-ZJJIO=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1ewQry5-5Pkyuva5TH0R9o3h_Hy5Vd2l2=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1LCNPPAt-D7cuGUx9odY4gRvQRaeTfJH9=w3360-h1766-iv1",
       ],
     },
     {
@@ -263,10 +271,11 @@ respectively)</p>
       location: "Ikoyi, Lagos",
       completionYear: "2015",
       headerImg:
-        "/images/cameroon-rd-ikoyi/Villa at Cameron Road, Ikoyi_2_50_11zon.png",
+        "https://lh3.google.com/u/0/d/1dI5c1X7SqrnyNUSghwxgY_ilhQbYbb1F=w3360-h1766-iv1",
       otherImgs: [
-        "/images/cameroon-rd-ikoyi/Villa at Cameron Road, Ikoyi_2_51_11zon.png",
-        "/images/cameroon-rd-ikoyi/Villa at Cameron Road, Ikoyi_52_11zon.png",
+        "https://lh3.google.com/u/0/d/1s-KIefv-qpnk1N8x9gl-W0074e_pYbAj=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1DRTQN4rr4U__uLbhAeo0nBn0O9e8BdnX=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1dI5c1X7SqrnyNUSghwxgY_ilhQbYbb1F=w3360-h1766-iv1",
       ],
     },
     {
@@ -279,13 +288,13 @@ Project Configuration - 1300 seater Auditorium</p>`,
       location: "Ilara, Epe, Lagos State.",
       completionYear: "2024",
       headerImg:
-        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_1_1_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1HncURbTkzAX8XaTY47-LUNNrnSiBRaDp=w3360-h1766-iv1",
       otherImgs: [
-        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_2_2_11zon.jpg",
-        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_3_3_11zon.jpg",
-        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_4_4_11zon.jpg",
-        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_5_5_11zon.jpg",
-        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_6_6_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1dqopVhMK2dYfJTnOhvxGh-4yEbk741-P=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1x2bJIpcwoz9VtZ51tFG0TIrdW4Zn_eaQ=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1zUzd5Hqegh_WXB75jFAaIK5pFKL7PC3i=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/177fAdlpwBfeloly9cRgpmklmxXytvKrU=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1vNTZZBowqllPuNn3oYkZc5vteiz90PTT=w3360-h1766-iv1",
       ],
     },
     {
@@ -298,13 +307,17 @@ Project Configuration - Ground + 2 Upper floors.
 </p>`,
       location: "Ikoyi, Lagos State",
       completionYear: "",
-      headerImg: "/images/residential-shoreline/Shoreline-Estate-1_1_11zon.jpg",
+      headerImg:
+        "https://lh3.google.com/u/0/d/1i1ijgvzSU_jaXZvsBqr0n8RS9AyNkYCy=w3360-h1766-iv1",
       otherImgs: [
-        "/images/residential-shoreline/Shoreline-Estate-2_2_11zon.jpg",
-        "/images/residential-shoreline/Shoreline-Estate-3_3_11zon.jpg",
-        "/images/residential-shoreline/Shoreline-Estate-4_4_11zon.jpg",
-        "/images/residential-shoreline/Shoreline-Estate-5_5_11zon.jpg",
-        "/images/residential-shoreline/Shoreline-Estate-6_6_11zon.jpg",
+        "https://lh3.google.com/u/0/d/1i6Rlbqqp9yjDumbrHv_sKTJRZRQUAq34=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1Kb9u5kfYNlii7_Kj5jV1dcZiIepOwj22=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1HcDQ8bUMeiN1PqqxDOGEvF3oPF9FcAbT=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1S2LKfJYf3v32XiqgDL4OM8ZnEqb_qR5s=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1eXRg7FonX6Ojzq7GwdffNO00c4w461qk=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1wXYdA1duqUGQmRJA_IW0vcR8PW4RnEOe=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1MN887GSSHIxcqW_HsvauAeX1NEmaXfKK=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1UDIBYgg7c9N3VdcNZ8Q4kAMsxdO1p11C=w3360-h1766-iv1",
       ],
     },
     {
@@ -318,15 +331,12 @@ Project Configuration - 96 units of a combination of Detached, Semi-<br/>detache
       location: "Lekki Phase 1, Lagos State.",
       completionYear: "Q4. 2027",
       headerImg:
-        "/images/cullingham-palace/Cullingham-Place-Site_6_1_11zon.jpeg",
+        "https://lh3.google.com/u/0/d/1tDwnI5B6NkaHjz1P9dBCFOhBdMit74bw=w3360-h1766-iv1",
       otherImgs: [
-        "/images/cullingham-palace/Cullingham-Place-Site_1_2_11zon.jpg",
-        "/images/cullingham-palace/Cullingham-Place-Site_2_3_11zon.jpg",
-        "/images/cullingham-palace/Cullingham-Place-Site_3_4_11zon.jpg",
-        "/images/cullingham-palace/Cullingham-Place-Site_4_5_11zon.jpeg",
-        "/images/cullingham-palace/Cullingham-Place-Site_5_6_11zon.jpeg",
-        "/images/cullingham-palace/Cullingham-Place-Site_7_7_11zon.jpeg",
-        "/images/cullingham-palace/Cullingham-Place-Site_8_8_11zon.jpeg",
+        "https://lh3.google.com/u/0/d/1cP6PlfakgfNGc1I_lv8ty3FjuWsDDTh6=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1bzDZubgGpGNC-BqcY34zTqO4bYGpdFCz=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1jWQy6dX7wrJjiBWBwD2B1Sl6wvcLl-HB=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1xM0QSOHmKiXxAOtz2gUiNp6Hj1cW3mho=w3360-h1766-iv1",
       ],
     },
     {
@@ -339,10 +349,12 @@ Project Configuration - Ground + 7 floors of 4-5 bedroom<br/> maisonettes and pe
 </p>`,
       location: "Ikoyi, Lagos State",
       completionYear: "Q1, 2027",
-      headerImg: "/images/project-sigma/Project-Sigma_1_1_11zon.jpg",
+      headerImg:
+        "https://lh3.google.com/u/0/d/14zpS-6qS9Joy3bIS6m48hhFMpdRSGSZl=w3360-h1766-iv1",
       otherImgs: [
-        "/images/project-sigma/Project-Sigma_2_2_11zon.jpg",
-        "/images/project-sigma/Project-Sigma_3_3_11zon.jpg",
+        "https://lh3.google.com/u/0/d/14zpS-6qS9Joy3bIS6m48hhFMpdRSGSZl=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1n_BiHkq2yODA65RgflCop9BGsvjQUizN=w3360-h1766-iv1",
+        "https://lh3.google.com/u/0/d/1RLrgvJLUWdjYjnxMzqvy5bTAj_2BxAua=w3360-h1766-iv1",
       ],
     },
   ],
