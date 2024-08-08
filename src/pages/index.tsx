@@ -254,7 +254,7 @@ export default function Home() {
                   height="100%"
                   style={{
                     borderRadius: "10px",
-                    backgroundColor: "red",
+                    backgroundColor: "gray",
                     backgroundImage: "url(video-thumbnail.png)",
                   }}
                   allow="autoplay"
