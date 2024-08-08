@@ -278,8 +278,15 @@ Building Type - Institutional Development.<br/>
 Project Configuration - 1300 seater Auditorium</p>`,
       location: "Ilara, Epe, Lagos State.",
       completionYear: "2024",
-      headerImg: "",
-      otherImgs: [],
+      headerImg:
+        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_1_1_11zon.jpg",
+      otherImgs: [
+        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_2_2_11zon.jpg",
+        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_3_3_11zon.jpg",
+        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_4_4_11zon.jpg",
+        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_5_5_11zon.jpg",
+        "/images/st-augustine-chapel/St.-Augustine-Uni-Chapel_6_6_11zon.jpg",
+      ],
     },
     {
       id: "private-residential-development-ikoyi",
@@ -291,8 +298,14 @@ Project Configuration - Ground + 2 Upper floors.
 </p>`,
       location: "Ikoyi, Lagos State",
       completionYear: "",
-      headerImg: "",
-      otherImgs: [],
+      headerImg: "/images/residential-shoreline/Shoreline-Estate-1_1_11zon.jpg",
+      otherImgs: [
+        "/images/residential-shoreline/Shoreline-Estate-2_2_11zon.jpg",
+        "/images/residential-shoreline/Shoreline-Estate-3_3_11zon.jpg",
+        "/images/residential-shoreline/Shoreline-Estate-4_4_11zon.jpg",
+        "/images/residential-shoreline/Shoreline-Estate-5_5_11zon.jpg",
+        "/images/residential-shoreline/Shoreline-Estate-6_6_11zon.jpg",
+      ],
     },
     {
       id: "cullingham-palace-lekki",
@@ -304,8 +317,17 @@ Project Configuration - 96 units of a combination of Detached, Semi-<br/>detache
 </p>`,
       location: "Lekki Phase 1, Lagos State.",
       completionYear: "Q4. 2027",
-      headerImg: "",
-      otherImgs: [],
+      headerImg:
+        "/images/cullingham-palace/Cullingham-Place-Site_6_1_11zon.jpeg",
+      otherImgs: [
+        "/images/cullingham-palace/Cullingham-Place-Site_1_2_11zon.jpg",
+        "/images/cullingham-palace/Cullingham-Place-Site_2_3_11zon.jpg",
+        "/images/cullingham-palace/Cullingham-Place-Site_3_4_11zon.jpg",
+        "/images/cullingham-palace/Cullingham-Place-Site_4_5_11zon.jpeg",
+        "/images/cullingham-palace/Cullingham-Place-Site_5_6_11zon.jpeg",
+        "/images/cullingham-palace/Cullingham-Place-Site_7_7_11zon.jpeg",
+        "/images/cullingham-palace/Cullingham-Place-Site_8_8_11zon.jpeg",
+      ],
     },
     {
       id: "project-sigma-rumens-ikoyi",
@@ -317,8 +339,11 @@ Project Configuration - Ground + 7 floors of 4-5 bedroom<br/> maisonettes and pe
 </p>`,
       location: "Ikoyi, Lagos State",
       completionYear: "Q1, 2027",
-      headerImg: "",
-      otherImgs: [],
+      headerImg: "/images/project-sigma/Project-Sigma_1_1_11zon.jpg",
+      otherImgs: [
+        "/images/project-sigma/Project-Sigma_2_2_11zon.jpg",
+        "/images/project-sigma/Project-Sigma_3_3_11zon.jpg",
+      ],
     },
   ],
 };

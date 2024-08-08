@@ -252,7 +252,11 @@ export default function Home() {
                   src="https://drive.google.com/file/d/1me4bd_CD30S8cBLXuMc8jvvp4FMQLYSp/preview"
                   width="100%"
                   height="100%"
-                  style={{ borderRadius: "10px" }}
+                  style={{
+                    borderRadius: "10px",
+                    backgroundColor: "red",
+                    backgroundImage: "url(video-thumbnail.png)",
+                  }}
                   allow="autoplay"
                   name="video"
                   loading="lazy"
