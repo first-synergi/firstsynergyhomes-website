@@ -217,8 +217,8 @@ export default function Projects() {
                       ? "Year completed"
                       : "Proposed Completion Timeline"}
                   </Text>
-                  <Text className="body-text-2">
-                    {project?.comepletionYear}
+                  <Text className="body-text-2" mt={"8px"}>
+                    {project?.completionYear}
                   </Text>
                 </Box>
               </Box>
