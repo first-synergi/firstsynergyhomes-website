@@ -32,7 +32,7 @@ Duplex respectively)</p>
 <p>Project Configuration - Ground + 5 Upper floors</p>
 `,
       location: "Gbagada, Lagos ",
-      comepletionYear: "2023",
+      comepletionYear: "2020",
       headerImg:
         "https://lh3.google.com/u/0/d/1wGwcDKLstFrqVmGfA-GO3gAJTRsGhE7F=w3360-h1766-iv1",
       otherImgs: [

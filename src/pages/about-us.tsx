@@ -330,14 +330,7 @@ export default function AboutUs() {
             </Flex>
           </SectionAnimation>
         </section>
-        <Box
-          display={{ base: "block", lg: "none" }}
-          bgImage={ImagesList.about.section3}
-          bgSize={"cover"}
-          bgPosition={"center"}
-          bgRepeat={"no-repeat"}
-          height={"364px"}
-        />
+
         <section className="section-container">
           <Box my={"100px"}>
             <Text color={"secondary"} className="body-text-1">
