@@ -37,7 +37,7 @@ const Blog = () => {
           content="Building exceptional homes and a lifestyle of opulence."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/brand-logo-gold.svg" />
+        <link rel="icon" href="/brand-favicon.svg" />
       </Head>
       <main>
         <nav className="section-container">
