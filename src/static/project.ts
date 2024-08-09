@@ -12,7 +12,7 @@ export const ProjectDetails = {
 Duplex respectively)</p>
 `,
       location: "Shoreline Estate, Ikoyi, Lagos State",
-      comepletionYear: "2023",
+      completionYear: "2023",
       headerImg:
         "https://lh3.google.com/u/0/d/1bPjq_UCcy9Qh62XCcaaf34OaCJzU9xcB=w3360-h1766-iv1",
       otherImgs: [
@@ -32,7 +32,7 @@ Duplex respectively)</p>
 <p>Project Configuration - Ground + 5 Upper floors</p>
 `,
       location: "Gbagada, Lagos ",
-      comepletionYear: "2020",
+      completionYear: "2020",
       headerImg:
         "https://lh3.google.com/u/0/d/1wGwcDKLstFrqVmGfA-GO3gAJTRsGhE7F=w3360-h1766-iv1",
       otherImgs: [
@@ -54,7 +54,7 @@ Project Configuration - Ground + 2 Upper floors.
 </p>
 `,
       location: "Surulere, Lagos State",
-      comepletionYear: " Q1 2024",
+      completionYear: " Q1 2024",
       headerImg:
         "https://lh3.google.com/u/0/d/1JuRzMGTL7i7d0ypCAy7mLhW1HECZT5jd=w3360-h1766-iv1",
       otherImgs: [
@@ -85,7 +85,7 @@ Project Configuration - Ground + 2 Upper floors.
       status: "Completed",
       summary: `<p>Scope - Build only</p>`,
       location: "Banana Island, Ikoyi, Lagos",
-      comepletionYear: "2019",
+      completionYear: "2019",
       headerImg:
         "https://lh3.google.com/u/0/d/1XPxanLsZtB_IDV3QKiuT99Q7t8iJpdYR=w3360-h1766-iv1",
       otherImgs: [
@@ -100,7 +100,7 @@ Project Configuration - Ground + 2 Upper floors.
       status: "Completed",
       summary: `<p>Scope - Build Only</p>`,
       location: "Sagamu G.R.A",
-      comepletionYear: "2021",
+      completionYear: "2021",
       headerImg:
         "https://lh3.google.com/u/0/d/1h2mlS3eLkzYy4-kYJTwxbH0xH_vxbHMQ=w3360-h1766-iv1",
       otherImgs: [
@@ -120,7 +120,7 @@ Project Configuration - Ground + 2 Upper floors.
 <p>Project Configuration - Ground + 5 Upper floors.</p>
 `,
       location: "Victoria Island, Lagos",
-      comepletionYear: "2017",
+      completionYear: "2017",
       headerImg:
         "https://lh3.google.com/u/0/d/1N-B9w6sUnYpFnMavlnL-yTUdrBLlrt0n=w3360-h1766-iv1",
       otherImgs: [
@@ -138,7 +138,7 @@ Building Type - Commercial Development.<br/>
 Project Configuration - Ground + 3 Upper floors.</p>
 `,
       location: "Lekki, Lagos",
-      comepletionYear: "2022",
+      completionYear: "2022",
       headerImg:
         "https://lh3.google.com/u/0/d/1KL3boWj0xKc6NoXcahqv7xeLmuISOr3P=w3360-h1766-iv1",
       otherImgs: [
@@ -156,7 +156,7 @@ Building Type - Commercial Development<br/>
 Project Configuration - Ground + 2 Upper floors.</p>
 `,
       location: "Port-Harcourt, Rivers State",
-      comepletionYear: "Q2 2023",
+      completionYear: "Q2 2023",
       headerImg:
         "https://lh3.google.com/u/0/d/1DYn8z4B2B6qBXP0YkNZSZ8tytwu1PVt9=w3360-h1766-iv1",
       otherImgs: [
@@ -171,7 +171,7 @@ Project Configuration - Ground + 2 Upper floors.</p>
       status: "Completed",
       summary: ``,
       location: "Lekki-Epe Expressway Lagos",
-      comepletionYear: "2016",
+      completionYear: "2016",
       headerImg:
         "https://lh3.google.com/u/0/d/17ipAu8gsxzVkwbi9qN8j4c9WpFESAfM5=w3360-h1766-iv1",
       otherImgs: [
@@ -190,7 +190,7 @@ Project Configuration - 3 Units of Ground + 3 Upper floors.<br/>
 respectively)</p>
 `,
       location: "Lekki Scheme 1, Lagos",
-      comepletionYear: "2018",
+      completionYear: "2018",
       headerImg:
         "https://lh3.google.com/u/0/d/1STCpANGRPQPYyKP60pCbVm8hV9hWqKxe=w3360-h1766-iv1",
       otherImgs: [
@@ -207,7 +207,7 @@ respectively)</p>
 </p>
 `,
       location: "Wuse Zone II, Abuja",
-      comepletionYear: "2017",
+      completionYear: "2017",
       headerImg:
         "https://lh3.google.com/u/0/d/1sVg9Pw7fcgcJLk_iicbdWNkyT9Cx5lqV=w3360-h1766-iv1",
       otherImgs: [
