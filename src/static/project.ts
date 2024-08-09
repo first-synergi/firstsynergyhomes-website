@@ -281,12 +281,12 @@ respectively)</p>
     {
       id: "st-augustine-uni-chapel-epe",
       projectName: "St Augustine University Chapel Development",
-      status: "Ongoing -  90% Complete",
+      status: "Ongoing",
       summary: `<p>Scope - Design and Build<br/>
 Building Type - Institutional Development.<br/>
 Project Configuration - 1300 seater Auditorium</p>`,
       location: "Ilara, Epe, Lagos State.",
-      completionYear: "2024",
+      completionYear: "90% Complete",
       headerImg:
         "https://lh3.google.com/u/0/d/1HncURbTkzAX8XaTY47-LUNNrnSiBRaDp=w3360-h1766-iv1",
       otherImgs: [
@@ -300,13 +300,13 @@ Project Configuration - 1300 seater Auditorium</p>`,
     {
       id: "private-residential-development-ikoyi",
       projectName: "Private Residential Development",
-      status: "Ongoing -  60% Complete",
+      status: "Ongoing",
       summary: `<p>Scope - Build Only (Civil works and Finishes Generally)<br/>
 Building Type - Private Residential Development.<br/>
 Project Configuration - Ground + 2 Upper floors.
 </p>`,
       location: "Ikoyi, Lagos State",
-      completionYear: "",
+      completionYear: "60% Complete",
       headerImg:
         "https://lh3.google.com/u/0/d/1i1ijgvzSU_jaXZvsBqr0n8RS9AyNkYCy=w3360-h1766-iv1",
       otherImgs: [
