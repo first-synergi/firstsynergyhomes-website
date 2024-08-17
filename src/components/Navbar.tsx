@@ -1,4 +1,17 @@
-import { Box, Flex, Stack, Text, useMediaQuery } from "@chakra-ui/react";
+import {
+  Box,
+  Checkbox,
+  Flex,
+  Heading,
+  Modal,
+  ModalBody,
+  ModalContent,
+  Stack,
+  Text,
+  useDisclosure,
+  useMediaQuery,
+  useToast,
+} from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
@@ -7,6 +20,7 @@ import { useRouter } from "next/router";
 import HamburgerMenuIcon from "./icons/HamburgerMenuIcon";
 import CloseIcon from "./icons/CloseIcon";
 import { useAnimate, motion, stagger } from "framer-motion";
+import { InputCmp } from "./InputCmp";
 
 const Navbar = () => {
   const location = useRouter();
@@ -50,6 +64,30 @@ const Navbar = () => {
     }
   }, [isMobile, showMobileMenu]);
 
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [agreed, setAgreed] = useState(false);
+
+  const toast = useToast();
+
+  const handleSubmit = () => {
+    const val = { firstName, lastName, email, phone, agreed };
+
+    if (!val.firstName || !val.lastName || !val.phone || !val.email) {
+      toast({
+        description: `Error: Please fill all required fields`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      return;
+    }
+    console.log(val);
+  };
+
   return (
     <>
       <Box>
@@ -91,14 +129,23 @@ const Navbar = () => {
               </Link>
             ))}
           </Flex>
-          <Box ml="auto">
+          <Flex alignItems={"center"} gap={"40px"} ml="auto">
+            <Text
+              color={"primary"}
+              cursor={"pointer"}
+              fontSize={"18px"}
+              fontWeight={600}
+              onClick={onOpen}
+            >
+              Get Cullingham Place Brochure
+            </Text>
             <Button
               display={{ lg: "flex", base: "none" }}
               label="Build with us"
               width={"fit-content"}
               onClick={() => location.push("/build-with-us")}
             />
-          </Box>
+          </Flex>
           {isMobile &&
             (showMobileMenu ? (
               <CloseIcon
@@ -160,6 +207,111 @@ const Navbar = () => {
           </Box>
         </Box>
       )}
+      <Modal
+        isOpen={isOpen}
+        onClose={onClose}
+        size={"3xl"}
+        isCentered
+        scrollBehavior="inside"
+      >
+        <ModalContent
+          // bgColor={"primary"}
+          bg={
+            "linear-gradient(180deg, rgba(0, 46, 59, 0.00) 0%, rgba(0, 46, 59, 0.80) 57.2%), url(/modal-bg.jpeg)"
+          }
+          bgSize={"cover"}
+          bgRepeat={"no-repeat"}
+        >
+          <ModalBody p={"42px"}>
+            <Flex gap={"29px"}>
+              <Box w="full" maxW={"50%"} mt={"auto"}>
+                <Text
+                  fontSize={"32px"}
+                  fontWeight={500}
+                  lineHeight={"100%"}
+                  letterSpacing={"-1.28px"}
+                >
+                  Learn more about{" "}
+                </Text>
+                <Heading
+                  fontSize={"60px"}
+                  fontWeight={700}
+                  letterSpacing={"-2.4px"}
+                  mt={"8px"}
+                  color={"secondary"}
+                >
+                  Cullingham Place
+                </Heading>
+                <Text
+                  fontSize={"16px"}
+                  lineHeight={"20px"}
+                  letterSpacing={"-0.64px"}
+                >
+                  Cullingham Place, defined by its sophisticated design,
+                  seamless flow, and practical features, is on track to exceed
+                  our past achievements and emerge as a new iconic landmark.
+                </Text>
+              </Box>
+              <Box w="full" maxW={"50%"}>
+                <form
+                  onSubmit={(e) => {
+                    e?.preventDefault();
+                    handleSubmit();
+                  }}
+                >
+                  <Stack spacing={"16px"} bg={"white"} p="20px">
+                    <InputCmp
+                      label="First name"
+                      type="text"
+                      onChange={(e) => setFirstName(e?.target?.value)}
+                      value={firstName}
+                    />
+                    <InputCmp
+                      label="Last name"
+                      type="text"
+                      onChange={(e) => setLastName(e?.target?.value)}
+                      value={lastName}
+                    />
+                    <InputCmp
+                      label="Email"
+                      type="email"
+                      onChange={(e) => setEmail(e?.target?.value)}
+                      value={email}
+                    />
+                    <InputCmp
+                      label="Phone number"
+                      type="number"
+                      onChange={(e) => setPhone(e?.target?.value)}
+                      value={phone}
+                    />
+                    <Flex gap={"16px"}>
+                      <Checkbox
+                        borderColor={"primary"}
+                        colorScheme="green"
+                        size={"lg"}
+                        mt={0}
+                        isChecked={agreed}
+                        onChange={(e) => setAgreed(e?.target?.checked)}
+                      />
+                      <Text fontSize={"16px"} color={"#82838A"}>
+                        By checking this box, I agree to the processing of
+                        personal data
+                      </Text>
+                    </Flex>
+                    <Button
+                      label="Send me the brochure"
+                      w="full"
+                      mt={"16px"}
+                      type="submit"
+                      isDisabled={!agreed}
+                    />
+                  </Stack>
+                </form>
+              </Box>
+            </Flex>
+          </ModalBody>
+        </ModalContent>
+      </Modal>
     </>
   );
 };

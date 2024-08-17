@@ -32,14 +32,52 @@ const BuildWithUs = () => {
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
+  const [errors, setErrors] = useState({
+    firstName: false,
+    lastName: false,
+    email: false,
+    phone: false,
+    subject: false,
+    message: false,
+  });
+  console.log(errors);
+
   const validate = () => {};
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
     const values = { firstName, lastName, email, phone, subject, message };
-    console.log(values);
-    console.log(process.env.NEXT_PUBLIC_EMAIL_HOST);
+    // console.log(values);
+    // console.log(process.env.NEXT_PUBLIC_EMAIL_HOST);
+
+    if (!firstName || !lastName || !email || !phone || !subject || !message) {
+      setErrors({
+        firstName: !firstName,
+        lastName: !lastName,
+        email: !email,
+        phone: !phone,
+        subject: !subject,
+        message: !message,
+      });
+      toast({
+        description: `Error: Please fill all required fields`,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      setIsLoading(false);
+      return;
+    }
+
+    setErrors({
+      firstName: false,
+      lastName: false,
+      email: false,
+      phone: false,
+      subject: false,
+      message: false,
+    });
 
     const res = await fetch("/api/send-email", {
       method: "POST",
@@ -199,6 +237,7 @@ const BuildWithUs = () => {
                         id="first_name"
                         value={firstName}
                         onChange={(e) => setFirstName(e?.target?.value)}
+                        error={errors?.firstName}
                       />
                       <InputCmp
                         label="Last name"
@@ -206,6 +245,7 @@ const BuildWithUs = () => {
                         id="last_name"
                         value={lastName}
                         onChange={(e) => setLastName(e?.target?.value)}
+                        error={errors?.lastName}
                       />
                     </Flex>
                     <Flex
@@ -219,6 +259,7 @@ const BuildWithUs = () => {
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e?.target?.value)}
+                        error={errors?.email}
                       />
                       <InputCmp
                         label="Phone number"
@@ -227,6 +268,7 @@ const BuildWithUs = () => {
                         type="number"
                         value={phone}
                         onChange={(e) => setPhone(e?.target?.value)}
+                        error={errors?.phone}
                       />
                     </Flex>
                     <InputCmp
@@ -235,6 +277,7 @@ const BuildWithUs = () => {
                       id="subject"
                       value={subject}
                       onChange={(e) => setSubject(e?.target?.value)}
+                      error={errors?.subject}
                     />
                     <TextAreaCmp
                       label="Message"
@@ -242,6 +285,7 @@ const BuildWithUs = () => {
                       id="message"
                       value={message}
                       onChange={(e) => setMessage(e?.target?.value)}
+                      error={errors?.message}
                     />
                     <Button
                       label="Send message"

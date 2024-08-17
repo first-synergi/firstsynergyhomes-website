@@ -10,13 +10,15 @@ import React from "react";
 
 interface IInput extends InputProps {
   label: string;
+  error?: boolean;
 }
 
 interface ITextArea extends TextareaProps {
   label: string;
+  error?: boolean;
 }
 
-const TextAreaCmp = ({ label, ...props }: ITextArea) => {
+const TextAreaCmp = ({ label, error, ...props }: ITextArea) => {
   return (
     <FormControl>
       <Text color={"primary"} fontSize={"16px"} mb={"8px"}>
@@ -25,7 +27,7 @@ const TextAreaCmp = ({ label, ...props }: ITextArea) => {
       <Textarea
         bg={"#FAFAFA"}
         borderBottom={"1px solid"}
-        borderColor={"primary"}
+        borderColor={error ? "red" : "primary"}
         borderRadius={"2px"}
         color={"primary"}
         type="text"
@@ -41,7 +43,7 @@ const TextAreaCmp = ({ label, ...props }: ITextArea) => {
   );
 };
 
-const InputCmp = ({ label, ...props }: IInput) => {
+const InputCmp = ({ label, error, ...props }: IInput) => {
   return (
     <FormControl>
       <Text color={"primary"} fontSize={"16px"} mb={"8px"}>
@@ -50,7 +52,7 @@ const InputCmp = ({ label, ...props }: IInput) => {
       <Input
         bg={"#FAFAFA"}
         borderBottom={"1px solid"}
-        borderColor={"primary"}
+        borderColor={error ? "red" : "primary"}
         borderRadius={"2px"}
         color={"primary"}
         height={"50px"}
